@@ -1,0 +1,68 @@
+{
+  "410001": "gen_filt_ht  <  600",
+  "407029": "gen_filt_ht  >  600 && gen_filt_ht < 1000",
+  "407030": "gen_filt_ht  > 1000 && gen_filt_ht < 1500",
+  "407031": "gen_filt_ht  > 1500",
+  "407032": "gen_filt_met > 200",
+  "410002": "gen_filt_ht  < 600",
+  "407033": "gen_filt_ht  >  600 && gen_filt_ht < 1000",
+  "407034": "gen_filt_ht  > 1000 && gen_filt_ht < 1500",
+  "407035": "gen_filt_ht  > 1500",
+  "407036": "gen_filt_met > 200",
+  "410004": "gen_filt_ht  <  600",
+  "407037": "gen_filt_ht  >  600 && gen_filt_ht < 1000",
+  "407038": "gen_filt_ht  > 1000 && gen_filt_ht < 1500",
+  "407039": "gen_filt_ht  > 1500",
+  "407040": "gen_filt_met > 200",
+  "407200": "gen_filt_met > 0 && gen_filt_met < 200 && gen_filt_ht > 0 && gen_filt_ht < 500",
+  "407201": "gen_filt_met > 0 && gen_filt_met < 200 && gen_filt_ht > 500 && gen_filt_ht < 700",
+  "407203": "gen_filt_met > 0 && gen_filt_met < 200 && gen_filt_ht > 700 && gen_filt_ht < 1000",
+  "407204": "gen_filt_met > 200 && gen_filt_ht > 0 && gen_filt_ht < 1000",
+  "410001": "gen_filt_ht > 1000",
+  "ttbar_syst_PhPyEG_radHi": [
+    ["bb","ttbar_class>0"],
+    ["cc","ttbar_class<0"],
+    ["light","ttbar_class==0"]
+  ],
+  "ttbar_syst_PhPyEG_radLo": [
+    ["bb","ttbar_class>0"],
+    ["cc","ttbar_class<0"],
+    ["light","ttbar_class==0"]
+  ],
+  "ttbar_syst_MGPy8EG": [
+    ["bb","ttbar_class>0"],
+    ["cc","ttbar_class<0"],
+    ["light","ttbar_class==0"]
+  ],
+  "ttbar_syst_aMcAtNlo": [
+    ["bb","ttbar_class>0"],
+    ["cc","ttbar_class<0"],
+    ["light","ttbar_class==0"]
+  ],
+  "ttbar_syst_PhPy8EG": [
+    ["bb","ttbar_class>0"],
+    ["cc","ttbar_class<0"],
+    ["light","ttbar_class==0"]
+  ],
+  "ttbar_syst_PhHppEG_H7UE": [
+    ["bb","ttbar_class>0"],
+    ["cc","ttbar_class<0"],
+    ["light","ttbar_class==0"]
+  ],
+  "ttbar_syst_Sherpa_221": [
+    ["bb","ttbar_class>0"],
+    ["cc","ttbar_class<0"],
+    ["light","ttbar_class==0"]
+  ],
+  "ttbar_syst_Sherpa_220": [
+    ["bb","ttbar_class>0"],
+    ["cc","ttbar_class<0"],
+    ["light","ttbar_class==0"]
+  ],
+  "ttbar_syst_PhHppEG": [
+    ["bb","ttbar_class>0"],
+    ["cc","ttbar_class<0"],
+    ["light","ttbar_class==0"]
+  ]
+}
+

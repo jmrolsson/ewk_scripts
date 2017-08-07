@@ -1,0 +1,574 @@
+---
+# we can have text properties which specify what text to draw (think atlas, prelim, internal)
+# NOTE indentation matters
+#   # this one pulls in all of the reference that's pre-defined
+#   texts:
+#     - *atlas
+#   # this one merges the &internal with the current hash so everything but the label is the same
+#   texts:
+#     - label: preliminary
+#       <<: *internal
+#   texts:
+#     - x: <position>
+#       y: <position>
+#       font: <number> (for SetTextFont(...))
+#       size: <number> (for SetTextSize(...))
+#       label: <string> (what to actually say)
+
+atlas: &atlas
+  x: 0.65
+  y: 0.65
+  font: 73
+  size: 25
+  label: ATLAS
+
+internal: &internal
+  x: 0.77
+  font: 43
+  label: Internal
+  <<: *atlas
+
+atlasinternal: &atlasinternal
+  - *atlas
+  - *internal
+
+labeloptions: &labeloptions
+  xtitleoffset: 1.4
+  ytitleoffset: 1.4
+  xtitlesize: 0.05
+  ytitlesize: 0.05
+  xlabelsize: 0.05
+  ylabelsize: 0.05
+
+# top level defines the label / grouping
+# second level is a list of files under that group, one can also specify a wildcard to match files so they all get grouped
+# third level specifies extra information for a given file such as plots to ignore
+# groups:
+#   - name: <group name>
+#     files:
+#       - <a file path or a file pattern to match a set of files>
+#     styles:
+#       <name of style>: <value for style>
+#   - name: <group name>
+#     files: [file1, file2, ...]
+#     styles: {style1: val1, style2: val2, ...}
+
+# styles are set on all hists associated with that group
+# styles:
+#   - drawstyle (passed into Draw(...), think 'same' or 'hist')
+#   - legendstyle (passed into Legend(...), think 'F')
+#   - markercolor (also set with 'color')
+#   - markerstyle
+#   - markersize
+#   - fillcolor (also set with 'color')
+#   - fillstyle
+#   - linecolor (also set with 'color')
+#   - linestyle
+#   - linewidth
+#   - color (sets markercolor, fillcolor, linecolor)
+
+groups:
+#  - name: data
+#    files:
+#      - TA01_MBJ17-18-19/hist-user.*.*.physics_Main.*.root
+#    styles:
+#      legendstyle: p
+#      color: black
+#    do not scale me: true
+
+  - name: dijets
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*361022*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*361023*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*361024*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*361025*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*361026*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*361027*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*361028*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "t#bar{t}"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*ttbar*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "singletop"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*singletop*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "t#bar{t}+V"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*topEW*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "V+jets"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*W_sherpa*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*Z_sherpa*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "diboson"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*diboson*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 300, m_{#tilde{#chi^{0}_{1}}} = 0"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*Wh_300p0_0p0*.hists
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+
+  - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 300, m_{#tilde{#chi^{0}_{1}}} = 50"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*Wh_300p0_50p0*.hists
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+  #
+  # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 300, m_{#tilde{#chi^{0}_{1}}} = 100"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*Wh_300p0_100p0*.hists
+  #   styles:
+  #     legendstyle: L
+  #     drawstyle: hist
+  #     linewidth: 2
+  #   stack it: false
+  #
+  # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 350, m_{#tilde{#chi^{0}_{1}}} = 50"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*Wh_350p0_50p0*.hists
+  #   styles:
+  #     legendstyle: L
+  #     drawstyle: hist
+  #     linewidth: 2
+  #   stack it: false
+  #
+  # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 350, m_{#tilde{#chi^{0}_{1}}} = 100"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*Wh_350p0_100p0*.hists
+  #   styles:
+  #     legendstyle: L
+  #     drawstyle: hist
+  #     linewidth: 2
+  #   stack it: false
+  #
+  - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 400, m_{#tilde{#chi^{0}_{1}}} = 0"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*Wh_400p0_0p0*.hists
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+  #
+  # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 450, m_{#tilde{#chi^{0}_{1}}} = 50"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*Wh_450p0_50p0*.hists
+  #   styles:
+  #     legendstyle: L
+  #     drawstyle: hist
+  #     linewidth: 2
+  #   stack it: false
+  #
+  # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 500, m_{#tilde{#chi^{0}_{1}}} = 0"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*Wh_500p0_0p0*.hists
+  #   styles:
+  #     legendstyle: L
+  #     drawstyle: hist
+  #     linewidth: 2
+  #   stack it: false
+  #
+  # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 500, m_{#tilde{#chi^{0}_{1}}} = 100"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*Wh_500p0_100p0*.hists
+  #   styles:
+  #     legendstyle: L
+  #     drawstyle: hist
+  #     linewidth: 2
+  #   stack it: false
+  #
+  - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 600, m_{#tilde{#chi^{0}_{1}}} = 0"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_main_variables_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_July19_default/*Wh_600p0_0p0*.hists
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+  
+# plots:
+#   config:  # here we set global configurations that are applied uniformly such as...
+#     canvas:
+#     legend:
+#     texts:
+
+plots:
+  config:
+    texts:
+      - *atlas
+      - *internal
+      - &topline
+        x: 0.65
+        y: 0.61
+        font: 43
+        size: 15
+        label: "#sqrt{s} = 13 TeV, L_{int} #approx 35 fb^{-1}"
+    canvas:
+      width: 800
+      height: 600
+      logy: true
+    legend:
+      numcolumns: 2
+      topmargin: 0.02
+      leftmargin: 0.02
+      rightmargin: 0.02
+      textsize: 18
+      entrysep: 0.005
+      entryheight: 0.01
+
+  paths:
+
+    # ##### Preselection (SUSY10+MBJ)
+    #
+    # hists/default/cutflow:
+    #   xlabel: "Cutflow"
+    #   ylabel: "Events"
+    #   ymin: 1
+    #   ymax: 100000000000000000000000
+    #   # ymax: 100000000
+    #   plot tag: logy
+    # hists/default/jets_n:
+    #   xmin: 0
+    #   xmax: 10
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000000
+    #   ylabel: Events
+    #   xlabel: "jet multiplicity"
+    #   plot tag: logy
+    # hists/default/bjets_n:
+    #   xmin: 0
+    #   xmax: 10
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   ylabel: Events
+    #   xlabel: "b-jet multiplicity (77% eff)"
+    #   plot tag: logy
+    # hists/default/bjets_n_60:
+    #   xmin: 0
+    #   xmax: 10
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   ylabel: Events
+    #   xlabel: "b-jet multiplicity (60% eff)"
+    #   plot tag: logy
+    # hists/default/bjets_n_70:
+    #   xmin: 0
+    #   xmax: 10
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   ylabel: Events
+    #   xlabel: "b-jet multiplicity (70% eff)"
+    #   plot tag: logy
+    # hists/default/bjets_n_85:
+    #   xmin: 0
+    #   xmax: 10
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   ylabel: Events
+    #   xlabel: "b-jet multiplicity (85% eff)"
+    #   plot tag: logy
+    # hists/default/pt_jet_1:
+    #   xmin: 0
+    #   xmax: 1000
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "p_{T,1}"
+    #   plot tag: logy
+    # hists/default/pt_jet_2:
+    #   xmin: 0
+    #   xmax: 1000
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "p_{T,2}"
+    #   plot tag: logy
+    # hists/default/pt_jet_3:
+    #   xmin: 0
+    #   xmax: 1000
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "p_{T,3}"
+    #   plot tag: logy
+    # hists/default/pt_jet_4:
+    #   xmin: 0
+    #   xmax: 1000
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "p_{T,4}"
+    #   plot tag: logy
+    # hists/default/dphi_min:
+    #   xmin: 0
+    #   xmax: 3.14
+    #   ymin: 0.01
+    #   ymax: 100000000000000000000000
+    #   ylabel: Events
+    #   xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+    #   plot tag: logy
+    # hists/default/dphi_1jet:
+    #   xmin: 0
+    #   xmax: 3.14
+    #   ymin: 0.01
+    #   ymax: 100000000000000000000000
+    #   ylabel: Events
+    #   xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+    #   plot tag: logy
+    # hists/default/dphi_sum4jet:
+    #   xmin: 0
+    #   xmax: 3.14
+    #   ymin: 0.01
+    #   ymax: 100000000000000000000000
+    #   ylabel: Events
+    #   xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+    #   plot tag: logy
+    # hists/default/gen_filt_ht:
+    #   xmin: 0
+    #   xmax: 1000
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "gen_filt_ht"
+    #   plot tag: logy
+    # hists/default/gen_filt_met:
+    #   xmin: 0
+    #   xmax: 1000
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "gen_filt_met"
+    #   plot tag: logy
+    # hists/default/met:
+    #   xmin: 0
+    #   xmax: 1000
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "E_{T}^{miss}"
+    #   plot tag: logy
+    # hists/default/mTb_min:
+    #   ymin: 0.1
+    #   ymax: 10000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "M_{T}^{b,min}"
+    #   plot tag: logy
+    # hists/default/meff_4j:
+    #   xmin: 0
+    #   xmax: 2500
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   rebin: 4
+    #   ylabel: Events
+    #   xlabel: "M_{eff}^{4j}"
+    #   plot tag: logy
+    # hists/default/mT_4j:
+    #   xmin: 0
+    #   xmax: 2500
+    #   ymin: 0.001
+    #   ymax: 1000000000000000000
+    #   rebin: 4
+    #   ylabel: Events
+    #   xlabel: "M_{T}^{4j}"
+    #   plot tag: logy
+    # hists/default/minv_2j:
+    #   xmin: 0
+    #   xmax: 2500
+    #   ymin: 0.001
+    #   ymax: 1000000000000000000
+    #   rebin: 4
+    #   ylabel: Events
+    #   xlabel: "M^{2j}"
+    #   plot tag: logy
+    # hists/default/mT_2j:
+    #   xmin: 0
+    #   xmax: 2500
+    #   ymin: 0.001
+    #   ymax: 1000000000000000000
+    #   rebin: 4
+    #   ylabel: Events
+    #   xlabel: "M_{T}^{2j}"
+    #   plot tag: logy
+    # hists/default/minv_bb:
+    #   ymin: 0.1
+    #   ymax: 10000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "M^{bb}"
+    #   plot tag: logy
+    # hists/default/mT_bb:
+    #   ymin: 0.1
+    #   ymax: 10000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "M_{T}^{bb}"
+    #   plot tag: logy
+    # hists/default/mct_bb:
+    #   ymin: 0.1
+    #   ymax: 10000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "M_{CT}^{bb}"
+    #   plot tag: logy
+    # hists/default/minv_non_bb:
+    #   ymin: 0.1
+    #   ymax: 10000000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "M^{non-bb}"
+    #   plot tag: logy
+    # hists/default/mT_non_bb:
+    #   ymin: 0.1
+    #   ymax: 10000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "M_{T}^{non-bb}"
+    #   plot tag: logy
+    # hists/default/mct_non_bb:
+    #   ymin: 0.1
+    #   ymax: 10000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "M_{CT}^{non-bb}"
+    #   plot tag: logy 
+    #
+    # #### N_jets == 4, 1 <= N_b-jets <= 2
+    #
+    # hists/nJetsEq4_nBJetsGeq1Leq2/jets_n:
+    #   xmin: 0
+    #   xmax: 10
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000000
+    #   ylabel: Events
+    #   xlabel: "jet multiplicity"
+    #   plot tag: logy
+    # hists/nJetsEq4_nBJetsGeq1Leq2/bjets_n:
+    #   xmin: 0
+    #   xmax: 10
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   ylabel: Events
+    #   xlabel: "b-jet multiplicity (77% eff)"
+    #   plot tag: logy
+    # hists/nJetsEq4_nBJetsGeq1Leq2/met:
+    #   xmin: 0
+    #   xmax: 1000
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "E_{T}^{miss}"
+    #   plot tag: logy
+    # hists/nJetsEq4_nBJetsGeq1Leq2/mTb_min:
+    #   ymin: 0.1
+    #   ymax: 10000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "M_{T}^{b,min}"
+    #   plot tag: logy
+    # hists/nJetsEq4_nBJetsGeq1Leq2/meff_4j:
+    #   xmin: 0
+    #   xmax: 2500
+    #   ymin: 0.01
+    #   ymax: 1000000000000000000
+    #   rebin: 4
+    #   ylabel: Events
+    #   xlabel: "M_{eff}^{4j}"
+    #   plot tag: logy
+    # hists/nJetsEq4_nBJetsGeq1Leq2/mct_bb:
+    #   ymin: 0.1
+    #   ymax: 10000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "M_{CT}^{bb}"
+    #   plot tag: logy
+    # hists/nJetsEq4_nBJetsGeq1Leq2/minv_bb:
+    #   ymin: 0.1
+    #   ymax: 10000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "M^{bb}"
+    #   plot tag: logy
+    # hists/nJetsEq4_nBJetsGeq1Leq2/minv_non_bb:
+    #   ymin: 0.1
+    #   ymax: 10000000000000000000
+    #   rebin: 2
+    #   ylabel: Events
+    #   xlabel: "M^{non-bb}"
+    #   plot tag: logy
+   
+    ##### N_jets == 4, 1 <= N_b-jets <= 2, MET>200 GeV, Meff > 700 GeV
+ 
+    hists/nJetsEq4_nBJetsGeq1Leq2_metG250_MeffG700/met:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100000000000000000000000
+      ylabel: Events
+      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      plot tag: logy
+    hists/nJetsEq4_nBJetsGeq1Leq2_metG250_MeffG700/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100000000000000000000000
+      ylabel: Events
+      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      plot tag: logy
+    hists/nJetsEq4_nBJetsGeq1Leq2_metG250_MeffG700/mTb_min:
+      ymin: 0.1
+      ymax: 10000000000000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "M_{T}^{b,min}"
+      plot tag: logy
+    hists/nJetsEq4_nBJetsGeq1Leq2_metG250_MeffG700/mct_bb:
+      ymin: 0.1
+      ymax: 10000000000000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "M_{CT}^{bb}"
+      plot tag: logy

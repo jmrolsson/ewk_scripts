@@ -1,0 +1,56 @@
+{
+  "cuts": [
+    {"cut": "1",
+    "name": "default"},
+    {"cut": "baseline_electrons_n==0 && baseline_muons_n==0 && jets_n==4 && bjets_n>=1 && bjets_n<=2 && met>200 && meff_4j > 700",
+    "name": "nJetsEq4_nBJetsGeq1Leq2_metG200_MeffG700"},
+    {"cut": "baseline_electrons_n==0 && baseline_muons_n==0 && jets_n==4 && bjets_n>=1 && bjets_n<=2 && met>200 && meff_4j > 700 && dphi_sum4jet > 2.6",
+    "name": "nJetsEq4_nBJetsGeq1Leq2_metG200_MeffG700_dphiSum4jetG2p6"},
+    {"cut": "baseline_electrons_n==0 && baseline_muons_n==0 && jets_n==4 && bjets_n>=1 && bjets_n<=2 && met>200 && meff_4j > 700 && dphi_min > 0.4",
+    "name": "nJetsEq4_nBJetsGeq1Leq2_metG200_MeffG700_dphiMinG0p4"}
+  ],
+  "draw": [
+    {
+      "draw": "n_vtx",
+      "name": "cutflow",
+      "min": -1e8,
+      "max": 1e8,
+      "nbins": 1
+    },
+    {
+      "draw": "dphi_min",
+      "name": "dphi_min",
+      "min": 0,
+      "max": 4,
+      "nbins": 40
+    },
+    {
+      "draw": "dphi_1jet",
+      "name": "dphi_1jet",
+      "min": 0,
+      "max": 4,
+      "nbins": 40
+    },
+    {
+      "draw": "dphi_sum4jet",
+      "name": "dphi_sum4jet",
+      "min": 0,
+      "max": 4,
+      "nbins": 40
+    },
+    {
+      "draw": "dphi_sum4jet:dphi_min",
+      "name": "dphi_sum4jet_vs_dphi_min",
+      "min": [0, 0],
+      "max": [4, 4],
+      "nbins": [40, 40]
+    },
+    {
+      "draw": "dphi_sum4jet:dphi_1jet",
+      "name": "dphi_sum4jet_vs_dphi_1jet",
+      "min": [0, 0],
+      "max": [4, 4],
+      "nbins": [40, 40]
+    }
+  ]
+}

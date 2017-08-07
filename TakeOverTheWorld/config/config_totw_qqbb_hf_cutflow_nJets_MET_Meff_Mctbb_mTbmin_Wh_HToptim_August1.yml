@@ -1,0 +1,166 @@
+---
+# defines background groups for the cutflows
+# wildcards for file patterns are allowed
+# NOTE indentation matters
+#
+# ex. 
+# backgrounds:
+#   - name: dijets
+#     files:
+#       - *36102*.hists
+#   - name: "t#bar{t}" 
+#     files:
+#       - *ttbar*.hists     
+# 
+backgrounds:
+
+  - name: "dijet"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*361021*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*361022*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*361023*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*361024*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*361025*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*361026*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*361027*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*361028*.hists
+
+  - name: "diboson"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*diboson*.hists
+
+  - name: "$\\ttbar$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*ttbar*.hists
+
+  - name: "single-top"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*singletop*.hists
+
+  - name: "$\\ttbar+X$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*topEW*.hists
+
+  - name: "$W$+jets"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*W_sherpa_220*.hists
+
+  - name: "$Z$+jets"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*Z_sherpa_220*.hists
+
+# defined analogously for signal samples
+# one group per signal sample is required
+signals:
+
+  - name: "(300, 0)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100001*300p0_0p0*.hists
+  - name: "(300, 50)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100002*300p0_50p0*.hists
+  - name: "(300, 100)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100003*300p0_100p0*.hists
+  - name: "(350, 0)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100004*350p0_0p0*.hists
+  - name: "(350, 50)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100005*350p0_50p0*.hists
+  - name: "(350, 100)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100006*350p0_100p0*.hists
+  - name: "(400, 0)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100007*400p0_0p0*.hists
+  - name: "(400, 50)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100008*400p0_50p0*.hists
+  - name: "(400, 100)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100009*400p0_100p0*.hists
+  - name: "(450, 0)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100010*450p0_0p0*.hists
+  - name: "(450, 50)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100011*450p0_50p0*.hists
+  - name: "(450, 100)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100012*450p0_100p0*.hists
+  - name: "(450, 150)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100013*450p0_150p0*.hists
+  - name: "(500, 0)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100014*500p0_0p0*.hists
+  - name: "(500, 50)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100015*500p0_50p0*.hists
+  - name: "(500, 100)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100016*500p0_100p0*.hists
+  - name: "(500, 150)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100017*500p0_150p0*.hists
+  - name: "(500, 200)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100018*500p0_200p0*.hists
+  - name: "(550, 0)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100019*550p0_0p0*.hists
+  - name: "(550, 50)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100020*550p0_50p0*.hists
+  - name: "(550, 100)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100021*550p0_100p0*.hists
+  - name: "(550, 150)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100022*550p0_150p0*.hists
+  - name: "(550, 200)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100023*550p0_200p0*.hists
+  - name: "(600, 0)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100024*600p0_0p0*.hists
+  - name: "(600, 50)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100025*600p0_50p0*.hists
+  - name: "(600, 100)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100026*600p0_100p0*.hists
+  - name: "(600, 150)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100027*600p0_150p0*.hists
+  - name: "(700, 0)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100028*700p0_0p0*.hists
+  - name: "(700, 50)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/*100029*700p0_50p0*.hists
+
+# specify the path to each cutflow histogram
+# one cutflow will be saved for each path
+cutflows:
+  paths:
+    hists/optimization_Wh_300_0_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG60L110_metG200_meffG700_mTbMinG120_mctbbG220/cutflow:
+      outfile: "cutflow_resolved/cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/optimization_Wh_300_0_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG60L110_metG200_meffG700_mTbMinG120_mctbbG220.txt"
+      label: "4 <= N_jets <= 5, N_bjets == 2, MET > 200 GeV, Meff > 700 GeV, dPhiMin(jet_i,MET) > 0.4, dPhi(diboson,MET) > 2.6, Mctbb > 220 GeV, MTb_min > 120 GeV, 100 < M_bb/GeV < 140, 60 < M_non_bb/GeV < 110"
+    hists/optimization_Wh_300_100_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG60L110_metG200_meffG700_mTbMinG300_mctbbG270/cutflow:
+      outfile: "cutflow_resolved/cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/optimization_Wh_300_100_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG60L110_metG200_meffG700_mTbMinG300_mctbbG270.txt"
+      label: "4 <= N_jets <= 5, N_bjets == 2, MET > 250 GeV, Meff > 700 GeV, dPhiMin(jet_i,MET) > 0.4, dPhi(diboson,MET) > 2.6, Mctbb > 270 GeV, MTb_min > 300 GeV, 100 < M_bb/GeV < 140, 60 < M_non_bb/GeV < 110"
+    hists/optimization_Wh_400_0_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG60L110_metG200_meffG900_mTbMinG160_mctbbG220/cutflow:
+      outfile: "cutflow_resolved/cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/optimization_Wh_400_0_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG60L110_metG200_meffG900_mTbMinG160_mctbbG220.txt"
+      label: "blabla"
+      label: "N_jets == 4, N_bjets == 2, MET > 200 GeV, Meff > 900 GeV, dPhiMin(jet_i,MET) > 0.4, dPhi(diboson,MET) > 2.6, Mctbb > 220 GeV, MTb_min > 160 GeV, 100 < M_bb/GeV < 140, 60 < M_non_bb/GeV < 110"
+    hists/optimization_Wh_500_0_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG60L110_metG250_meffG900_mTbMinG300_mctbbG140/cutflow:
+      outfile: "cutflow_resolved/cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/optimization_Wh_500_0_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG60L110_metG250_meffG900_mTbMinG300_mctbbG140.txt"
+      label: "N_jets == 4, N_bjets == 2, MET > 250 GeV, Meff > 900 GeV, dPhiMin(jet_i,MET) > 0.4, dPhi(diboson,MET) > 2.6, Mctbb > 140 GeV, MTb_min > 300 GeV, 100 < M_bb/GeV < 140, 60 < M_non_bb/GeV < 110"
+    hists/optimization_Wh_500_100_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG60L110_metG200_meffG900_mTbMinG260_mctbbG120/cutflow:
+      outfile: "cutflow_resolved/cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/optimization_Wh_500_100_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG60L110_metG200_meffG900_mTbMinG260_mctbbG120.txt"
+      label: "N_jets == 4, N_bjets == 2, MET > 200 GeV, Meff > 900 GeV, dPhiMin(jet_i,MET) > 0.4, dPhi(diboson,MET) > 2.6, Mctbb > 120 GeV, MTb_min > 260 GeV, 100 < M_bb/GeV < 140, 60 < M_non_bb/GeV < 110"
+    hists/optimization_Wh_600_0_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG60L110_metG200_meffG1000_mTbMinG180_mctbbG150/cutflow:
+      outfile: "cutflow_resolved/cutflow_nJets_MET_Meff_Mctbb_mTbmin_Wh_HToptim_August1_HT_incl_filter/optimization_Wh_600_0_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG60L110_metG200_meffG1000_mTbMinG180_mctbbG150.txt"
+      label: "N_jets == 4, N_bjets == 2, MET > 200 GeV, Meff > 1000 GeV, dPhiMin(jet_i,MET) > 0.4, dPhi(diboson,MET) > 2.6, Mctbb > 150 GeV, MTb_min > 180 GeV, 100 < M_bb/GeV < 140, 60 < M_non_bb/GeV < 110"

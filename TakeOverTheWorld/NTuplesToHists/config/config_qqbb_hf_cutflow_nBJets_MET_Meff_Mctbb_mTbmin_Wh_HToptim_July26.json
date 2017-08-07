@@ -1,0 +1,45 @@
+{
+  "cuts": [
+
+    {"cut": "1",
+    "name": "default"},
+
+    {"cut": "baseline_electrons_n==0 && baseline_muons_n==0 && jets_n>=4 && jets_n<=5 && bjets_n==2 && met>200 && meff_4j>900 && dphi_min>0.4 && dphi_sum4jet>2.6 && mct_bb>200 && mTb_min>160 && minv_bb>100 && minv_bb<140 && minv_non_bb>60 && minv_non_bb<110",
+    "name": "optimization_Wh_300_0_nJetsGeq4Leq5_nBJetsEq2_metG200_MeffG900_dphiMinG0p4_dphiSum4jetG2p6_MctbbG200_mTbminG160_MinvbbG100L140_MinvNonbbG60L110"},
+
+    {"cut": "baseline_electrons_n==0 && baseline_muons_n==0 && jets_n>=4 && jets_n<=5 && bjets_n>=2 && bjets_n<=3 && met>250 && meff_4j>1000 && dphi_min>0.4 && dphi_sum4jet>2.6 && mct_bb>190 && mTb_min>280 && minv_bb>100 && minv_bb<140 && minv_non_bb>60 && minv_non_bb<110",
+    "name": "optimization_Wh_300_100_nJetsGeq4Leq5_nBJetsGeq2Leq3_metG250_MeffG1000_dphiMinG0p4_dphiSum4jetG2p6_MctbbG190_mTbminG280_MinvbbG100L140_MinvNonbbG60L110"},
+
+    {"cut": "baseline_electrons_n==0 && baseline_muons_n==0 && jets_n>=4 && jets_n<=5 && bjets_n==2 && met>200 && meff_4j>900 && dphi_min>0.4 && dphi_sum4jet>2.6 && mct_bb>170 && mTb_min>180 && minv_bb>100 && minv_bb<140 && minv_non_bb>60 && minv_non_bb<110",
+    "name": "optimization_Wh_400_0_nJetsGeq4Leq5_nBJetsEq2_metG200_MeffG900_dphiMinG0p4_dphiSum4jetG2p6_MctbbG170_mTbminG180_MinvbbG100L140_MinvNonbbG60L110"},
+
+    {"cut": "baseline_electrons_n==0 && baseline_muons_n==0 && jets_n>=4 && jets_n<=5 && bjets_n==2 && met>200 && meff_4j>1000 && dphi_min>0.4 && dphi_sum4jet>2.6 && mct_bb>100 && mTb_min>220 && minv_bb>100 && minv_bb<140 && minv_non_bb>60 && minv_non_bb<110",
+    "name": "optimization_Wh_500_0_nJetsGeq4Leq5_nBJetsEq2_metG200_MeffG1000_dphiMinG0p4_dphiSum4jetG2p6_MctbbG100_mTbminG220_MinvbbG100L140_MinvNonbbG60L110"},
+
+    {"cut": "baseline_electrons_n==0 && baseline_muons_n==0 && jets_n>=4 && jets_n<=5 && bjets_n==2 && met>200 && meff_4j>1000 && dphi_min>0.4 && dphi_sum4jet>2.6 && mct_bb>200 && mTb_min>220 && minv_bb>100 && minv_bb<140 && minv_non_bb>60 && minv_non_bb<110",
+    "name": "optimization_Wh_500_100_nJetsGeq4Leq5_nBJetsEq2_metG200_MeffG1000_dphiMinG0p4_dphiSum4jetG2p6_MctbbG200_mTbminG220_MinvbbG100L140_MinvNonbbG60L110"},
+
+    {"cut": "baseline_electrons_n==0 && baseline_muons_n==0 && jets_n>=4 && jets_n<=5 && bjets_n==2 && met>250 && meff_4j>1000 && dphi_min>0.4 && dphi_sum4jet>2.6 && mct_bb>140 && mTb_min>240 && minv_bb>100 && minv_bb<140 && minv_non_bb>60 && minv_non_bb<110",
+    "name": "optimization_Wh_600_0_nJetsGeq4Leq5_nBJetsEq2_metG250_MeffG1000_dphiMinG0p4_dphiSum4jetG2p6_MctbbG140_mTbminG240_MinvbbG100L140_MinvNonbbG60L110"},
+
+    {"cut": "baseline_electrons_n==0 && baseline_muons_n==0 && jets_n>=4 && jets_n<=5 && bjets_n==2 && met>200 && meff_4j>1000 && dphi_min>0.4 && dphi_sum4jet>2.6 && mct_bb>130 && mTb_min>280 && minv_bb>100 && minv_bb<140 && minv_non_bb>60 && minv_non_bb<110",
+    "name": "optimization_Wh_700_0_nJetsGeq4Leq5_nBJetsEq2_metG200_MeffG1000_dphiMinG0p4_dphiSum4jetG2p6_MctbbG130_mTbminG280_MinvbbG100L140_MinvNonbbG60L110"}
+
+  ],
+  "draw": [
+    {
+      "draw": "n_vtx",
+      "name": "cutflow",
+      "min": -1e8,
+      "max": 1e8,
+      "nbins": 1
+    },
+    {
+      "draw": "gen_filt_ht",
+      "name": "gen_filt_ht",
+      "min": 0,
+      "max": 2000,
+      "nbins": 100
+    }
+  ]
+}
