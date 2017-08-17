@@ -1,0 +1,128 @@
+{
+  "cuts": [
+
+    {"cut": "1",
+    "name": "default"},
+
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb > 140",
+    "name": "optimization_Wh_SR1_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbMinG100_mctbbG140"},
+
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 135 && minv_non_bb > 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb > 140",
+    "name": "optimization_Wh_CR1_mbbG135_mNonbbG90"},
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb > 140",
+    "name": "optimization_Wh_CR1_mbbG135"},
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb > 140",
+    "name": "optimization_Wh_CR1_mNonbbG90"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 135 && minv_non_bb > 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb < 140",
+    "name": "optimization_Wh_CR1_mbbG135_mNonbbG90_mctbbL140"},
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb < 140",
+    "name": "optimization_Wh_CR1_mbbG135_mctbbL140"},
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb < 140",
+    "name": "optimization_Wh_CR1_mNonbbG90_mctbbL140"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 135 && minv_non_bb > 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb > 180",
+    "name": "optimization_Wh_CR1_mbbG135_mNonbbG90_mctbbG180"},
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb > 180",
+    "name": "optimization_Wh_CR1_mbbG135_mctbbG180"},
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb > 180",
+    "name": "optimization_Wh_CR1_mNonbbG90_mctbbG180"},
+
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && (minv_bb < 105 || minv_bb > 135) && minv_non_bb > 75 && minv_non_bb < 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb > 140",
+    "name": "optimization_Wh_CR1_inv_mbbL105G135"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && (minv_non_bb < 75 || minv_non_bb > 90) && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb > 140",
+    "name": "optimization_Wh_CR1_inv_mNonbbL75G90"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && (minv_bb < 105 || minv_bb > 135) && (minv_non_bb < 75 || minv_non_bb > 90) && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb > 140",
+    "name": "optimization_Wh_CR1_inv_mbbL105G135_mNonbbL75G90"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 200 && meff_4j > 900 && mTb_min < 100 && mct_bb > 140",
+    "name": "optimization_Wh_CR1_inv_mTbMinL100"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb < 140",
+    "name": "optimization_Wh_CR1_inv_mctbbL140"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 200 && meff_4j > 900 && mTb_min < 100 && mct_bb < 140",
+    "name": "optimization_Wh_CR1_inv_mTbMinL100_mctbbL140"},
+
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb > 140",
+    "name": "optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140"},
+
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 135 && minv_non_bb > 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb > 140",
+    "name": "optimization_Wh_CR2_mbbG135_mNonbbG90"},
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb > 140",
+    "name": "optimization_Wh_CR2_mbbG135"},
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb > 140",
+    "name": "optimization_Wh_CR2_mNonbbG90"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 135 && minv_non_bb > 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb < 140",
+    "name": "optimization_Wh_CR2_mbbG135_mNonbbG90_mctbbL140"},
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb < 140",
+    "name": "optimization_Wh_CR2_mbbG135_mctbbL140"},
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb < 140",
+    "name": "optimization_Wh_CR2_mNonbbG90_mctbbL140"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 135 && minv_non_bb > 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb > 180",
+    "name": "optimization_Wh_CR2_mbbG135_mNonbbG90_mctbbG180"},
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb > 180",
+    "name": "optimization_Wh_CR2_mbbG135_mctbbG180"},
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb > 180",
+    "name": "optimization_Wh_CR2_mNonbbG90_mctbbG180"},
+
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && (minv_bb < 105 || minv_bb > 135) && minv_non_bb > 75 && minv_non_bb < 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb > 140",
+    "name": "optimization_Wh_CR2_inv_mbbL105G135"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && (minv_non_bb < 75 || minv_non_bb > 90) && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb > 140",
+    "name": "optimization_Wh_CR2_inv_mNonbbL75G90"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && (minv_bb < 105 || minv_bb > 135) && (minv_non_bb < 75 || minv_non_bb > 90) && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb > 140",
+    "name": "optimization_Wh_CR2_inv_mbbL105G135_mNonbbL75G90"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 250 && meff_4j > 900 && mTb_min < 160 && mct_bb > 140",
+    "name": "optimization_Wh_CR2_inv_mTbMinL160"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb < 140",
+    "name": "optimization_Wh_CR2_inv_mctbbL140"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 250 && meff_4j > 900 && mTb_min < 160 && mct_bb < 140",
+    "name": "optimization_Wh_CR2_inv_mTbMinL160_mctbbL140"},
+
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 200 && meff_4j > 700 && mTb_min > 180 && mct_bb > 190",
+    "name": "optimization_Wh_SR3_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG200_meffG700_mTbMinG180_mctbbG190"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n >= 2 && bjets_n <= 4 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 200 && meff_4j > 700 && mTb_min > 200 && mct_bb > 200",
+    "name": "optimization_Wh_SR3_old_Aug14_leptonveto_nJetsEq4_nBJetsGeq2Leq4_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG200_meffG700_mTbMinG200_mctbbG200"}
+
+  ],
+  "draw": [
+    {
+      "draw": "n_vtx",
+      "name": "cutflow",
+      "min": -1e8,
+      "max": 1e8,
+      "nbins": 1
+    },
+    {
+      "draw": "gen_filt_ht",
+      "name": "gen_filt_ht",
+      "min": 0,
+      "max": 2000,
+      "nbins": 100
+    },
+    {
+      "draw": "met",
+      "name": "met",
+      "min": 0,
+      "max": 1000,
+      "nbins": 100
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+---
+# defines background groups for the cutflows
+# wildcards for file patterns are allowed
+# NOTE indentation matters
+#
+# ex. 
+# backgrounds:
+#   - name: dijets
+#     files:
+#       - *36102*.hists
+#   - name: "t#bar{t}" 
+#     files:
+#       - *ttbar*.hists     
+# 
+backgrounds:
+
+  - name: "dijet"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361021*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361022*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361023*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361024*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361025*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361026*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361027*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361028*.hists
+
+  # - name: "dijet_JZ1W"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361021*.hists
+  # - name: "dijet_JZ2W"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361022*.hists
+  # - name: "dijet_JZ3W"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361023*.hists
+  # - name: "dijet_JZ4W"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361024*.hists
+  # - name: "dijet_JZ5W"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361025*.hists
+  # - name: "dijet_JZ6W"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361026*.hists
+  # - name: "dijet_JZ7W"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361027*.hists
+  # - name: "dijet_JZ8W"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*361028*.hists
+
+  - name: "diboson"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*diboson*.hists
+
+  - name: "ttbar"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*ttbar*.hists
+
+  - name: "singletop"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*singletop*.hists
+
+  - name: "ttbar+X"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*topEW*.hists
+
+  - name: "W+jets"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*W_sherpa_220*.hists
+
+  - name: "Z+jets"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/*Z_sherpa_220*.hists
+
+# defined analogously for signal samples
+# one group per signal sample is required
+signals:
+
+  - name: "$\\mheavy = 300\\gev, \\mneut = 0\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100001.MGPy8EG_A14N23LO_C1N2_Wh_300p0_0p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_300_0.txt"
+
+  - name: "$\\mheavy = 300\\gev, \\mneut = 50\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100002.MGPy8EG_A14N23LO_C1N2_Wh_300p0_50p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_300_50.txt"
+
+  - name: "$\\mheavy = 400\\gev, \\mneut = 0\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100007.MGPy8EG_A14N23LO_C1N2_Wh_400p0_0p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_400_0.txt"
+
+  - name: "$\\mheavy = 450\\gev, \\mneut = 0\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100010.MGPy8EG_A14N23LO_C1N2_Wh_450p0_0p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_450_0.txt"
+
+  - name: "$\\mheavy = 450\\gev, \\mneut = 50\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100011.MGPy8EG_A14N23LO_C1N2_Wh_450p0_50p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_450_50.txt"
+
+  - name: "$\\mheavy = 450\\gev, \\mneut = 100\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100012.MGPy8EG_A14N23LO_C1N2_Wh_450p0_100p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_450_100.txt"
+
+  - name: "$\\mheavy = 500\\gev, \\mneut = 0\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100014.MGPy8EG_A14N23LO_C1N2_Wh_500p0_0p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_500_0.txt"
+
+  - name: "$\\mheavy = 500\\gev, \\mneut = 100\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100016.MGPy8EG_A14N23LO_C1N2_Wh_500p0_100p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_500_100.txt"
+
+  - name: "$\\mheavy = 500\\gev, \\mneut = 150\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100017.MGPy8EG_A14N23LO_C1N2_Wh_500p0_150p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_500_150.txt"
+
+  - name: "$\\mheavy = 550\\gev, \\mneut = 0\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100019.MGPy8EG_A14N23LO_C1N2_Wh_550p0_0p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_550_0.txt"
+
+  - name: "$\\mheavy = 550\\gev, \\mneut = 50\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100020.MGPy8EG_A14N23LO_C1N2_Wh_550p0_50p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_550_50.txt"
+
+  - name: "$\\mheavy = 550\\gev, \\mneut = 100\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100021.MGPy8EG_A14N23LO_C1N2_Wh_550p0_100p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_550_100.txt"
+
+  - name: "$\\mheavy = 550\\gev, \\mneut = 150\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100022.MGPy8EG_A14N23LO_C1N2_Wh_550p0_150p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_550_150.txt"
+
+  - name: "$\\mheavy = 550\\gev, \\mneut = 200\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100023.MGPy8EG_A14N23LO_C1N2_Wh_550p0_200p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_550_200.txt"
+
+  - name: "$\\mheavy = 600\\gev, \\mneut = 0\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100024.MGPy8EG_A14N23LO_C1N2_Wh_600p0_0p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_600_0.txt"
+
+  - name: "$\\mheavy = 600\\gev, \\mneut = 50\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100025.MGPy8EG_A14N23LO_C1N2_Wh_600p0_50p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_600_50.txt"
+
+  - name: "$\\mheavy = 600\\gev, \\mneut = 100\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100026.MGPy8EG_A14N23LO_C1N2_Wh_600p0_100p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_600_100.txt"
+
+  - name: "$\\mheavy = 600\\gev, \\mneut = 150\\gev$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/user.jolsson.mc15_13TeV.100027.MGPy8EG_A14N23LO_C1N2_Wh_600p0_150p0_bbqq_J10.DAOD_SUSY10.20170726_AFII_EXT0.merged.hists
+    outfile: "cutflow_resolved/cutflow_everycut_nJets_MET_Mctbb_mTbmin_MeffG900_Wh_SR1_HToptim_August8/optimization_Wh_SR1_detailed_cutflow_masspoint_600_150.txt"
+ 
+# specify the path to each cutflow histogram
+# one cutflow will be saved for each path
+#
+
+cutflows:
+  paths:
+    hists/all/cutflow:
+      label: "All events"
+      order: 0
+    hists/default/cutflow:
+      label: "Preselection"
+      order: 1
+    hists/optimization_Wh_SR1_nJetsEq4/cutflow:
+      label: "$\\njet = 4$"
+      order: 2
+    hists/optimization_Wh_SR1_nJetsEq4_metG200/cutflow:
+      label: "\\Etmiss>200\\gev"
+      order: 3
+    hists/optimization_Wh_SR1_nJetsEq4_metG200_leptonveto/cutflow:
+      label: "$0L$"
+      order: 4
+    hists/optimization_Wh_SR1_nJetsEq4_metG200_leptonveto_nBJetsEq2/cutflow:
+      label: "$\\nbjet = 2$"
+      order: 5
+    hists/optimization_Wh_SR1_nJetsEq4_metG200_leptonveto_nBJetsEq2_dphiMinG0p4/cutflow:
+      label: "$\\dphimin>0.4$"
+      order: 6
+    hists/optimization_Wh_SR1_nJetsEq4_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6/cutflow:
+      label: "$\\dphidiboson>2.6$"
+      order: 7
+    hists/optimization_Wh_SR1_nJetsEq4_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_meffG900/cutflow:
+      label: "$\\meffj>900\\gev$"
+      order: 8
+    hists/optimization_Wh_SR1_nJetsEq4_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_meffG900_mTbMinG100/cutflow:
+      label: "$\\mTbmin>100\\gev$"
+      order: 9
+    hists/optimization_Wh_SR1_nJetsEq4_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_meffG900_mTbMinG100_mctbbG140/cutflow:
+      label: "$\\mctbb>140\\gev$"
+      order: 10
+    hists/optimization_Wh_SR1_nJetsEq4_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_meffG900_mTbMinG100_mctbbG140_mbbG105L135/cutflow:
+      label: "$105<\\mbb/\\gev<135$"
+      order: 11
+    hists/optimization_Wh_SR1_nJetsEq4_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_meffG900_mTbMinG100_mctbbG140_mbbG105L135_mNonbbG75L90/cutflow:
+      label: "$75<\\mnonbb/\\gev<90$"
+      order: 12

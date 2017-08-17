@@ -1,9 +1,9 @@
-# requires weights.json and did_to_group.json in the directory
+# requires weights_qqbb.json and did_to_group.json in the directory
 # produces a metadata-like file with all the information needed mostly
 
 import json
 
-weights = json.load(file('weights.json'))
+weights = json.load(file('weights_qqbb.json'))
 did_to_group = json.load(file('did_to_group.json'))
 
 header = '''id/I:name/C:xsec/F:kfac/F:eff/F:relunc/F
@@ -14,7 +14,7 @@ header = '''id/I:name/C:xsec/F:kfac/F:eff/F:relunc/F
 ##########################################################################################################################
 '''
 
-with open('weights.meta', 'w+') as f:
+with open('weights_qqbb.meta', 'w+') as f:
   print >>f, header
   for did, data in iter(sorted(weights.iteritems())):
     print >>f, ('{0:6s}\t{1:<20s}\t{2:10.10f}\t{3:16.4f}\t{4:16.4f}\t{5:14.6f}'.format(did,

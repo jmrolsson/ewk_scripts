@@ -310,19 +310,37 @@ def save_detailed_cutflow(cuts_sig, cuts_bkg, tag='<cutflow>', outfile='detailed
 
     if do_latex:
       print(r"\begin{table}[!ht]", file=f)
-      print(r"\scriptsize", file=f)
+      print(r"\tiny", file=f)
       print(r"\begin{center}\renewcommand\arraystretch{1.6}", file=f)
       print(r"\sisetup{round-mode=figures, round-precision=2,", file=f)
       print(r"retain-explicit-plus=true, group-digits = true}", file=f)
-      print(r"\begin{tabular}{l | c | c | c | c | c | c | c | c | c | c}", file=f)
+      # print(r"\begin{tabular}{l | c | c | c | c | c | c | c | c | c | c | c | c | c | c}", file=f)
+      print(r"\scalebox{0.9}{", file=f)
+      print(r"\begin{tabular}{l | ", file=f)
+      print(r"S[table-format=5.0, table-number-alignment=left, round-mode=places, round-precision=0]@{\quad$\pm\,$}", file=f)
+      print(r"S[table-format=3.0, table-number-alignment=right, round-mode=figures, round-precision=2]|", file=f)
+      print(r"S[table-format=4.0, table-number-alignment=left, round-mode=figures, round-precision=2]@{\quad$\pm\,$}", file=f)
+      print(r"S[table-format=3.2, table-number-alignment=right, round-mode=figures, round-precision=2]|", file=f)
+      print(r"S[table-format=2.2, table-number-alignment=left, round-mode=figures, round-precision=2]|", file=f)
+      print(r"S[table-format=2.2, table-number-alignment=left, round-mode=figures, round-precision=2]|", file=f)
+      print(r"S[table-format=8.0, table-number-alignment=left, round-mode=figures, round-precision=2]@{\quad$\pm\,$}", file=f)
+      print(r"S[table-format=6.0, table-number-alignment=right, round-mode=figures, round-precision=2]|", file=f)
+      print(r"S[table-format=12.0, table-number-alignment=left, round-mode=figures, round-precision=2]@{\quad$\pm\,$}", file=f)
+      print(r"S[table-format=11.2, table-number-alignment=right, round-mode=figures, round-precision=2]|", file=f)
+      print(r"S[table-format=4.0, table-number-alignment=left, round-mode=figures, round-precision=2]|", file=f)
+      print(r"S[table-format=4.0, table-number-alignment=left, round-mode=figures, round-precision=2]|", file=f)
+      print(r"S[table-format=4.0, table-number-alignment=left, round-mode=figures, round-precision=2]|", file=f)
+      print(r"S[table-format=4.0, table-number-alignment=left, round-mode=figures, round-precision=2]", file=f)
+      print(r"}", file=f)
     print(toprule, file=f)
     if do_latex:
-      print(r"\multicolumn{11}{c}{Signal sample: $\mheavy = 400\gev, \mneut = 200\gev$} \\[0.2cm]", file=f)
+      print("\multicolumn{{15}}{{c}}{{ {} }} \\\\[0.2cm]".format(tag), file=f)
     else:
       print(tag, file=f)
     print(toprule, file=f)
     if do_latex:
-      print(r"Cut & {$N_S^{\rm raw}$} & {$N_S$} & {$\eff_S$} & {$\releff_S$} & {$N_{B}^{\rm raw}$} & {$N_B$} & {$\eff_B$} & {$\releff_B$} & {$N_S/\sqrt{N_B}$} & {$\Zn$} \\", file=f)
+      print(r"Cut & \multicolumn{2}{c|}{$N_S^{\rm raw}$} & \multicolumn{2}{c|}{$N_S$} & {$\eff_S$ [\%]} & {$\releff_S$ [\%]} & \multicolumn{2}{c|}{$N_{B}^{\rm raw}$} & \multicolumn{2}{c|}{$N_B$} & {$\eff_B$ [\%]} & {$\releff_B$ [\%]} & {$N_S/\sqrt{N_B}$} & {$\Zn$} \\", file=f)
+
     else:
       print("{: <25} | {: <21} | {: <21} | {: <8} | {: <8} | {: <21} | {: <21} | {: <8} | {: <8} | {: <8} | {: <8}".format(
         "Cut", "nSraw", "nS", "effS", "effSrel", "nBraw", "nB", "effB", "effBrel", "SsqrtB", "Zn"), file=f)
@@ -337,13 +355,13 @@ def save_detailed_cutflow(cuts_sig, cuts_bkg, tag='<cutflow>', outfile='detailed
         s_wn_initial = s.wn
         b_wn_initial = b.wn
       if (i!=0):
-        if (s_wn_initial>0): seff = s.wn/s_wn_initial
+        if (s_wn_initial>0): seff = s.wn/s_wn_initial*100.
         else: seff = 0
-        if (b_wn_initial>0): beff = b.wn/b_wn_initial
+        if (b_wn_initial>0): beff = b.wn/b_wn_initial*100.
         else: beff = 0
-        if (s_wn_prev>0): sreleff = s.wn/s_wn_prev
+        if (s_wn_prev>0): sreleff = s.wn/s_wn_prev*100.
         else: sreleff = 0
-        if (b_wn_prev>0): breleff = b.wn/b_wn_prev
+        if (b_wn_prev>0): breleff = b.wn/b_wn_prev*100.
         else: breleff = 0
       s_wn_prev = s.wn
       b_wn_prev = b.wn
@@ -351,9 +369,9 @@ def save_detailed_cutflow(cuts_sig, cuts_bkg, tag='<cutflow>', outfile='detailed
       zn = ROOT.RooStats.NumberCountingUtils.BinomialExpZ(s.wn, b.wn, 0.3)
       if (zn <0): zn = 0
       if do_latex:
-        cutflow_str = "{} &{} {{$\\pm$}} {} & {} {{$\\pm$}} {} & {} & {}".format(
+          cutflow_str = "{} &{:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f}".format(
           cut, s.n, s.err, s.wn, s.werr, seff, sreleff)
-        cutflow_str += "{} {{$\\pm$}} {} & {} {{$\\pm$}} {} & {} & {} & {} & {}".format(
+          cutflow_str += "& {:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f} \\\\".format(
           b.n, b.err, b.wn, b.werr, beff, breleff, sq, zn)
       else:
         cutflow_str = "{: <25} | {:.2e} +/- {:.2e} | {:.2e} +/- {:.2e} | {:.2e} | {:.2e}".format(
@@ -364,15 +382,16 @@ def save_detailed_cutflow(cuts_sig, cuts_bkg, tag='<cutflow>', outfile='detailed
     print(bottomrule, file=f)
     if do_latex:
       print(r"\end{tabular}", file=f)
+      print(r"}", file=f)
       print(r"\\[0.2cm]", file=f)
-      caption_str = "\\caption{{Event yields and efficiencies for the {} signal sample and the total background. ".format(tag)
-      caption_str += r"The raw number of events ($N_{S,B}^{\rm raw}$), the number of events scaled to cross section ($N_{S,B}$), "
-      caption_str += r"the absolute efficiency ($\eff_{S,B}$), and the relative efficiency ($\releff_{S,B}$) are shown for both "
-      caption_str += r"signal and background. Estimates of the significance are shown using both $N_S/\sqrt{N_B}$ and the RooStats "
-      caption_str += r"[cite] function $\Zn = {\rm BinomalExpZ}(N_S,N_B, 0.30)$, with an estimated flat uncertainty of $30\%$. "
-      caption_str += r"Only statistical uncertainties are shown.}"
-      print(caption_str, file=f)
-      print(r"\label{tab:cutflow:wh:400_200}", file=f)
+      # caption_str = "\\caption{{Event yields and efficiencies for the {} signal sample and the total background. ".format(tag)
+      # caption_str += r"The raw number of events ($N_{S,B}^{\rm raw}$), the number of events scaled to cross section ($N_{S,B}$), "
+      # caption_str += r"the absolute efficiency ($\eff_{S,B}$), and the relative efficiency ($\releff_{S,B}$) are shown for both "
+      # caption_str += r"signal and background. Estimates of the significance are shown using both $N_S/\sqrt{N_B}$ and the RooStats "
+      # caption_str += r"[cite] function $\Zn = {\rm BinomalExpZ}(N_S,N_B, 0.30)$, with an estimated flat uncertainty of $30\%$. "
+      # caption_str += r"Only statistical uncertainties are shown.}"
+      # print(caption_str, file=f)
+      # print(r"\label{tab:cutflow:wh:SR1}", file=f)
       print(r"\end{center}", file=f)
       print(r"\end{table}", file=f)
 
@@ -488,8 +507,8 @@ if __name__ == "__main__":
           else:
             cuts_sigs[h.GetTitle()] = {cut_label : [cut_order, cut_sig] }
 
-      print(cuts_sigs)
-      exit()
+      # print(cuts_sigs)
+      # exit()
 
       if args.detailed_cutflow:
         for s in cuts_sigs:

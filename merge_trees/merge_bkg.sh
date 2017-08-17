@@ -4,7 +4,7 @@ ntuple_path=/share/t3data2/jolsson/EWK/ewk_mbj_ntuples/histfitter
 
 FAIL=0
 
-for bkg in ttbar topEW singletop dijet diboson Z_sherpa_220 W_sherpa_220 Z_sherpa_221 W_sherpa_221
+for bkg in ttbar topEW singletop dijet diboson Z_sherpa_220 W_sherpa_220 #Z_sherpa_221 W_sherpa_221
 do
   python mergeTrees.py ${ntuple_path}/${tag}/*.merged --tree nominal --filters filters/filters_ht.json --weights weights_qqbb.json --did-to-group did_to_group.json --output-suffix _${tag}_${bkg} --groups-bkg ${bkg} --groups-sig "" --dids `cat processes/*.list | tr '\n' ' '` > ${bkg}.log 2>&1 &
 done

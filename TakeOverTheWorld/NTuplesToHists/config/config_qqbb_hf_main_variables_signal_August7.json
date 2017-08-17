@@ -184,8 +184,8 @@
       "draw": "minv_bb",
       "name": "minv_bb",
       "min": 0,
-      "max": 2000,
-      "nbins": 200
+      "max": 500,
+      "nbins": 500
     },
     {
       "draw": "mT_bb",
@@ -212,8 +212,8 @@
       "draw": "minv_non_bb",
       "name": "minv_non_bb",
       "min": 0,
-      "max": 2000,
-      "nbins": 200
+      "max": 500,
+      "nbins": 500
     },
     {
       "draw": "mT_non_bb",

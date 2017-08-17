@@ -212,19 +212,15 @@ def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', d
 
       if do_latex:
         print(r"\begin{table}[!ht]", file=f)
-        print(r"\scriptsize", file=f)
+        print(r"\tiny", file=f)
         print(r"\begin{center}\renewcommand\arraystretch{1.6}", file=f)
         print(r"\sisetup{round-mode=figures, round-precision=2,", file=f)
         print(r"retain-explicit-plus=true, group-digits = true}", file=f)
-        print(r"\begin{tabular}{l | c | c | c | c }", file=f)
-
-      # print(toprule, file=f)
-      # print("Cutflow: {}".format(title), file=f)
-      # print(toprule, file=f)
+        print(r"\begin{tabular}{l | c | c | c | c | c }", file=f)
 
       print(toprule, file=f)
       if do_latex:
-        print("Background & $N_B^{\\rm raw}$ & $N_B^{\\rm w.}$ & \multicolumn{2}{c}{} \\\\", file=f)
+        print("Background & $N_B^{\\rm raw}$ & $N_B^{\\rm w.}$ & \multicolumn{3}{c}{} \\\\", file=f)
       else:
         print("{} | Num. Events             | W. Num. Events".format(" "*25), file=f)
       print(toprule, file=f)
@@ -243,7 +239,7 @@ def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', d
           w_tot_bkg += h.GetBinContent(1)
           w_tot_bkg_err += werr**2
           if do_latex:
-            print("{0: <25} & ${1:10.2f} \pm {2:8.2f}$ & ${3:10.2f} \pm {4:8.2f}$ & \multicolumn{{2}}{{c}}{{}} \\\\".format(
+            print("{0: <25} & ${1:10.2f} \pm {2:8.2f}$ & ${3:10.2f} \pm {4:8.2f}$ & \multicolumn{{3}}{{c}}{{}} \\\\".format(
                 name, evt, err, wevt, werr), file=f)
           else:
             print("{0: <25} | {1:10.2f} +/- {2:8.2f} | {3:10.2f} +/- {4:8.2f}".format(
@@ -252,18 +248,16 @@ def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', d
       tot_bkg_err = np.sqrt(tot_bkg_err)
       w_tot_bkg_err = np.sqrt(w_tot_bkg_err)
       if do_latex:
-        print("{0} & ${1:10.2f} \pm {2:8.2f}$ & ${3:10.2f} \pm {4:8.2f}$ & \multicolumn{{2}}{{c}}{{}} \\\\".format(
+        print("{0} & ${1:10.2f} \pm {2:8.2f}$ & ${3:10.2f} \pm {4:8.2f}$ & \multicolumn{{3}}{{c}}{{}} \\\\".format(
             "Tot. Background", tot_bkg, tot_bkg_err, w_tot_bkg, w_tot_bkg_err), file=f)
       else:
         print("{0: <25} | {1:10.2f} +/- {2:8.2f} | {3:10.2f} +/- {4:8.2f}".format(
             "Tot. Background", tot_bkg, tot_bkg_err, w_tot_bkg, w_tot_bkg_err), file=f)
-      print(midrule, file=f)
-      # print("\multicolumn{5}{c}{Signal} \\\\", file=f)
-      print(midrule, file=f)
+      print(toprule, file=f)
       if do_latex:
-        print("$(m_{\\tilde{\\chi}^{\\pm}_{1},\\tilde{\\chi}^{0}_{2}}, m_{\\tilde{\\chi}^{0}_{1}})$ & $N_S^{\\rm raw}$ & $N_S^{\\rm w.}$ & $N_S/\sqrt{N_B}$ & $\\mathcal{Z}_n$ \\\\", file=f)
+        print("$(m_{\\tilde{\\chi}^{\\pm}_{1},\\tilde{\\chi}^{0}_{2}}, m_{\\tilde{\\chi}^{0}_{1}})$ & $N_S^{\\rm raw}$ & $N_S^{\\rm w.}$ & $N_S/N_B~[\\%]$ & $N_S/\sqrt{N_B}$ & $\\mathcal{Z}_n$ \\\\", file=f)
       else:
-        print("{} | Num. Events             | W. Num. Events          | S/sqrt(B_tot)   | BinomialExpZ(S,B_tot,0.30)".format(" "*25), file=f)
+        print("{} | Num. Events             | W. Num. Events    | S/B [%]     | S/sqrt(B_tot)   | BinomialExpZ(S,B_tot,0.30)".format(" "*25), file=f)
       print(midrule, file=f)
       for h in sig_hists:
           name = h.GetTitle()
@@ -271,17 +265,19 @@ def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', d
           err = np.sqrt(evt)
           wevt = h.GetBinContent(1)
           werr = h.GetBinError(1)
+          sbratio = wevt/w_tot_bkg
           signif_1 = wevt/np.sqrt(w_tot_bkg)
           signif_2 = ROOT.RooStats.NumberCountingUtils.BinomialExpZ(wevt, w_tot_bkg, 0.3)
           if do_latex:
-            print("${0: <25}$ & ${1:10.2f} \\pm {2:8.2f}$ & ${3:10.2f} \\pm {4:8.2f}$ & ${5:15.3f}$ & ${6:10.3f}$ \\\\".format(
-                name, evt, err, wevt, werr, signif_1, signif_2), file=f)
+            print("${0: <25}$ & ${1:10.2f} \\pm {2:8.2f}$ & ${3:10.2f} \\pm {4:8.2f}$ & ${5:15.1f}$ & ${6:15.3f}$ & ${7:10.3f}$ \\\\".format(
+                name, evt, err, wevt, werr, sbratio*100., signif_1, signif_2), file=f)
           else:
-            print("{0: <25} | {1:10.2f} +/- {2:8.2f} | {3:10.2f} +/- {4:8.2f} | {5:15.3f} | {6:10.3f}".format(
-                name, evt, err, wevt, werr, signif_1, signif_2), file=f)
-      print(toprule, file=f)
+            print("{0: <25} | {1:10.2f} +/- {2:8.2f} | {3:10.2f} +/- {4:8.2f} | {5:15.1f} | {6:15.3f} | {7:10.3f}".format(
+                name, evt, err, wevt, werr, sbratio*100, signif_1, signif_2), file=f)
+      print(bottomrule, file=f)
       if do_latex:
         print(r"\end{tabular}", file=f)
+        print("\caption{{{}}}".format(title), file=f)
         print(r"\end{center}", file=f)
         print(r"\end{table}", file=f)
   except IOError:
@@ -358,12 +354,12 @@ if __name__ == "__main__":
         bkg_hists = map(lambda hgroup: hgroup.flatten, hbkg)
         sig_hists = map(lambda hgroup: hgroup.flatten, hsig)
 
-        cutflow_label = cutflows_paths.get(hsig.path, {})['label']
+        cutflow_caption = cutflows_paths.get(hsig.path, {})['caption']
         outfile = cutflows_paths.get(hsig.path, {})['outfile']
         print ("Histograms:")
         print (sig_hists)
         print (bkg_hists)
-        save_cutflow(sig_hists, bkg_hists, cutflow_label, outfile, args.do_latex)
+        save_cutflow(sig_hists, bkg_hists, cutflow_caption, outfile, args.do_latex)
 
       if not args.debug:
         ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")

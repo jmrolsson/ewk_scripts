@@ -1,0 +1,2019 @@
+---
+# we can have text properties which specify what text to draw (think atlas, prelim, internal)
+# NOTE indentation matters
+#   # this one pulls in all of the reference that's pre-defined
+#   texts:
+#     - *atlas
+#   # this one merges the &internal with the current hash so everything but the label is the same
+#   texts:
+#     - label: preliminary
+#       <<: *internal
+#   texts:
+#     - x: <position>
+#       y: <position>
+#       font: <number> (for SetTextFont(...))
+#       size: <number> (for SetTextSize(...))
+#       label: <string> (what to actually say)
+
+atlas: &atlas
+  x: 0.65
+  y: 0.65
+  font: 73
+  size: 25
+  label: ATLAS
+
+internal: &internal
+  x: 0.77
+  font: 43
+  label: Internal
+  <<: *atlas
+
+atlasinternal: &atlasinternal
+  - *atlas
+  - *internal
+
+labeloptions: &labeloptions
+  xtitleoffset: 1.4
+  ytitleoffset: 1.4
+  xtitlesize: 0.05
+  ytitlesize: 0.05
+  xlabelsize: 0.05
+  ylabelsize: 0.05
+
+# top level defines the label / grouping
+# second level is a list of files under that group, one can also specify a wildcard to match files so they all get grouped
+# third level specifies extra information for a given file such as plots to ignore
+# groups:
+#   - name: <group name>
+#     files:
+#       - <a file path or a file pattern to match a set of files>
+#     styles:
+#       <name of style>: <value for style>
+#   - name: <group name>
+#     files: [file1, file2, ...]
+#     styles: {style1: val1, style2: val2, ...}
+
+# styles are set on all hists associated with that group
+# styles:
+#   - drawstyle (passed into Draw(...), think 'same' or 'hist')
+#   - legendstyle (passed into Legend(...), think 'F')
+#   - markercolor (also set with 'color')
+#   - markerstyle
+#   - markersize
+#   - fillcolor (also set with 'color')
+#   - fillstyle
+#   - linecolor (also set with 'color')
+#   - linestyle
+#   - linewidth
+#   - color (sets markercolor, fillcolor, linecolor)
+
+groups:
+#  - name: data
+#    files:
+#      - TA01_MBJ17-18-19/hist-user.*.*.physics_Main.*.root
+#    styles:
+#      legendstyle: p
+#      color: black
+#    do not scale me: true
+
+  - name: "t#bar{t}"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*ttbar*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "single-top"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*singletop*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "t#bar{t}+X"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*topEW*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "W+jets"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*W_sherpa_220*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "Z+jets"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*Z_sherpa_220*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "diboson"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*diboson*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+  - name: "dijet"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*361021*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*361022*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*361023*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*361024*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*361025*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*361026*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*361027*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*361028*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  # - name: "(300, 0)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100001*300p0_0p0*.hists
+  # - name: "(300, 50)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100002*300p0_50p0*.hists
+  # - name: "(300, 100)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100003*300p0_100p0*.hists
+  # - name: "(350, 0)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100004*350p0_0p0*.hists
+  # - name: "(350, 50)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100005*350p0_50p0*.hists
+  # - name: "(350, 100)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100006*350p0_100p0*.hists
+  # - name: "(400, 0)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100007*400p0_0p0*.hists
+  # - name: "(400, 50)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100008*400p0_50p0*.hists
+  # - name: "(400, 100)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100009*400p0_100p0*.hists
+  # - name: "(450, 0)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100010*450p0_0p0*.hists
+  # - name: "(450, 50)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100011*450p0_50p0*.hists
+  # - name: "(450, 100)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100012*450p0_100p0*.hists
+  # - name: "(450, 150)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100013*450p0_150p0*.hists
+  # - name: "(500, 0)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100014*500p0_0p0*.hists
+  # - name: "(500, 50)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100015*500p0_50p0*.hists
+  # - name: "(500, 100)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100016*500p0_100p0*.hists
+  # - name: "(500, 150)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100017*500p0_150p0*.hists
+  # - name: "(500, 200)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100018*500p0_200p0*.hists
+
+  # - name: "(550, 0)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100019*550p0_0p0*.hists
+  #   styles:
+  #     legendstyle: L
+  #     drawstyle: hist
+  #     linewidth: 2
+  #   stack it: false
+  # - name: "(550, 50)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100020*550p0_50p0*.hists
+  #   styles:
+  #     legendstyle: L
+  #     drawstyle: hist
+  #     linewidth: 2
+  #   stack it: false
+  # - name: "(550, 100)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100021*550p0_100p0*.hists
+  #   styles:
+  #     legendstyle: L
+  #     drawstyle: hist
+  #     linewidth: 2
+  #   stack it: false
+  # - name: "(550, 150)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100022*550p0_150p0*.hists
+  #   styles:
+  #     legendstyle: L
+  #     drawstyle: hist
+  #     linewidth: 2
+  #   stack it: false
+  # - name: "(550, 200)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100023*550p0_200p0*.hists
+  #   styles:
+  #     legendstyle: L
+  #     drawstyle: hist
+  #     linewidth: 2
+  #   stack it: false
+
+  - name: "(600, 0)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100024*600p0_0p0*.hists
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+  - name: "(600, 50)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100025*600p0_50p0*.hists
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+  - name: "(600, 100)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100026*600p0_100p0*.hists
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+  - name: "(600, 150)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100027*600p0_150p0*.hists
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+
+  # - name: "(700, 0)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100028*700p0_0p0*.hists
+  # - name: "(700, 50)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_Nm1_Wh_SR1_SR2_August15_HT_incl_filter/*100029*700p0_50p0*.hists
+  
+# plots:
+#   config:  # here we set global configurations that are applied uniformly such as...
+#     canvas:
+#     legend:
+#     texts:
+
+plots:
+  config:
+    texts:
+      - *atlas
+      - *internal
+      - &topline
+        x: 0.65
+        y: 0.61
+        font: 43
+        size: 15
+        label: "#sqrt{s} = 13 TeV, L_{int} #approx 35 fb^{-1}"
+    canvas:
+      width: 800
+      height: 600
+      logy: true
+    legend:
+      numcolumns: 2
+      topmargin: 0.02
+      leftmargin: 0.02
+      rightmargin: 0.02
+      textsize: 18
+      entrysep: 0.005
+      entryheight: 0.01
+
+  paths:
+
+    #### Preselection (SUSY10+MBJ)
+
+    hists/default/cutflow:
+      xlabel: "Cutflow"
+      ylabel: "Events"
+      ymin: 1
+      ymax: 100000000000
+      plot tag: logy
+    hists/default/jets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100000000000
+      ylabel: Events
+      xlabel: "jet multiplicity"
+      plot tag: logy
+    hists/default/bjets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100000000000
+      ylabel: Events
+      xlabel: "b-jet multiplicity (77% eff)"
+      plot tag: logy
+    hists/default/bjets_n_85:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100000000000
+      ylabel: Events
+      xlabel: "b-jet multiplicity (85% eff)"
+      plot tag: logy
+    hists/default/pt_jet_1:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100000000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "p_{T,1}"
+      plot tag: logy
+    hists/default/pt_jet_2:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100000000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "p_{T,2}"
+      plot tag: logy
+    hists/default/pt_jet_3:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100000000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "p_{T,3}"
+      plot tag: logy
+    hists/default/pt_jet_4:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100000000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "p_{T,4}"
+      plot tag: logy
+    hists/default/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100000000000
+      ylabel: Events
+      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      plot tag: logy
+    hists/default/dphi_1jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100000000000
+      ylabel: Events
+      xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      plot tag: logy
+    hists/default/dphi_sum4jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100000000000
+      ylabel: Events
+      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      plot tag: logy
+    hists/default/met:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100000000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "E_{T}^{miss}"
+      plot tag: logy
+    hists/default/mTb_min:
+      ymin: 0.1
+      ymax: 100000000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "M_{T}^{b,min}"
+      plot tag: logy
+    hists/default/meff_4j:
+      xmin: 0
+      xmax: 2500
+      ymin: 0.01
+      ymax: 100000000000
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{eff}^{4j}"
+      plot tag: logy
+    hists/default/minv_bb:
+      ymin: 0.1
+      ymax: 100000000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "M^{bb}"
+      plot tag: logy
+    hists/default/mct_bb:
+      ymin: 0.1
+      ymax: 100000000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "M_{CT}^{bb}"
+      plot tag: logy
+    hists/default/minv_non_bb:
+      ymin: 0.1
+      ymax: 100000000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "M^{non-bb}"
+      plot tag: logy
+
+    #### optimization_Wh_SR2_Nm1_nJetsGeq4Leq5
+
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/cutflow:
+      xlabel: "Cutflow"
+      ylabel: "Events"
+      ymin: 1
+      ymax: 100
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/jets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "jet multiplicity"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/bjets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (77% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/bjets_n_85:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (85% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/pt_jet_1:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/pt_jet_2:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,2}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/pt_jet_3:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,3}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/pt_jet_4:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,4}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/dphi_1jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/dphi_sum4jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/met:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "E_{T}^{miss}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/mTb_min:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{T}^{b,min}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/meff_4j:
+      xmin: 0
+      xmax: 2500
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{eff}^{4j}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/minv_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "M^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/mct_bb:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{CT}^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nJetsGeq4Leq5/minv_non_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "M^{non-bb}"
+      plot tag: logy
+
+    #### optimization_Wh_SR2_Nm1_nBJetsEq2
+
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/cutflow:
+      xlabel: "Cutflow"
+      ylabel: "Events"
+      ymin: 1
+      ymax: 100
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/jets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "jet multiplicity"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/bjets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (77% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/bjets_n_85:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (85% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/pt_jet_1:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/pt_jet_2:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,2}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/pt_jet_3:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,3}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/pt_jet_4:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,4}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/dphi_1jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/dphi_sum4jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/met:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "E_{T}^{miss}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/mTb_min:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{T}^{b,min}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/meff_4j:
+      xmin: 0
+      xmax: 2500
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{eff}^{4j}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/minv_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "M^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/mct_bb:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{CT}^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_nBJetsEq2/minv_non_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "M^{non-bb}"
+      plot tag: logy
+
+    #### optimization_Wh_SR2_Nm1_dphiMinG0p4
+
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/cutflow:
+      xlabel: "Cutflow"
+      ylabel: "Events"
+      ymin: 1
+      ymax: 100
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/jets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "jet multiplicity"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/bjets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (77% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/bjets_n_85:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (85% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/pt_jet_1:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/pt_jet_2:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,2}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/pt_jet_3:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,3}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/pt_jet_4:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,4}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/dphi_1jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/dphi_sum4jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/met:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "E_{T}^{miss}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/mTb_min:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{T}^{b,min}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/meff_4j:
+      xmin: 0
+      xmax: 2500
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{eff}^{4j}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/minv_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "M^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/mct_bb:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{CT}^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiMinG0p4/minv_non_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "M^{non-bb}"
+      plot tag: logy
+
+    #### optimization_Wh_SR2_Nm1_dphiSum4jetG2p6
+
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/cutflow:
+      xlabel: "Cutflow"
+      ylabel: "Events"
+      ymin: 1
+      ymax: 100
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/jets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "jet multiplicity"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/bjets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (77% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/bjets_n_85:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (85% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/pt_jet_1:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/pt_jet_2:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,2}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/pt_jet_3:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,3}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/pt_jet_4:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,4}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/dphi_1jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/dphi_sum4jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/met:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "E_{T}^{miss}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/mTb_min:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{T}^{b,min}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/meff_4j:
+      xmin: 0
+      xmax: 2500
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{eff}^{4j}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/minv_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "M^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/mct_bb:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{CT}^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_dphiSum4jetG2p6/minv_non_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "M^{non-bb}"
+      plot tag: logy
+
+    #### optimization_Wh_SR2_Nm1_mbbG105L135
+
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/cutflow:
+      xlabel: "Cutflow"
+      ylabel: "Events"
+      ymin: 1
+      ymax: 100
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/jets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "jet multiplicity"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/bjets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (77% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/bjets_n_85:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (85% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/pt_jet_1:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/pt_jet_2:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,2}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/pt_jet_3:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,3}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/pt_jet_4:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,4}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/dphi_1jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/dphi_sum4jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/met:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "E_{T}^{miss}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/mTb_min:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{T}^{b,min}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/meff_4j:
+      xmin: 0
+      xmax: 2500
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{eff}^{4j}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/minv_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/mct_bb:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{CT}^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mbbG105L135/minv_non_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{non-bb}"
+      plot tag: logy
+
+    #### optimization_Wh_SR2_Nm1_mNonbbG75L90
+
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/cutflow:
+      xlabel: "Cutflow"
+      ylabel: "Events"
+      ymin: 1
+      ymax: 100
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/jets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "jet multiplicity"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/bjets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (77% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/bjets_n_85:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (85% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/pt_jet_1:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/pt_jet_2:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,2}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/pt_jet_3:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,3}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/pt_jet_4:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,4}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/dphi_1jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/dphi_sum4jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/met:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "E_{T}^{miss}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/mTb_min:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{T}^{b,min}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/meff_4j:
+      xmin: 0
+      xmax: 2500
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{eff}^{4j}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/minv_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/mct_bb:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{CT}^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mNonbbG75L90/minv_non_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{non-bb}"
+      plot tag: logy
+
+    #### optimization_Wh_SR2_Nm1_metG250
+
+    hists/optimization_Wh_SR2_Nm1_metG250/cutflow:
+      xlabel: "Cutflow"
+      ylabel: "Events"
+      ymin: 1
+      ymax: 100
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/jets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "jet multiplicity"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/bjets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (77% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/bjets_n_85:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (85% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/pt_jet_1:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/pt_jet_2:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,2}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/pt_jet_3:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,3}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/pt_jet_4:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,4}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/dphi_1jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/dphi_sum4jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/met:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "E_{T}^{miss}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/mTb_min:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{T}^{b,min}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/meff_4j:
+      xmin: 0
+      xmax: 2500
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{eff}^{4j}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/minv_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/mct_bb:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{CT}^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_metG250/minv_non_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{non-bb}"
+      plot tag: logy
+
+    #### optimization_Wh_SR2_Nm1_meffG900
+
+    hists/optimization_Wh_SR2_Nm1_meffG900/cutflow:
+      xlabel: "Cutflow"
+      ylabel: "Events"
+      ymin: 1
+      ymax: 100
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/jets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "jet multiplicity"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/bjets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (77% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/bjets_n_85:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (85% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/pt_jet_1:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/pt_jet_2:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,2}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/pt_jet_3:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,3}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/pt_jet_4:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,4}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/dphi_1jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/dphi_sum4jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/met:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "E_{T}^{miss}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/mTb_min:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{T}^{b,min}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/meff_4j:
+      xmin: 0
+      xmax: 2500
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{eff}^{4j}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/minv_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/mct_bb:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{CT}^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_meffG900/minv_non_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{non-bb}"
+      plot tag: logy
+
+    #### optimization_Wh_SR2_Nm1_mctbbG140
+
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/cutflow:
+      xlabel: "Cutflow"
+      ylabel: "Events"
+      ymin: 1
+      ymax: 100
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/jets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "jet multiplicity"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/bjets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (77% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/bjets_n_85:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (85% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/pt_jet_1:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/pt_jet_2:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,2}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/pt_jet_3:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,3}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/pt_jet_4:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,4}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/dphi_1jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/dphi_sum4jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/met:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "E_{T}^{miss}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/mTb_min:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{T}^{b,min}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/meff_4j:
+      xmin: 0
+      xmax: 2500
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{eff}^{4j}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/minv_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/mct_bb:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{CT}^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mctbbG140/minv_non_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{non-bb}"
+      plot tag: logy
+
+    #### optimization_Wh_SR2_Nm1_mTbMinG160
+
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/cutflow:
+      xlabel: "Cutflow"
+      ylabel: "Events"
+      ymin: 1
+      ymax: 100
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/jets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "jet multiplicity"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/bjets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (77% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/bjets_n_85:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (85% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/pt_jet_1:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/pt_jet_2:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,2}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/pt_jet_3:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,3}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/pt_jet_4:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,4}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/dphi_1jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/dphi_sum4jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/met:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "E_{T}^{miss}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/mTb_min:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{T}^{b,min}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/meff_4j:
+      xmin: 0
+      xmax: 2500
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{eff}^{4j}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/minv_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/mct_bb:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{CT}^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_Nm1_mTbMinG160/minv_non_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{non-bb}"
+      plot tag: logy
+
+    #### optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140
+
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/cutflow:
+      xlabel: "Cutflow"
+      ylabel: "Events"
+      ymin: 1
+      ymax: 100
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/jets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "jet multiplicity"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/bjets_n:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (77% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/bjets_n_85:
+      xmin: 0
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "b-jet multiplicity (85% eff)"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/pt_jet_1:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/pt_jet_2:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,2}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/pt_jet_3:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,3}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/pt_jet_4:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,4}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/dphi_1jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/dphi_sum4jet:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/met:
+      xmin: 0
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "E_{T}^{miss}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/mTb_min:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{T}^{b,min}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/meff_4j:
+      xmin: 0
+      xmax: 2500
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{eff}^{4j}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/minv_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/mct_bb:
+      ymin: 0.1
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "M_{CT}^{bb}"
+      plot tag: logy
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/minv_non_bb:
+      xmin: 0
+      xmax: 200
+      ymin: 0.1
+      ymax: 100
+      rebin: 1
+      ylabel: Events
+      xlabel: "M^{non-bb}"
+      plot tag: logy
