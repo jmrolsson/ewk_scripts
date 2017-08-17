@@ -1,0 +1,27 @@
+{
+  "background" : {
+    "dijet": {
+      "yield_raw": 0.0,
+      "err_raw": 0.0,
+      "yield_scaled": 0.0,
+      "err_scaled": 0.0
+    },
+    "total": {
+      "yield_raw": 76.0,
+      "err_raw": 8.72,
+      "yield_scaled": 1.05,
+      "err_scaled": 0.2
+    }
+  },
+  "signal" : {
+    "300_0": {
+      "yield_raw": 25.0,
+      "err_raw": 5.0,
+      "yield_scaled": 1.32,
+      "err_scaled": 0.26,
+      "s_over_b": 1.249,
+      "s_sqrt_b": 1.283,
+      "signif": 0.757
+    }
+  }
+} 
