@@ -5640,265 +5640,294 @@
     "rel uncert": 1.0
   },
   "100001": {
-    "tag": "300_0",
-    "cross section": 0.15180513, 
+    "m_c1n2": 300.0,
+    "m_n1": 0.0,
+    "cross section": 0.151805, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 103748.505956, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0681255
   },
   "100002": {
-    "tag": "300_50",
-    "cross section": 0.15180513, 
+    "m_c1n2": 300.0,
+    "m_n1": 50.0,
+    "cross section": 0.151805, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 93000.0, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0681255
   },
   "100003": {
-    "tag": "300_100",
-    "cross section": 0.15180513, 
+    "m_c1n2": 300.0,
+    "m_n1": 100.0,
+    "cross section": 0.151805, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 103712.857996, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0681255
   },
   "100004": {
-    "tag": "350_0",
-    "cross section": 0.08216840700179999, 
+    "m_c1n2": 350.0,
+    "m_n1": 0.0,
+    "cross section": 0.0821684, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 101987.427274, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0737871 
   },
   "100005": {
-    "tag": "350_50",
-    "cross section": 0.08216840700179999, 
+    "m_c1n2": 350.0,
+    "m_n1": 50.0,
+    "cross section": 0.0821684, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 97505.8881587, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0737871 
   },
   "100006": {
-    "tag": "350_100",
-    "cross section": 0.08216840700179999, 
+    "m_c1n2": 350.0,
+    "m_n1": 100.0,
+    "cross section": 0.0821684, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 96340.2540536, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0737871 
   },
   "100007": {
-    "tag": "400_0",
-    "cross section": 0.04747657, 
+    "m_c1n2": 400.0,
+    "m_n1": 0.0,
+    "cross section": 0.0474766, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 102942.452747, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0794674
   },
   "100008": {
-    "tag": "400_50",
-    "cross section": 0.04747657, 
+    "m_c1n2": 400.0,
+    "m_n1": 50.0,
+    "cross section": 0.0474766, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 102760.171493, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0794674
   },
   "100009": {
-    "tag": "400_100",
-    "cross section": 0.04747657, 
+    "m_c1n2": 400.0,
+    "m_n1": 100.0,
+    "cross section": 0.0474766, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 102972.184716, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0794674
   },
   "100010": {
-    "tag": "450_0",
-    "cross section": 0.028810906055820002, 
+    "m_c1n2": 450.0,
+    "m_n1": 0.0,
+    "cross section": 0.0288109, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 96225.5202785, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0849569
   },
   "100011": {
-    "tag": "450_50",
-    "cross section": 0.028810906055820002, 
+    "m_c1n2": 450.0,
+    "m_n1": 50.0,
+    "cross section": 0.0288109, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 102944.763509, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0849569
   },
   "100012": {
-    "tag": "450_100",
-    "cross section": 0.028810906055820002, 
+    "m_c1n2": 450.0,
+    "m_n1": 100.0,
+    "cross section": 0.0288109, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 91151.8599367, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0849569
   },
   "100013": {
-    "tag": "450_150",
-    "cross section": 0.028810906055820002, 
+    "m_c1n2": 450.0,
+    "m_n1": 150.0,
+    "cross section": 0.0288109, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 101881.286886, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0849569
   },
   "100014": {
-    "tag": "500_0",
-    "cross section": 0.01818561, 
+    "m_c1n2": 500.0,
+    "m_n1": 0.0,
+    "cross section": 0.0181856, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 51329.9693573, 
-    "rel uncert": 1.0
+    "rel uncert": 0.089845 
   },
   "100015": {
-    "tag": "500_50",
-    "cross section": 0.01818561, 
+    "m_c1n2": 500.0,
+    "m_n1": 50.0,
+    "cross section": 0.0181856, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 51149.8418089, 
-    "rel uncert": 1.0
+    "rel uncert": 0.089845 
   },
   "100016": {
-    "tag": "500_100",
-    "cross section": 0.01818561, 
+    "m_c1n2": 500.0,
+    "m_n1": 100.0,
+    "cross section": 0.0181856, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 51261.9247723, 
-    "rel uncert": 1.0
+    "rel uncert": 0.089845 
   },
   "100017": {
-    "tag": "500_150",
-    "cross section": 0.01818561, 
+    "m_c1n2": 500.0,
+    "m_n1": 150.0,
+    "cross section": 0.0181856, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 51436.1622882, 
-    "rel uncert": 1.0
+    "rel uncert": 0.089845 
   },
   "100018": {
-    "tag": "500_200",
-    "cross section": 0.01818561, 
+    "m_c1n2": 500.0,
+    "m_n1": 200.0,
+    "cross section": 0.0181856, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 51470.8994949, 
-    "rel uncert": 1.0
+    "rel uncert": 0.089845 
   },
   "100019": {
-    "tag": "550_0",
-    "cross section": 0.01183475522, 
+    "m_c1n2": 550.0,
+    "m_n1": 0.0,
+    "cross section": 0.0118348, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 50469.6268474, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0954945 
   },
   "100020": {
-    "tag": "550_50",
-    "cross section": 0.01183475522, 
+    "m_c1n2": 550.0,
+    "m_n1": 50.0,
+    "cross section": 0.0118348, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 51208.1479108, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0954945 
   },
   "100021": {
-    "tag": "550_100",
-    "cross section": 0.01183475522, 
+    "m_c1n2": 550.0,
+    "m_n1": 100.0,
+    "cross section": 0.0118348, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 51370.0128663, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0954945 
   },
   "100022": {
-    "tag": "550_150",
-    "cross section": 0.01183475522, 
+    "m_c1n2": 550.0,
+    "m_n1": 150.0,
+    "cross section": 0.0118348, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 43572.0044824, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0954945 
   },
   "100023": {
-    "tag": "550_200",
-    "cross section": 0.01183475522, 
+    "m_c1n2": 550.0,
+    "m_n1": 200.0,
+    "cross section": 0.0118348, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 51340.7236552, 
-    "rel uncert": 1.0
+    "rel uncert": 0.0954945 
   },
   "100024": {
-    "tag": "600_0",
+    "m_c1n2": 600.0,
+    "m_n1": 0.0,
     "cross section": 0.00790035, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 51045.9860253, 
-    "rel uncert": 1.0
+    "rel uncert": 0.101523 
   },
   "100025": {
-    "tag": "600_50",
+    "m_c1n2": 600.0,
+    "m_n1": 50.0,
     "cross section": 0.00790035, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 51074.5098734, 
-    "rel uncert": 1.0
+    "rel uncert": 0.101523 
   },
   "100026": {
-    "tag": "600_100",
+    "m_c1n2": 600.0,
+    "m_n1": 100.0,
     "cross section": 0.00790035, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 51068.0816257, 
-    "rel uncert": 1.0
+    "rel uncert": 0.101523 
   },
   "100027": {
-    "tag": "600_150",
+    "m_c1n2": 600.0,
+    "m_n1": 150.0,
     "cross section": 0.00790035, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 51125.9701073, 
-    "rel uncert": 1.0
+    "rel uncert": 0.101523 
   },
   "100028": {
-    "tag": "700_0",
+    "m_c1n2": 700.0,
+    "m_n1": 0.0,
     "cross section": 0.00373115, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 51125.9701073, 
-    "rel uncert": 1.0
+    "rel uncert": 0.109452
   },
   "100029": {
-    "tag": "700_50",
+    "m_c1n2": 700.0,
+    "m_n1": 50.0,
     "cross section": 0.00373115, 
     "errors": [], 
     "filter efficiency": 1.0, 
     "k-factor": 1.0, 
     "num events": 50345.9723793, 
-    "rel uncert": 1.0
+    "rel uncert": 0.109452
   },
   "unknown": {
     "cross section": 0.0,
