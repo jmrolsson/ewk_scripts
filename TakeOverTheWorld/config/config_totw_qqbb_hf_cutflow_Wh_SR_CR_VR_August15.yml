@@ -29,7 +29,7 @@ backgrounds:
     files:
       - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/*diboson*.hists
 
-  - name: "$\\ttbar$"
+  - name: "$t\\bar{t}$"
     files:
       - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/*ttbar*.hists
 
@@ -37,7 +37,7 @@ backgrounds:
     files:
       - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/*singletop*.hists
 
-  - name: "$\\ttbar+X$"
+  - name: "$t\\bar{t}+X$"
     files:
       - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/histograms/hf_cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/*topEW*.hists
 
@@ -150,114 +150,134 @@ cutflows:
       outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_SR1_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbMinG100_mctbbG140.txt"
       caption: "Cutflow for SR1 -- ''medium-mass''. Selections: $0L$, $\\njet = 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\dphidiboson > 2.6$, $\\Etmiss > 200 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mTbmin > 100\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 90$."
 
-    hists/optimization_Wh_CR1_mbbG135_mNonbbG90/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135_mNonbbG90.txt"
-      caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 140\\gev$."
-    hists/optimization_Wh_CR1_mbbG135/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135.txt"
-      caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mctbb > 140\\gev$."
-    hists/optimization_Wh_CR1_mNonbbG90/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mNonbbG90.txt"
-      caption: "Cutflow for CR1 -- $\\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 140\\gev$."
+    # hists/optimization_Wh_CR1_mbbG135_mNonbbG135_mTbMinG100_mctbbG160/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135_mNonbbG135_mTbMinG100_mctbbG160.txt"
+    #   caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 135\\gev ~{\\rm and}~ \\mctbb > 160\\gev$."
+    # hists/optimization_Wh_CR1_mbbG190_mNonbbG135_mTbMinG100_mctbbG160/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG190_mNonbbG135_mTbMinG100_mctbbG160.txt"
+    #   caption: "Cutflow for CR1 -- $\\mbb > 190\\gev ~{\\rm and}~ \\mnonbb > 135\\gev ~{\\rm and}~ \\mctbb > 160\\gev$."
+    # hists/optimization_Wh_CR1_mbbG190_mNonbbG75L90_mTbMinG100_mctbbG160/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG190_mNonbbG75L90_mTbMinG100_mctbbG160.txt"
+    #   caption: "Cutflow for CR1 -- $\\mbb > 190\\gev ~{\\rm and}~ 75 < \\mnonbb < 190\\gev ~{\\rm and}~ \\mctbb > 160\\gev$."
+    #
+    # hists/optimization_Wh_CR1_mbbG135_mNonbbG135_mTbMinG180_mctbbG160/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135_mNonbbG135_mTbMinG180_mctbbG160.txt"
+    #   caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 135\\gev ~{\\rm and}~ \\mctbb > 160\\gev ~{\\rm and}~ \\mTbmin > 180\\gev$."
+    # hists/optimization_Wh_CR1_mbbG190_mNonbbG135_mTbMinG180_mctbbG160/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG190_mNonbbG135_mTbMinG180_mctbbG160.txt"
+    #   caption: "Cutflow for CR1 -- $\\mbb > 190\\gev ~{\\rm and}~ \\mnonbb > 135\\gev ~{\\rm and}~ \\mctbb > 160\\gev ~{\\rm and}~ \\mTbmin > 180\\gev$."
+    # hists/optimization_Wh_CR1_mbbG190_mNonbbG75L90_mTbMinG180_mctbbG160/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG190_mNonbbG75L90_mTbMinG180_mctbbG160.txt"
+    #   caption: "Cutflow for CR1 -- $\\mbb > 190\\gev ~{\\rm and}~ 75 < \\mnonbb < 190\\gev ~{\\rm and}~ \\mctbb > 160\\gev ~{\\rm and}~ \\mTbmin > 180\\gev$."
 
-    hists/optimization_Wh_CR1_mbbG135_mNonbbG90_mctbbL140/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135_mNonbbG90_mctbbL140.txt"
-      caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb < 140\\gev$."
-    hists/optimization_Wh_CR1_mbbG135_mctbbL140/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135_mctbbL140.txt"
-      caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mctbb < 140\\gev$."
-    hists/optimization_Wh_CR1_mNonbbG90_mctbbL140/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mNonbbG90_mctbbL140.txt"
-      caption: "Cutflow for CR1 -- $\\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb < 140\\gev$."
-
-    hists/optimization_Wh_CR1_mbbG135_mNonbbG90_mctbbG180/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135_mNonbbG90_mctbbG180.txt"
-      caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 180\\gev$."
-    hists/optimization_Wh_CR1_mbbG135_mctbbG180/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135_mctbbG180.txt"
-      caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mctbb > 180\\gev$."
-    hists/optimization_Wh_CR1_mNonbbG90_mctbbG180/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mNonbbG90_mctbbG180.txt"
-      caption: "Cutflow for CR1 -- $\\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 180\\gev$."
-
-    hists/optimization_Wh_CR1_inv_mbbL105G135/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_inv_mbbL105G135.txt"
-      caption: "Cutflow for CR1 -- $\\mbb < 105\\gev ~{\\rm or}~ \\mbb > 135\\gev$."
-    hists/optimization_Wh_CR1_inv_mNonbbL75G90/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_inv_mNonbbL75G90.txt"
-      caption: "Cutflow for CR1 -- $\\mnonbb < 75\\gev ~{\\rm or}~ \\mnonbb > 90\\gev$."
-    hists/optimization_Wh_CR1_inv_mbbL105G135_mNonbbL75G90/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_inv_mbbL105G135_mNonbbL75G90.txt"
-      caption: "Cutflow for CR1 -- $(\\mbb < 105\\gev ~{\\rm or}~ \\mbb > 135\\gev) ~{\\rm and}~ (\\mnonbb < 75\\gev ~{\\rm or}~ \\mnonbb > 90\\gev)$."
-
-    hists/optimization_Wh_CR1_inv_mTbMinL100/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_inv_mTbMinL100.txt"
-      caption: "Cutflow for CR1 -- $\\mTbmin < 100\\gev$."
-    hists/optimization_Wh_CR1_inv_mctbbL140/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_inv_mctbbL140.txt"
-      caption: "Cutflow for CR1 -- $\\mctbb < 140\\gev$."
-    hists/optimization_Wh_CR1_inv_mTbMinL100_mctbbL140/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_inv_mTbMinL100_mctbbL140.txt"
-      caption: "Cutflow for CR1 -- $(\\mTbmin < 100\\gev) ~{\\rm and}~ (\\mctbb < 140\\gev)$."
-
+    # hists/optimization_Wh_CR1_mbbG135_mNonbbG90/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135_mNonbbG90.txt"
+    #   caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 140\\gev$."
+    # hists/optimization_Wh_CR1_mbbG135/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135.txt"
+    #   caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mctbb > 140\\gev$."
+    # hists/optimization_Wh_CR1_mNonbbG90/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mNonbbG90.txt"
+    #   caption: "Cutflow for CR1 -- $\\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 140\\gev$."
+    #
+    # hists/optimization_Wh_CR1_mbbG135_mNonbbG90_mctbbL140/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135_mNonbbG90_mctbbL140.txt"
+    #   caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb < 140\\gev$."
+    # hists/optimization_Wh_CR1_mbbG135_mctbbL140/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135_mctbbL140.txt"
+    #   caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mctbb < 140\\gev$."
+    # hists/optimization_Wh_CR1_mNonbbG90_mctbbL140/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mNonbbG90_mctbbL140.txt"
+    #   caption: "Cutflow for CR1 -- $\\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb < 140\\gev$."
+    #
+    # hists/optimization_Wh_CR1_mbbG135_mNonbbG90_mctbbG180/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135_mNonbbG90_mctbbG180.txt"
+    #   caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 180\\gev$."
+    # hists/optimization_Wh_CR1_mbbG135_mctbbG180/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mbbG135_mctbbG180.txt"
+    #   caption: "Cutflow for CR1 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mctbb > 180\\gev$."
+    # hists/optimization_Wh_CR1_mNonbbG90_mctbbG180/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_mNonbbG90_mctbbG180.txt"
+    #   caption: "Cutflow for CR1 -- $\\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 180\\gev$."
+    #
+    # hists/optimization_Wh_CR1_inv_mbbL105G135/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_inv_mbbL105G135.txt"
+    #   caption: "Cutflow for CR1 -- $\\mbb < 105\\gev ~{\\rm or}~ \\mbb > 135\\gev$."
+    # hists/optimization_Wh_CR1_inv_mNonbbL75G90/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_inv_mNonbbL75G90.txt"
+    #   caption: "Cutflow for CR1 -- $\\mnonbb < 75\\gev ~{\\rm or}~ \\mnonbb > 90\\gev$."
+    # hists/optimization_Wh_CR1_inv_mbbL105G135_mNonbbL75G90/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_inv_mbbL105G135_mNonbbL75G90.txt"
+    #   caption: "Cutflow for CR1 -- $(\\mbb < 105\\gev ~{\\rm or}~ \\mbb > 135\\gev) ~{\\rm and}~ (\\mnonbb < 75\\gev ~{\\rm or}~ \\mnonbb > 90\\gev)$."
+    #
+    # hists/optimization_Wh_CR1_inv_mTbMinL100/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_inv_mTbMinL100.txt"
+    #   caption: "Cutflow for CR1 -- $\\mTbmin < 100\\gev$."
+    # hists/optimization_Wh_CR1_inv_mctbbL140/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_inv_mctbbL140.txt"
+    #   caption: "Cutflow for CR1 -- $\\mctbb < 140\\gev$."
+    # hists/optimization_Wh_CR1_inv_mTbMinL100_mctbbL140/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR1_inv_mTbMinL100_mctbbL140.txt"
+    #   caption: "Cutflow for CR1 -- $(\\mTbmin < 100\\gev) ~{\\rm and}~ (\\mctbb < 140\\gev)$."
+    #
     hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140/cutflow:
       outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mctbbG140.txt"
       caption: "Cutflow for SR2 -- ''high-mass''. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\dphidiboson > 2.6$, $\\Etmiss > 250 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mTbmin > 160\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 90$."
 
-    hists/optimization_Wh_CR2_mbbG135_mNonbbG90/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mbbG135_mNonbbG90.txt"
-      caption: "Cutflow for CR2 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 140\\gev$."
-    hists/optimization_Wh_CR2_mbbG135/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mbbG135.txt"
-      caption: "Cutflow for CR2 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mctbb > 140\\gev$."
-    hists/optimization_Wh_CR2_mNonbbG90/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mNonbbG90.txt"
-      caption: "Cutflow for CR2 -- $\\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 140\\gev$."
-
-    hists/optimization_Wh_CR2_mbbG135_mNonbbG90_mctbbL140/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mbbG135_mNonbbG90_mctbbL140.txt"
-      caption: "Cutflow for CR2 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb < 140\\gev$."
-    hists/optimization_Wh_CR2_mbbG135_mctbbL140/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mbbG135_mctbbL140.txt"
-      caption: "Cutflow for CR2 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mctbb < 140\\gev$."
-    hists/optimization_Wh_CR2_mNonbbG90_mctbbL140/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mNonbbG90_mctbbL140.txt"
-      caption: "Cutflow for CR2 -- $\\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb < 140\\gev$."
-
-    hists/optimization_Wh_CR2_mbbG135_mNonbbG90_mctbbG180/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mbbG135_mNonbbG90_mctbbG180.txt"
-      caption: "Cutflow for CR2 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 180\\gev$."
-    hists/optimization_Wh_CR2_mbbG135_mctbbG180/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mbbG135_mctbbG180.txt"
-      caption: "Cutflow for CR2 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mctbb > 180\\gev$."
-    hists/optimization_Wh_CR2_mNonbbG90_mctbbG180/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mNonbbG90_mctbbG180.txt"
-      caption: "Cutflow for CR2 -- $\\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 180\\gev$."
-
-    hists/optimization_Wh_CR2_inv_mbbL105G135/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_inv_mbbL105G135.txt"
-      caption: "Cutflow for CR2 -- $\\mbb < 105\\gev ~{\\rm or}~ \\mbb > 135\\gev$."
-    hists/optimization_Wh_CR2_inv_mNonbbL75G90/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_inv_mNonbbL75G90.txt"
-      caption: "Cutflow for CR2 -- $\\mnonbb < 75\\gev ~{\\rm or}~ \\mnonbb > 90\\gev$."
-    hists/optimization_Wh_CR2_inv_mbbL105G135_mNonbbL75G90/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_inv_mbbL105G135_mNonbbL75G90.txt"
-      caption: "Cutflow for CR2 -- $(\\mbb < 105\\gev ~{\\rm or}~ \\mbb > 135\\gev) ~{\\rm and}~ (\\mnonbb < 75\\gev ~{\\rm or}~ \\mnonbb > 90\\gev)$."
-
-    hists/optimization_Wh_CR2_inv_mTbMinL160/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_inv_mTbMinL160.txt"
-      caption: "Cutflow for CR2 -- $\\mTbmin < 160\\gev$."
-    hists/optimization_Wh_CR2_inv_mctbbL140/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_inv_mctbbL140.txt"
-      caption: "Cutflow for CR2 -- $\\mctbb < 140\\gev$."
-    hists/optimization_Wh_CR2_inv_mTbMinL160_mctbbL140/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_inv_mTbMinL160_mctbbL140.txt"
-      caption: "Cutflow for CR2 -- $(\\mTbmin < 160\\gev) ~{\\rm and}~ (\\mctbb < 140\\gev)$."
-
+    # hists/optimization_Wh_CR2_mbbG135_mNonbbG90/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mbbG135_mNonbbG90.txt"
+    #   caption: "Cutflow for CR2 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 140\\gev$."
+    # hists/optimization_Wh_CR2_mbbG135/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mbbG135.txt"
+    #   caption: "Cutflow for CR2 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mctbb > 140\\gev$."
+    # hists/optimization_Wh_CR2_mNonbbG90/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mNonbbG90.txt"
+    #   caption: "Cutflow for CR2 -- $\\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 140\\gev$."
+    #
+    # hists/optimization_Wh_CR2_mbbG135_mNonbbG90_mctbbL140/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mbbG135_mNonbbG90_mctbbL140.txt"
+    #   caption: "Cutflow for CR2 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb < 140\\gev$."
+    # hists/optimization_Wh_CR2_mbbG135_mctbbL140/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mbbG135_mctbbL140.txt"
+    #   caption: "Cutflow for CR2 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mctbb < 140\\gev$."
+    # hists/optimization_Wh_CR2_mNonbbG90_mctbbL140/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mNonbbG90_mctbbL140.txt"
+    #   caption: "Cutflow for CR2 -- $\\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb < 140\\gev$."
+    #
+    # hists/optimization_Wh_CR2_mbbG135_mNonbbG90_mctbbG180/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mbbG135_mNonbbG90_mctbbG180.txt"
+    #   caption: "Cutflow for CR2 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 180\\gev$."
+    # hists/optimization_Wh_CR2_mbbG135_mctbbG180/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mbbG135_mctbbG180.txt"
+    #   caption: "Cutflow for CR2 -- $\\mbb > 135\\gev ~{\\rm and}~ \\mctbb > 180\\gev$."
+    # hists/optimization_Wh_CR2_mNonbbG90_mctbbG180/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_mNonbbG90_mctbbG180.txt"
+    #   caption: "Cutflow for CR2 -- $\\mnonbb > 90\\gev ~{\\rm and}~ \\mctbb > 180\\gev$."
+    #
+    # hists/optimization_Wh_CR2_inv_mbbL105G135/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_inv_mbbL105G135.txt"
+    #   caption: "Cutflow for CR2 -- $\\mbb < 105\\gev ~{\\rm or}~ \\mbb > 135\\gev$."
+    # hists/optimization_Wh_CR2_inv_mNonbbL75G90/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_inv_mNonbbL75G90.txt"
+    #   caption: "Cutflow for CR2 -- $\\mnonbb < 75\\gev ~{\\rm or}~ \\mnonbb > 90\\gev$."
+    # hists/optimization_Wh_CR2_inv_mbbL105G135_mNonbbL75G90/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_inv_mbbL105G135_mNonbbL75G90.txt"
+    #   caption: "Cutflow for CR2 -- $(\\mbb < 105\\gev ~{\\rm or}~ \\mbb > 135\\gev) ~{\\rm and}~ (\\mnonbb < 75\\gev ~{\\rm or}~ \\mnonbb > 90\\gev)$."
+    #
+    # hists/optimization_Wh_CR2_inv_mTbMinL160/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_inv_mTbMinL160.txt"
+    #   caption: "Cutflow for CR2 -- $\\mTbmin < 160\\gev$."
+    # hists/optimization_Wh_CR2_inv_mctbbL140/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_inv_mctbbL140.txt"
+    #   caption: "Cutflow for CR2 -- $\\mctbb < 140\\gev$."
+    # hists/optimization_Wh_CR2_inv_mTbMinL160_mctbbL140/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_CR2_inv_mTbMinL160_mctbbL140.txt"
+    #   caption: "Cutflow for CR2 -- $(\\mTbmin < 160\\gev) ~{\\rm and}~ (\\mctbb < 140\\gev)$."
+    #
     hists/optimization_Wh_SR3_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG200_meffG700_mTbMinG180_mctbbG190/cutflow:
       outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_SR3_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG200_meffG700_mTbMinG180_mctbbG190.txt"
       caption: "Cutflow for SR3 -- ''low-$\\meffj$''. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\dphidiboson > 2.6$, $\\Etmiss > 200 \\gev$, $\\meffj > 700\\gev$, $\\mctbb > 190\\gev$, $\\mTbmin > 180\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 90$."
-
-    hists/optimization_Wh_SR3_old_Aug14_leptonveto_nJetsEq4_nBJetsGeq2Leq4_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG200_meffG700_mTbMinG200_mctbbG200/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_SR3_old_Aug14_leptonveto_nJetsEq4_nBJetsGeq2Leq4_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG200_meffG700_mTbMinG200_mctbbG200.txt"
-      caption: "Cutflow for SR3 (old) -- ''low-$\\meffj$''. Selections: $0L$, $\\njet = 4$, 2 $\\geq \\nbjet \\geq 4$, $\\dphimin > 0.4$, $\\dphidiboson > 2.6$, $\\Etmiss > 200 \\gev$, $\\meffj > 700\\gev$, $\\mctbb > 200\\gev$, $\\mTbmin > 200\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 90$."
+    #
+    # hists/optimization_Wh_SR3_old_Aug14_leptonveto_nJetsEq4_nBJetsGeq2Leq4_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG200_meffG700_mTbMinG200_mctbbG200/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_August15_HT_incl_filter/optimization_Wh_SR3_old_Aug14_leptonveto_nJetsEq4_nBJetsGeq2Leq4_dphiMinG0p4_dphiSum4jetG2p6_mbbG105L135_mNonbbG75L90_metG200_meffG700_mTbMinG200_mctbbG200.txt"
+    #   caption: "Cutflow for SR3 (old) -- ''low-$\\meffj$''. Selections: $0L$, $\\njet = 4$, 2 $\\geq \\nbjet \\geq 4$, $\\dphimin > 0.4$, $\\dphidiboson > 2.6$, $\\Etmiss > 200 \\gev$, $\\meffj > 700\\gev$, $\\mctbb > 200\\gev$, $\\mTbmin > 200\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 90$."

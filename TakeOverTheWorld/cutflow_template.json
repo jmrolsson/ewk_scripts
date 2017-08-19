@@ -1,12 +1,12 @@
 {
-  "background" : {
+  "bkg" : {
     "dijet": {
       "yield_raw": 0.0,
       "err_raw": 0.0,
       "yield_scaled": 0.0,
       "err_scaled": 0.0
     },
-    "total": {
+    "tot_bkg": {
       "yield_raw": 76.0,
       "err_raw": 8.72,
       "yield_scaled": 1.05,

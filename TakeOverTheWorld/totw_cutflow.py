@@ -30,6 +30,7 @@ import subprocess
 import glob
 import yaml
 import json
+import io
 
 '''
   with tempfile.NamedTemporaryFile() as tmpFile:
@@ -193,7 +194,7 @@ def scale_hists(h, weights, groups):
       hist.scale(scaleFactor)
       logger.info("Scale factor for %s: %0.6f" % (did, scaleFactor))
 
-def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', do_latex=False):
+def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', do_latex=False, do_json=False):
 
   if do_latex:
     toprule = r"\toprule"
@@ -209,6 +210,10 @@ def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', d
         f = open(re.sub(".txt", ".tex", outfile), 'w')
       else:
         f = open(outfile, 'w')
+
+      if do_json:
+        bkg_list = []
+        sig_list = []
 
       if do_latex:
         print(r"\begin{table}[!ht]", file=f)
@@ -238,6 +243,8 @@ def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', d
           tot_bkg_err += err**2
           w_tot_bkg += h.GetBinContent(1)
           w_tot_bkg_err += werr**2
+          if do_json:
+              bkg_list.append({"label": name, "nevents_raw": evt, "err_raw": err, "nevents": wevt, "err": werr})
           if do_latex:
             print("{0: <25} & ${1:10.2f} \pm {2:8.2f}$ & ${3:10.2f} \pm {4:8.2f}$ & \multicolumn{{3}}{{c}}{{}} \\\\".format(
                 name, evt, err, wevt, werr), file=f)
@@ -247,6 +254,8 @@ def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', d
       print(midrule, file=f)
       tot_bkg_err = np.sqrt(tot_bkg_err)
       w_tot_bkg_err = np.sqrt(w_tot_bkg_err)
+      if do_json:
+          tot_bkg_dict = {"nevents_raw": tot_bkg, "err_raw": tot_bkg_err, "nevents": w_tot_bkg, "err": w_tot_bkg_err}
       if do_latex:
         print("{0} & ${1:10.2f} \pm {2:8.2f}$ & ${3:10.2f} \pm {4:8.2f}$ & \multicolumn{{3}}{{c}}{{}} \\\\".format(
             "Tot. Background", tot_bkg, tot_bkg_err, w_tot_bkg, w_tot_bkg_err), file=f)
@@ -260,20 +269,32 @@ def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', d
         print("{} | Num. Events             | W. Num. Events    | S/B [%]     | S/sqrt(B_tot)   | BinomialExpZ(S,B_tot,0.30)".format(" "*25), file=f)
       print(midrule, file=f)
       for h in sig_hists:
-          name = h.GetTitle()
-          evt = h.GetEntries()
-          err = np.sqrt(evt)
-          wevt = h.GetBinContent(1)
-          werr = h.GetBinError(1)
-          sbratio = wevt/w_tot_bkg
-          signif_1 = wevt/np.sqrt(w_tot_bkg)
-          signif_2 = ROOT.RooStats.NumberCountingUtils.BinomialExpZ(wevt, w_tot_bkg, 0.3)
-          if do_latex:
-            print("${0: <25}$ & ${1:10.2f} \\pm {2:8.2f}$ & ${3:10.2f} \\pm {4:8.2f}$ & ${5:15.1f}$ & ${6:15.3f}$ & ${7:10.3f}$ \\\\".format(
-                name, evt, err, wevt, werr, sbratio*100., signif_1, signif_2), file=f)
-          else:
-            print("{0: <25} | {1:10.2f} +/- {2:8.2f} | {3:10.2f} +/- {4:8.2f} | {5:15.1f} | {6:15.3f} | {7:10.3f}".format(
-                name, evt, err, wevt, werr, sbratio*100, signif_1, signif_2), file=f)
+        name = h.GetTitle()
+        evt = h.GetEntries()
+        err = np.sqrt(evt)
+        wevt = h.GetBinContent(1)
+        werr = h.GetBinError(1)
+        s_over_b = wevt/w_tot_bkg
+        s_sqrt_b = wevt/np.sqrt(w_tot_bkg)
+        signif = ROOT.RooStats.NumberCountingUtils.BinomialExpZ(wevt, w_tot_bkg, 0.3)
+        if do_json:
+          masspoint = map(int, re.findall('\d+', name))
+          if len(masspoint)>1:
+            sig_list.append({"label": name, "m_c1n2": masspoint[0], "m_n1": masspoint[1], "signal_raw": evt, "err_signal_raw": err, "signal": wevt, "err_signal": werr, "bkgd_raw": tot_bkg, "err_bkgd_raw": tot_bkg_err, "bkgd": w_tot_bkg, "err_bkgd": w_tot_bkg_err, "ratio": s_over_b, "s_sqrt_b": s_sqrt_b, "significance": signif})
+        if do_latex:
+          print("${0: <25}$ & ${1:10.2f} \\pm {2:8.2f}$ & ${3:10.2f} \\pm {4:8.2f}$ & ${5:15.1f}$ & ${6:15.3f}$ & ${7:10.3f}$ \\\\".format(
+              name, evt, err, wevt, werr, s_over_b*100., s_sqrt_b, signif), file=f)
+        else:
+          print("{0: <25} | {1:10.2f} +/- {2:8.2f} | {3:10.2f} +/- {4:8.2f} | {5:15.1f} | {6:15.3f} | {7:10.3f}".format(
+              name, evt, err, wevt, werr, s_over_b*100, s_sqrt_b, signif), file=f)
+      if do_json:
+        # write JSON
+        try:
+          to_unicode = unicode
+        except NameError:
+          to_unicode = str
+        with io.open(re.sub(".txt", ".json", outfile), 'w', encoding='utf8') as f_json:
+            f_json.write(to_unicode(json.dumps({"tot_bkgd": tot_bkg_dict, "bkgd": bkg_list, "signal": sig_list}, indent=2, sort_keys=True,  separators=(',', ': '), ensure_ascii=False)))
       print(bottomrule, file=f)
       if do_latex:
         print(r"\end{tabular}", file=f)
@@ -304,6 +325,7 @@ if __name__ == "__main__":
   parser.add_argument('--lumi', required=False, type=int, dest='global_luminosity', metavar='<ifb>', help='luminosity to use for scaling')
   parser.add_argument("--do", help="Do systemtic variations [0/1]", type=int, default=0)
   parser.add_argument('-l', '--latex', dest='do_latex', action='store_true', help='Save latex tables.', default=False)
+  parser.add_argument('--json', dest='do_json', action='store_true', help='Save JSON tables.', default=False)
 
   parser.add_argument('-i', '--input', dest='topLevel', type=str, help='Top level directory containing plots.', default='all')
 
@@ -359,7 +381,7 @@ if __name__ == "__main__":
         print ("Histograms:")
         print (sig_hists)
         print (bkg_hists)
-        save_cutflow(sig_hists, bkg_hists, cutflow_caption, outfile, args.do_latex)
+        save_cutflow(sig_hists, bkg_hists, cutflow_caption, outfile, args.do_latex, args.do_json)
 
       if not args.debug:
         ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")
