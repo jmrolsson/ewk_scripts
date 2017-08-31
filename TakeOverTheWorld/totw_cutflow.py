@@ -194,7 +194,7 @@ def scale_hists(h, weights, groups):
       hist.scale(scaleFactor)
       logger.info("Scale factor for %s: %0.6f" % (did, scaleFactor))
 
-def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', do_latex=False, do_json=False):
+def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', do_latex=False, do_json=False, no_signal=False):
 
   if do_latex:
     toprule = r"\toprule"
@@ -262,31 +262,36 @@ def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', d
       else:
         print("{0: <25} | {1:10.2f} +/- {2:8.2f} | {3:10.2f} +/- {4:8.2f}".format(
             "Tot. Background", tot_bkg, tot_bkg_err, w_tot_bkg, w_tot_bkg_err), file=f)
-      print(toprule, file=f)
-      if do_latex:
-        print("$(m_{\\tilde{\\chi}^{\\pm}_{1},\\tilde{\\chi}^{0}_{2}}, m_{\\tilde{\\chi}^{0}_{1}})$ & $N_S^{\\rm raw}$ & $N_S^{\\rm w.}$ & $N_S/N_B~[\\%]$ & $N_S/\sqrt{N_B}$ & $\\mathcal{Z}_n$ \\\\", file=f)
-      else:
-        print("{} | Num. Events             | W. Num. Events    | S/B [%]     | S/sqrt(B_tot)   | BinomialExpZ(S,B_tot,0.30)".format(" "*25), file=f)
-      print(midrule, file=f)
-      for h in sig_hists:
-        name = h.GetTitle()
-        evt = h.GetEntries()
-        err = np.sqrt(evt)
-        wevt = h.GetBinContent(1)
-        werr = h.GetBinError(1)
-        s_over_b = wevt/w_tot_bkg
-        s_sqrt_b = wevt/np.sqrt(w_tot_bkg)
-        signif = ROOT.RooStats.NumberCountingUtils.BinomialExpZ(wevt, w_tot_bkg, 0.3)
-        if do_json:
-          masspoint = map(int, re.findall('\d+', name))
-          if len(masspoint)>1:
-            sig_list.append({"label": name, "m_c1n2": masspoint[0], "m_n1": masspoint[1], "signal_raw": evt, "err_signal_raw": err, "signal": wevt, "err_signal": werr, "bkgd_raw": tot_bkg, "err_bkgd_raw": tot_bkg_err, "bkgd": w_tot_bkg, "err_bkgd": w_tot_bkg_err, "ratio": s_over_b, "s_sqrt_b": s_sqrt_b, "significance": signif})
+      if not no_signal:
+        print(toprule, file=f)
         if do_latex:
-          print("${0: <25}$ & ${1:10.2f} \\pm {2:8.2f}$ & ${3:10.2f} \\pm {4:8.2f}$ & ${5:15.1f}$ & ${6:15.3f}$ & ${7:10.3f}$ \\\\".format(
-              name, evt, err, wevt, werr, s_over_b*100., s_sqrt_b, signif), file=f)
+          print("$(m_{\\tilde{\\chi}^{\\pm}_{1},\\tilde{\\chi}^{0}_{2}}, m_{\\tilde{\\chi}^{0}_{1}})$ & $N_S^{\\rm raw}$ & $N_S^{\\rm w.}$ & $N_S/N_B~[\\%]$ & $N_S/\sqrt{N_B}$ & $\\mathcal{Z}_n$ \\\\", file=f)
         else:
-          print("{0: <25} | {1:10.2f} +/- {2:8.2f} | {3:10.2f} +/- {4:8.2f} | {5:15.1f} | {6:15.3f} | {7:10.3f}".format(
-              name, evt, err, wevt, werr, s_over_b*100, s_sqrt_b, signif), file=f)
+          print("{} | Num. Events             | W. Num. Events    | S/B [%]     | S/sqrt(B_tot)   | BinomialExpZ(S,B_tot,0.30)".format(" "*25), file=f)
+        print(midrule, file=f)
+        for h in sig_hists:
+          name = h.GetTitle()
+          evt = h.GetEntries()
+          err = np.sqrt(evt)
+          wevt = h.GetBinContent(1)
+          werr = h.GetBinError(1)
+          if w_tot_bkg>0:
+            s_over_b = wevt/w_tot_bkg
+            s_sqrt_b = wevt/np.sqrt(w_tot_bkg)
+          else:
+            s_over_b = 0.
+            s_sqrt_b = 0.
+          signif = ROOT.RooStats.NumberCountingUtils.BinomialExpZ(wevt, w_tot_bkg, 0.3)
+          if do_json:
+            masspoint = map(int, re.findall('\d+', name))
+            if len(masspoint)>1:
+              sig_list.append({"label": name, "m_c1n2": masspoint[0], "m_n1": masspoint[1], "signal_raw": evt, "err_signal_raw": err, "signal": wevt, "err_signal": werr, "bkgd_raw": tot_bkg, "err_bkgd_raw": tot_bkg_err, "bkgd": w_tot_bkg, "err_bkgd": w_tot_bkg_err, "ratio": s_over_b, "s_sqrt_b": s_sqrt_b, "significance": signif})
+          if do_latex:
+            print("${0: <25}$ & ${1:10.2f} \\pm {2:8.2f}$ & ${3:10.2f} \\pm {4:8.2f}$ & ${5:15.1f}$ & ${6:15.3f}$ & ${7:10.3f}$ \\\\".format(
+                name, evt, err, wevt, werr, s_over_b*100., s_sqrt_b, signif), file=f)
+          else:
+            print("{0: <25} | {1:10.2f} +/- {2:8.2f} | {3:10.2f} +/- {4:8.2f} | {5:15.1f} | {6:15.3f} | {7:10.3f}".format(
+                name, evt, err, wevt, werr, s_over_b*100, s_sqrt_b, signif), file=f)
       if do_json:
         # write JSON
         try:
@@ -303,7 +308,6 @@ def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', d
         print(r"\end{table}", file=f)
   except IOError:
       print ('Could not open file', outfile)
-
 
 if __name__ == "__main__":
   class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter):
@@ -326,6 +330,7 @@ if __name__ == "__main__":
   parser.add_argument("--do", help="Do systemtic variations [0/1]", type=int, default=0)
   parser.add_argument('-l', '--latex', dest='do_latex', action='store_true', help='Save latex tables.', default=False)
   parser.add_argument('--json', dest='do_json', action='store_true', help='Save JSON tables.', default=False)
+  parser.add_argument('--no-signal', dest='no_signal', action='store_true', help='Do not include signals.', default=False)
 
   parser.add_argument('-i', '--input', dest='topLevel', type=str, help='Top level directory containing plots.', default='all')
 
@@ -368,20 +373,19 @@ if __name__ == "__main__":
       for path in cutflows_paths.keys():
 
         hbkg = reduce(lambda x,y: getattr(x, y, None), (item for item in path.split('/') if item != args.topLevel), bkgall)
-        hsig = reduce(lambda x,y: getattr(x, y, None), (item for item in path.split('/') if item != args.topLevel), sigall)
-
         scale_hists(hbkg, weights, backgrounds)
-        scale_hists(hsig, weights, signals)
-
         bkg_hists = map(lambda hgroup: hgroup.flatten, hbkg)
+
+        hsig = reduce(lambda x,y: getattr(x, y, None), (item for item in path.split('/') if item != args.topLevel), sigall)
+        scale_hists(hsig, weights, signals)
         sig_hists = map(lambda hgroup: hgroup.flatten, hsig)
 
         cutflow_caption = cutflows_paths.get(hsig.path, {})['caption']
         outfile = cutflows_paths.get(hsig.path, {})['outfile']
-        print ("Histograms:")
-        print (sig_hists)
-        print (bkg_hists)
-        save_cutflow(sig_hists, bkg_hists, cutflow_caption, outfile, args.do_latex, args.do_json)
+        # print ("Histograms:")
+        # print (sig_hists)
+        # print (bkg_hists)
+        save_cutflow(sig_hists, bkg_hists, cutflow_caption, outfile, args.do_latex, args.do_json, args.no_signal)
 
       if not args.debug:
         ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")
