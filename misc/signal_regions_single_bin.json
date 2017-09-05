@@ -1,0 +1,13 @@
+{
+
+"pre-selection and lepton veto":"gen_filt_ht > 500 && baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && met > 200",
+
+"singletop_1L_CR":"gen_filt_ht > 500 && (signal_electrons_n == 1 || signal_muons_n == 1) && jets_n >= 4 && bjets_n == 2 && dphi_min > 0.4 && m_bb > 195 && m_non_bb > 75 && m_non_bb < 90 && met > 200 && meff_4j > 500 && mTb_min > 180 && mCT_bb > 200",
+
+"SR1":"gen_filt_ht > 500 && baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mCT_bb > 140",
+
+"SR2":"gen_filt_ht > 500 && baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mCT_bb > 140",
+
+"SR3":"gen_filt_ht > 500 && baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && met > 200 && meff_4j > 700 && mTb_min > 180 && mCT_bb > 190"
+
+}

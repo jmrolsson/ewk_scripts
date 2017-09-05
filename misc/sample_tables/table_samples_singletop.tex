@@ -1,0 +1,27 @@
+\begin{table}[h]
+\footnotesize
+\begin{center}\renewcommand\arraystretch{1.6}
+\sisetup{round-mode=figures, round-precision=2,
+retain-explicit-plus=false, group-digits = false}
+\begin{tabular}{|l|l|c|
+S[table-parse-only, round-precision=4]|
+S[table-parse-only, round-mode=places, round-precision=1]|
+S[table-format= 1.3, round-mode=places, round-precision=3]|
+}
+\toprule
+Generator & Fiducial Region & {DSID} & {\begin{tabular}[c]{@{}c@{}}No. of\\events\end{tabular}} & {\begin{tabular}[c]{@{}c@{}}$\sigma \times \epsilon_\textnormal{filter}$\\ $[$pb$]$\end{tabular}} & {$k$-factor} \\
+\midrule
+\PowhegPythia & $Wt$, inclusive-$t$, $\HT>500\gev$ & 407018 & 0.0836538882779 & 3.00847677993 & 1.05400002003 \\
+\PowhegPythia & $Wt$, inclusive-$\bar{t}$, $\HT>500\gev$ & 407020 & 0.0838775494174 & 3.00514402547 & 1.05400002003 \\
+\PowhegPythia & $t$-channel, at least one lepton, $t$ & 410011 & 0.218165148808 & 43.7389984131 & 1.00940001011 \\
+\PowhegPythia & $t$-channel, at least one lepton, $\bar{t}$ & 410012 & 0.128694693283 & 25.7779998779 & 1.01929998398 \\
+\PowhegPythia & $Wt$, inclusive-$t$ & 410013 & 4985800.0 & 34.0089988708 & 1.05400002003 \\
+\PowhegPythia & $Wt$, inclusive-$\bar{t}$ & 410014 & 4985600.0 & 33.9889984131 & 1.05400002003 \\
+\PowhegPythia & $s$-channel, at least one lepton, $t$ & 410025 & 0.00204856751068 & 2.0517001152 & 1.00460004807 \\
+\PowhegPythia & $s$-channel, at least one lepton, $\bar{t}$ & 410026 & 0.00125651986173 & 1.26150000095 & 1.02149999142 \\
+\bottomrule
+\end{tabular}
+\caption{The single-top MC samples used.}
+\label{tab:app:datamc:singletop}
+\end{center}
+\end{table}

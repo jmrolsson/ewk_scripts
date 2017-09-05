@@ -33,9 +33,33 @@ backgrounds:
     files:
       - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*ttbar*.hists
 
-  - name: "single-top"
+  # - name: "single-top"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*singletop*.hists
+  - name: "single-top (Wt incl top)"
     files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*singletop*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410013*singletop*.hists
+  - name: "single-top (Wt incl antitop)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410014*singletop*.hists
+  - name: "single-top (Wt HT>500GeV top)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*407018*singletop*.hists
+  - name: "single-top (Wt HT>500GeV antitop)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*407020*singletop*.hists
+  - name: "single-top (tchan lept top)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410011*singletop*.hists
+  - name: "single-top (tchan lept antitop)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410012*singletop*.hists
+  - name: "single-top (schan noAllHad top)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410025*singletop*.hists
+  - name: "single-top (schan noAllHad antitop)"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410026*singletop*.hists
 
   - name: "$t\\bar{t}+X$"
     files:
@@ -146,10 +170,10 @@ signals:
 cutflows:
   paths:
 
-    # hists/optimization_Wh_SR1_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbMinG100_mctbbG140/cutflow:
-    #   outfile: "cutflow_resolved/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/optimization_Wh_SR1_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbMinG100_mctbbG140.txt"
-    #   caption: "Cutflow for SR1. Selections: $0L$, $\\njet = 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\Etmiss > 200 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mTbmin > 100\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 105$."
-    #
+    hists/optimization_Wh_SR1_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbMinG100_mctbbG140/cutflow:
+      outfile: "cutflow_resolved/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/optimization_Wh_SR1_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbMinG100_mctbbG140.txt"
+      caption: "Cutflow for SR1. Selections: $0L$, $\\njet = 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\Etmiss > 200 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mTbmin > 100\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 105$."
+
     # hists/optimization_Wh_CR1_singletop_nJetsGeq4_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG700_mTbminG100_mctbbG160/cutflow:
     #   outfile: "cutflow_resolved/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/optimization_Wh_CR1_singletop_nJetsGeq4_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG700_mTbminG100_mctbbG160.txt"
     #   caption: "Cutflow for CR1 ''single-top''. Selections: $\\njet \\geq 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\mbb > 195\\gev$, $75 < \\mnonbb < 90\\gev$, $\\mTbmin > 100\\gev$, $\\mctbb > 160\\gev$."

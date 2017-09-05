@@ -1,0 +1,11 @@
+{
+  "dijet": "dijet",
+  "diboson": "diboson",
+  "Z_sherpa_220": "$Z$+jets",
+  "W_sherpa_220": "$W$+jets",
+  "Z_sherpa_221": "$Z$+jets",
+  "W_sherpa_221": "$W$+jets",
+  "ttbar": "$t\\bar{t}$",
+  "topEW": "$t\\bar{t}+X$",
+  "singletop": "single-top"
+}

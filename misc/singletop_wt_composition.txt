@@ -1,0 +1,124 @@
+----> Datasets:
+
+mc15_13TeV.407018.PowhegPythiaEvtGen_P2012CT10_Wt_inclusive_top_HT500.merge.DAOD_SUSY10.e4024_s2608_r7725_r7676_p2719
+mc15_13TeV.407020.PowhegPythiaEvtGen_P2012CT10_Wt_inclusive_tbar_HT500.merge.DAOD_SUSY10.e4024_s2608_r7725_r7676_p2719
+
+----> Region: pre-selection and lepton veto
+
+Number of events in pre-selection and lepton veto: 108995
+
+Fraction all hadronic (W->qq, t->bW->bqq): 0.0707004908482
+Fraction fully-leptonic (W->lnu, t->bW->blnu): 0.0796733795128
+Fraction semi-leptonic (W->lnu, t->bW->bqq OR W->qq, t->bW->blnu): 0.849626129639
+
+Fully-leptonic:
+    (enu enu + enu munu + munu munu) / (all fully-lept): 0.0812989405804
+    (enu taunu + munu taunu + taunu taunu) / (all fully-lept): 0.91870105942
+
+Semi-leptonic:
+      (elnu had + munu had) / (all semi-lept): 0.275147130285
+      (taunu had) / (all semi-lept): 0.724852869715
+
+ Fraction of events with fully-leptonic decays and at least one tau in the final state: 0.073196018166
+
+ Fraction of events with semi-leptonic decays and at least one tau in the final state: 0.615853938254
+
+ Fraction of total events with at least one tau in the final state: 0.68904995642
+
+ Fraction of events with at least one tau among events with leptons: 0.7414724205
+
+----> Region: singletop_1L_CR
+
+Number of events in singletop_1L_CR: 1263
+
+Fraction all hadronic (W->qq, t->bW->bqq): 0.0
+Fraction fully-leptonic (W->lnu, t->bW->blnu): 0.0823436262866
+Fraction semi-leptonic (W->lnu, t->bW->bqq OR W->qq, t->bW->blnu): 0.917656373713
+
+Fully-leptonic:
+    (enu enu + enu munu + munu munu) / (all fully-lept): 0.451923076923
+    (enu taunu + munu taunu + taunu taunu) / (all fully-lept): 0.548076923077
+
+Semi-leptonic:
+      (elnu had + munu had) / (all semi-lept): 0.817083692839
+      (taunu had) / (all semi-lept): 0.182916307161
+
+ Fraction of events with fully-leptonic decays and at least one tau in the final state: 0.0451306413302
+
+ Fraction of events with semi-leptonic decays and at least one tau in the final state: 0.167854315123
+
+ Fraction of total events with at least one tau in the final state: 0.212984956453
+
+ Fraction of events with at least one tau among events with leptons: 0.212984956453
+
+----> Region: SR1
+
+Number of events in SR1: 8
+
+Fraction all hadronic (W->qq, t->bW->bqq): 0.0
+Fraction fully-leptonic (W->lnu, t->bW->blnu): 0.0
+Fraction semi-leptonic (W->lnu, t->bW->bqq OR W->qq, t->bW->blnu): 1.0
+
+Fully-leptonic:
+    (enu enu + enu munu + munu munu) / (all fully-lept): 0
+    (enu taunu + munu taunu + taunu taunu) / (all fully-lept): 0
+
+Semi-leptonic:
+      (elnu had + munu had) / (all semi-lept): 0.125
+      (taunu had) / (all semi-lept): 0.875
+
+ Fraction of events with fully-leptonic decays and at least one tau in the final state: 0.0
+
+ Fraction of events with semi-leptonic decays and at least one tau in the final state: 0.875
+
+ Fraction of total events with at least one tau in the final state: 0.875
+
+ Fraction of events with at least one tau among events with leptons: 0.875
+
+----> Region: SR2
+
+Number of events in SR2: 11
+
+Fraction all hadronic (W->qq, t->bW->bqq): 0.0
+Fraction fully-leptonic (W->lnu, t->bW->blnu): 0.0909090909091
+Fraction semi-leptonic (W->lnu, t->bW->bqq OR W->qq, t->bW->blnu): 0.909090909091
+
+Fully-leptonic:
+    (enu enu + enu munu + munu munu) / (all fully-lept): 0.0
+    (enu taunu + munu taunu + taunu taunu) / (all fully-lept): 1.0
+
+Semi-leptonic:
+      (elnu had + munu had) / (all semi-lept): 0.3
+      (taunu had) / (all semi-lept): 0.7
+
+ Fraction of events with fully-leptonic decays and at least one tau in the final state: 0.0909090909091
+
+ Fraction of events with semi-leptonic decays and at least one tau in the final state: 0.636363636364
+
+ Fraction of total events with at least one tau in the final state: 0.727272727273
+
+ Fraction of events with at least one tau among events with leptons: 0.727272727273
+
+----> Region: SR3
+
+Number of events in SR3: 19
+
+Fraction all hadronic (W->qq, t->bW->bqq): 0.0
+Fraction fully-leptonic (W->lnu, t->bW->blnu): 0.0526315789474
+Fraction semi-leptonic (W->lnu, t->bW->bqq OR W->qq, t->bW->blnu): 0.947368421053
+
+Fully-leptonic:
+    (enu enu + enu munu + munu munu) / (all fully-lept): 0.0
+    (enu taunu + munu taunu + taunu taunu) / (all fully-lept): 1.0
+
+Semi-leptonic:
+      (elnu had + munu had) / (all semi-lept): 0.388888888889
+      (taunu had) / (all semi-lept): 0.611111111111
+
+ Fraction of events with fully-leptonic decays and at least one tau in the final state: 0.0526315789474
+
+ Fraction of events with semi-leptonic decays and at least one tau in the final state: 0.578947368421
+
+ Fraction of total events with at least one tau in the final state: 0.631578947368
+
+ Fraction of events with at least one tau among events with leptons: 0.631578947368
