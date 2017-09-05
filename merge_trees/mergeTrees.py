@@ -156,25 +156,24 @@ if __name__ == "__main__":
                                'JET_GroupedNP_3__1up',
                                'JET_GroupedNP_3__1down',
                                'JET_JER_SINGLE_NP__1up',
-                               'JET_EtaIntercalibration_NonClosure__1up'])
-  """
-                               'JET_JMS_GroupedNP_1__1up',
-                               'JET_JMS_GroupedNP_1__1down'])
-                               'EG_RESOLUTION_ALL__1down',
-                               'EG_RESOLUTION_ALL__1up',
-                               'EG_SCALE_ALL__1down',
-                               'EG_SCALE_ALL__1up',
+                               'JET_EtaIntercalibration_NonClosure__1up',
+                               'JET_EtaIntercalibration_NonClosure__1up',
+                               #'JET_RelativeNonClosure_AFII__1up',
+                               #'JET_RelativeNonClosure_AFII__1down',
+                               #'EG_RESOLUTION_ALL__1down',
+                               #'EG_RESOLUTION_ALL__1up',
+                               #'EG_SCALE_ALL__1down',
+                               #'EG_SCALE_ALL__1up',
                                'MET_SoftTrk_ResoPara',
                                'MET_SoftTrk_ResoPerp',
                                'MET_SoftTrk_ScaleDown',
                                'MET_SoftTrk_ScaleUp',
-                               'MUONS_ID__1down',
-                               'MUONS_ID__1up',
-                               'MUONS_MS__1down',
-                               'MUONS_MS__1up',
-                               'MUONS_SCALE__1down',
-                               'MUONS_SCALE__1up"*/
-  """
+                               'MUON_ID__1down',
+                               'MUON_ID__1up',
+                               'MUON_MS__1down',
+                               'MUON_MS__1up',
+                               'MUON_SCALE__1down',
+                               'MUON_SCALE__1up'])
 
   parser.add_argument('--dids', metavar='did', type=str, nargs='+', help='DIDs to use or not use (see --blacklist-dids)', default=[])
   parser.add_argument('--blacklist-dids', action='store_true', help='If enabled, the specified DIDs will be skipped')
