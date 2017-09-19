@@ -33,33 +33,33 @@ backgrounds:
     files:
       - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*ttbar*.hists
 
-  # - name: "single-top"
+  - name: "single-top"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*singletop*.hists
+  # - name: "single-top (Wt incl top)"
   #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*singletop*.hists
-  - name: "single-top (Wt incl top)"
-    files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410013*singletop*.hists
-  - name: "single-top (Wt incl antitop)"
-    files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410014*singletop*.hists
-  - name: "single-top (Wt HT>500GeV top)"
-    files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*407018*singletop*.hists
-  - name: "single-top (Wt HT>500GeV antitop)"
-    files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*407020*singletop*.hists
-  - name: "single-top (tchan lept top)"
-    files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410011*singletop*.hists
-  - name: "single-top (tchan lept antitop)"
-    files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410012*singletop*.hists
-  - name: "single-top (schan noAllHad top)"
-    files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410025*singletop*.hists
-  - name: "single-top (schan noAllHad antitop)"
-    files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410026*singletop*.hists
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410013*singletop*.hists
+  # - name: "single-top (Wt incl antitop)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410014*singletop*.hists
+  # - name: "single-top (Wt HT>500GeV top)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*407018*singletop*.hists
+  # - name: "single-top (Wt HT>500GeV antitop)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*407020*singletop*.hists
+  # - name: "single-top (tchan lept top)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410011*singletop*.hists
+  # - name: "single-top (tchan lept antitop)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410012*singletop*.hists
+  # - name: "single-top (schan noAllHad top)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410025*singletop*.hists
+  # - name: "single-top (schan noAllHad antitop)"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.28-0-1-77-gd12fe93-histograms/hf_cutflow_only_Wh_CR_test_singletop_August22_HT_incl_filter/*410026*singletop*.hists
 
   - name: "$t\\bar{t}+X$"
     files:
