@@ -41,7 +41,7 @@ def get_did(filename):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='grab cutflows from root files')
-    parser.add_argument('file_paths', metavar='<file_paths>', type=str, help='Input file pattern. Example: \'./my_path/*.root\'')
+    parser.add_argument('file_pattern', metavar='<file_pattern>', type=str, help='Input file pattern. Example: \'./my_path/*.root\'')
     parser.add_argument('--cutflow-bin', dest='cutflow_bin', type=int, required=False, help='Cutflow bin to read', default=2)
     parser.add_argument('--weights', metavar='<weights.json>', type=str, help='JSON dictionary of weights', default = 'weights.json')
     parser.add_argument('--threshold', type=float, help='Threshold for number comparison', default = 0.001)
@@ -59,26 +59,37 @@ if __name__ == '__main__':
     try:
         weights = json.load(file(args.weights))
 
-        file_paths = glob.glob(args.file_paths)
+        file_paths = glob.glob(args.file_pattern)
         logger.info('Begin processing files...')
+        did_to_files_dict = {}
         for f in file_paths:
+            if '.data_' in f: continue
             logger.debug('Input file:\n '+f)
             did = get_did(f)
+            # check that the DIDs have weights
             if did in weights:
               logger.debug('DID {} found in {}'.format(did, args.weights))
               logger.debug('Dictionary entry for DID {}: {}'.format(did, weights[did]))
             else:
               logger.warning('DID {} not found in {}'.format(did, args.weights))
               continue
+            # associate DIDs with files
+            if did in did_to_files_dict:
+                did_to_files_dict[did].append(f)
+            else:
+                did_to_files_dict[did] = [f]
 
-            root_file = TFile.Open(f, 'READ')
+        for did, files in did_to_files_dict.iteritems():
             nevt_dict = weights[did]['num events']
-            nevt_actual = root_file.Get('cut_flow').GetBinContent(2)
+            nevt_actual = 0.
+            for f in files:
+                tf = TFile.Open(f, 'READ')
+                if 'TH1' in str(tf.Get('cut_flow')):
+                    nevt_actual += tf.Get('cut_flow').GetBinContent(args.cutflow_bin)
             logger.debug('num events in weights dictionary: {}'.format(nevt_dict))
             logger.debug('actual num events in dataset root file: {}'.format(nevt_actual))
             if (abs(float(nevt_actual)/float(nevt_dict) - 1.000) > args.threshold):
-                logger.debug('--> Mismatch between weights dictionary and actual number of events, updating dictionary for DID: {}'.format(did))
-                logger.info('({}) \'num events\': {} -> {}, ratio: {}'.format(did, nevt_dict, nevt_actual, nevt_actual/nevt_dict))
+                logger.info('Updated \'num events\' for DID {} (before: {}, after: {}, ratio: {})'.format(did, nevt_dict, nevt_actual, nevt_actual/nevt_dict))
                 weights[did]['num events'] = nevt_actual
 
         # write JSON

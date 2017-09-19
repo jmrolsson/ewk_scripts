@@ -429,7 +429,7 @@ plots:
       xlabel: "M_{T}^{4j} [GeV]"
       plot tag: logy
       ratio: true 
-    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/minv_2j:
+    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/m_2j:
       xmin: 0
       xmax: 2500
       ymin: 0.001
@@ -449,7 +449,7 @@ plots:
       xlabel: "M_{T}^{2j} [GeV]"
       plot tag: logy
       ratio: true 
-    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/minv_bb:
+    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/m_bb:
       ymin: 0.1
       ymax: 1000000
       rebin: 4
@@ -465,7 +465,7 @@ plots:
       xlabel: "M_{T}^{bb} [GeV]"
       plot tag: logy
       ratio: true 
-    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mct_bb:
+    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mCT_bb:
       ymin: 0.1
       ymax: 1000000
       rebin: 2
@@ -473,7 +473,7 @@ plots:
       xlabel: "M_{CT}^{bb} [GeV]"
       plot tag: logy
       ratio: true 
-    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/minv_non_bb:
+    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/m_non_bb:
       ymin: 0.1
       ymax: 1000000
       rebin: 4
@@ -489,7 +489,7 @@ plots:
       xlabel: "M_{T}^{non-bb} [GeV]"
       plot tag: logy
       ratio: true 
-    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mct_non_bb:
+    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mCT_non_bb:
       ymin: 0.1
       ymax: 1000000
       rebin: 2
