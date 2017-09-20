@@ -169,105 +169,110 @@ signals:
 # one cutflow will be saved for each path
 cutflows:
   paths:
-    hists/optimization_Wh_SR1_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbMinG100_mCTbbG140/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_SR1_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbMinG100_mCTbbG140.txt"
-      caption: "Cutflow for SR1. Selections: $0L$, $\\njet = 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\Etmiss > 200 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mTbmin > 100\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 105$."
+    # hists/optimization_Wh_SR1_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbMinG100_mCTbbG140/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_SR1_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbMinG100_mCTbbG140.txt"
+    #   caption: "Cutflow for SR1. Selections: $0L$, $\\njet = 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\Etmiss > 200 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mTbmin > 100\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 105$."
 
     # hists/optimization_Wh_CR1_ttbar_diff_mbbG135_mNonbbG90_mCTbbL140/cutflow:
     #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_ttbar_diff_mbbG135_mNonbbG90_mCTbbL140.txt"
-    #   caption: "Cutflow for CR1 -- ''$t\\bar{t}$''. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mnonbb > 90\\gev$, $\\mctbb < 140\\gev$."
-    #
+    #   caption: "Cutflow for CR$_1^{t\\bar{t}}$. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mnonbb > 90\\gev$, $\\mctbb < 140\\gev$."
     # hists/optimization_Wh_CR1_ttbar_diff_mbbG135_mCTbbL140/cutflow:
     #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_ttbar_diff_mbbG135_mCTbbL140.txt"
-    #   caption: "Cutflow for CR1 -- ''$t\\bar{t}$''. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mctbb < 140\\gev$."
+    #   caption: "Cutflow for CR$_1^{t\\bar{t}}$. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mctbb < 140\\gev$."
     # hists/optimization_Wh_CR1_ttbar_diff_mbbG135_mCTbbL120/cutflow:
     #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_ttbar_diff_mbbG135_mCTbbL120.txt"
-    #   caption: "Cutflow for CR1 -- ''$t\\bar{t}$''. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mctbb < 120\\gev$."
+    #   caption: "Cutflow for CR$_1^{t\\bar{t}}$. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mctbb < 120\\gev$."
     # hists/optimization_Wh_CR1_ttbar_diff_mbbG135_mCTbbL100/cutflow:
     #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_ttbar_diff_mbbG135_mCTbbL100.txt"
-    #   caption: "Cutflow for CR1 -- ''$t\\bar{t}$''. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mctbb < 100\\gev$."
+    #   caption: "Cutflow for CR$_1^{t\\bar{t}}$. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mctbb < 100\\gev$."
     # hists/optimization_Wh_CR1_ttbar_diff_mbbG135_mTbminL140_mCTbbL120/cutflow:
     #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_ttbar_diff_mbbG135_mTbminL140_mCTbbL120.txt"
-    #   caption: "Cutflow for CR1 -- ''$t\\bar{t}$''. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mTbmin < 140\\gev$, $\\mctbb < 120\\gev$."
+    #   caption: "Cutflow for CR$_1^{t\\bar{t}}$. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mTbmin < 140\\gev$, $\\mctbb < 120\\gev$."
     # hists/optimization_Wh_CR1_ttbar_diff_mbbG135_mTbminL100_mCTbbL140/cutflow:
     #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_ttbar_diff_mbbG135_mTbminL100_mCTbbL140.txt"
-    #   caption: "Cutflow for CR1 -- ''$t\\bar{t}$''. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mTbmin < 100\\gev$, $\\mctbb < 140\\gev$."
+    #   caption: "Cutflow for CR$_1^{t\\bar{t}}$. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mTbmin < 100\\gev$, $\\mctbb < 140\\gev$."
     # hists/optimization_Wh_CR1_ttbar_diff_mbbG135_mTbminL140_mCTbbL140/cutflow:
     #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_ttbar_diff_mbbG135_mTbminL140_mCTbbL140.txt"
-    #   caption: "Cutflow for CR1 -- ''$t\\bar{t}$''. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mTbmin < 140\\gev$, $\\mctbb < 140\\gev$."
+    #   caption: "Cutflow for CR$_1^{t\\bar{t}}$. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mTbmin < 140\\gev$, $\\mctbb < 140\\gev$."
     # hists/optimization_Wh_CR1_ttbar_diff_mbbG135_mTbminL100_mCTbbL120/cutflow:
     #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_ttbar_diff_mbbG135_mTbminL100_mCTbbL120.txt"
-    #   caption: "Cutflow for CR1 -- ''$t\\bar{t}$''. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mTbmin < 100\\gev$, $\\mctbb < 120\\gev$."
-
+    #   caption: "Cutflow for CR$_1^{t\\bar{t}}$. Differences compared to SR1: $\\mbb > 135\\gev$, $\\mTbmin < 100\\gev$, $\\mctbb < 120\\gev$."
     # hists/optimization_Wh_CR1_ttbar_diff_mNonbbG90_mCTbbL140/cutflow:
     #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_ttbar_diff_mNonbbG90_mCTbbL140.txt"
-    #   caption: "Cutflow for CR1 -- ''$t\\bar{t}$''. Differences compared to SR1: $\\mnonbb > 90\\gev$, $\\mctbb < 140\\gev$."
- 
-    hists/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG500_mTbminG180_mCTbbG200/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG500_mTbminG180_mCTbbG200.txt"
-      caption: "Cutflow for CR1 ''single-top''. Selections: $1L$ (1 signal lepton), $\\njet \\geq 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\Etmiss > 200 \\gev$, $\\mbb > 195\\gev$, $ 75 < \\mnonbb < 90\\gev$, $\\mTbmin > 180\\gev$, $\\mctbb > 200\\gev$."
+    #   caption: "Cutflow for CR$_1^{t\\bar{t}}$. Differences compared to SR1: $\\mnonbb > 90\\gev$, $\\mctbb < 140\\gev$."
 
-    hists/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG900_mTbminG180_mCTbbG200/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG900_mTbminG180_mCTbbG200.txt"
-      caption: "Cutflow for CR1 ''single-top''. Selections: $1L$ (1 signal lepton), $\\njet \\geq 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\Etmiss > 200 \\gev$, $\\mbb > 195\\gev$, $ 75 < \\mnonbb < 90\\gev$, $\\mTbmin > 180\\gev$, $\\mctbb > 200\\gev$."
+    # hists/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG500_mTbminG180_mCTbbG200/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG500_mTbminG180_mCTbbG200.txt"
+    #   caption: "Cutflow for CR$_1^{Wt}$. Selections: $1L$ (1 signal lepton), $\\njet \\geq 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\Etmiss > 200 \\gev$, $\\mbb > 195\\gev$, $ 75 < \\mnonbb < 90\\gev$, $\\mTbmin > 180\\gev$, $\\mctbb > 200\\gev$."
+    # hists/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG900_mTbminG180_mCTbbG200/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG900_mTbminG180_mCTbbG200.txt"
+    #   caption: "Cutflow for CR$_1^{Wt}$. Selections: $1L$ (1 signal lepton), $\\njet \\geq 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\Etmiss > 200 \\gev$, $\\mbb > 195\\gev$, $ 75 < \\mnonbb < 90\\gev$, $\\mTbmin > 180\\gev$, $\\mctbb > 200\\gev$."
+    # hists/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meffG900_mTbminG180_mCTbbG200/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meffG900_mTbminG180_mCTbbG200.txt"
+    #   caption: "Cutflow for CR$_1^{Wt}$. Selections: $1L$ (1 signal lepton), $\\njet \\geq 4$, $\\nbjet = 2$, $\\Etmiss > 200 \\gev$, $\\mbb > 195\\gev$, $ 75 < \\mnonbb < 90\\gev$, $\\mTbmin > 180\\gev$, $\\mctbb > 200\\gev$."
+    # hists/optimization_Wh_CR1_singletop_1L_nJetsEq4_nBJetsEq2_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbminG180_mCTbbG200/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_singletop_1L_nJetsEq4_nBJetsEq2_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbminG180_mCTbbG200.txt"
+    #   caption: "Cutflow for CR$_1^{Wt}$. Selections: $1L$ (1 signal lepton), $\\njet \\geq 4$, $\\nbjet = 2$, $\\Etmiss > 200 \\gev$, $105 < \\mbb/\\gev < 135$, $ 75 < \\mnonbb < 90\\gev$, $\\mTbmin > 180\\gev$, $\\mctbb > 200\\gev$."
+    # hists/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meffG900_mTbminG100_mCTbbG200/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meffG900_mTbminG100_mCTbbG200.txt"
+    #   caption: "Cutflow for CR$_1^{Wt}$. Selections: $1L$ (1 signal lepton), $\\njet \\geq 4$, $\\nbjet = 2$, $\\Etmiss > 200 \\gev$, $\\mbb > 195\\gev$, $ 75 < \\mnonbb < 90\\gev$, $\\mTbmin > 100\\gev$, $\\mctbb > 200\\gev$."
+    # hists/optimization_Wh_CR1_singletop_1L_nJetsEq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meff3j1LG900_mTbminG180_mCTbbG200/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_singletop_1L_nJetsEq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meff3j1LG900_mTbminG180_mCTbbG200.txt"
+    #   caption: "Cutflow for CR$_1^{Wt}$. Selections: $1L$ (1 signal lepton), $\\njet \\geq 4$, $\\nbjet = 2$, $\\Etmiss > 200 \\gev$, $\\mbb > 195\\gev$, $ 75 < \\mnonbb < 90\\gev$, $\\mTbmin > 180\\gev$, $\\mctbb > 200\\gev$."
+    # hists/optimization_Wh_CR1_singletop_1L_nJetsEq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meff4j1LG900_mTbminG180_mCTbbG200/cutflow:
+    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_singletop_1L_nJetsEq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meff4j1LG900_mTbminG180_mCTbbG200.txt"
+    #   caption: "Cutflow for CR$_1^{Wt}$. Selections: $1L$ (1 signal lepton), $\\njet \\geq 4$, $\\nbjet = 2$, $\\Etmiss > 200 \\gev$, $\\mbb > 195\\gev$, $ 75 < \\mnonbb < 90\\gev$, $\\mTbmin > 180\\gev$, $\\mctbb > 200\\gev$."
 
-    hists/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meffG900_mTbminG180_mCTbbG200/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_singletop_1L_nJetsGeq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meffG900_mTbminG180_mCTbbG200.txt"
-      caption: "Cutflow for CR1 ''single-top''. Selections: $1L$ (1 signal lepton), $\\njet \\geq 4$, $\\nbjet = 2$, $\\Etmiss > 200 \\gev$, $\\mbb > 195\\gev$, $ 75 < \\mnonbb < 90\\gev$, $\\mTbmin > 180\\gev$, $\\mctbb > 200\\gev$."
-
-    hists/optimization_Wh_CR1_singletop_1L_nJetsEq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meff3j1LG900_mTbminG180_mCTbbG200/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_singletop_1L_nJetsEq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meff3j1LG900_mTbminG180_mCTbbG200.txt"
-      caption: "Cutflow for CR1 ''single-top''. Selections: $1L$ (1 signal lepton), $\\njet \\geq 4$, $\\nbjet = 2$, $\\Etmiss > 200 \\gev$, $\\mbb > 195\\gev$, $ 75 < \\mnonbb < 90\\gev$, $\\mTbmin > 180\\gev$, $\\mctbb > 200\\gev$."
-
-    hists/optimization_Wh_CR1_singletop_1L_nJetsEq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meff4j1LG900_mTbminG180_mCTbbG200/cutflow:
-      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_singletop_1L_nJetsEq4_nBJetsEq2_mbbG195_mNonbbG75L90_metG200_meff4j1LG900_mTbminG180_mCTbbG200.txt"
-      caption: "Cutflow for CR1 ''single-top''. Selections: $1L$ (1 signal lepton), $\\njet \\geq 4$, $\\nbjet = 2$, $\\Etmiss > 200 \\gev$, $\\mbb > 195\\gev$, $ 75 < \\mnonbb < 90\\gev$, $\\mTbmin > 180\\gev$, $\\mctbb > 200\\gev$."
-
-
-    # hists/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_ZCRmetG200_ZCRmeffG900_ZmassG75L105/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_ZCRmetG200_ZCRmeffG900_ZmassG75L105.txt"
-    #   caption: "Cutflow for CR1 -- ''Z+jets''. Selections: $2L$, $\\njet \\geq 4$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$."
-    #
-    # hists/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mCTbbG140/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mCTbbG140.txt"
-    #   caption: "Cutflow for CR1 -- ''Z+jets''. Selections: $2L$, $\\njet \\geq 4$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$, $\\mctbb > 140\\gev$."
-    #
-    # hists/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mCTbbG160/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mCTbbG160.txt"
-    #   caption: "Cutflow for CR1 -- ''Z+jets''. Selections: $2L$, $\\njet \\geq 4$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$, $\\mctbb > 160\\gev$."
-    #
-    # hists/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsL2_ZCRmetG200_ZCRmeffG900_ZmassG75L105/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsL2_ZCRmetG200_ZCRmeffG900_ZmassG75L105.txt"
-    #   caption: "Cutflow for CR1 -- ''Z+jets''. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet < 2$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$."
-    #
-    # hists/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsL2_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mTbminG160/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsL2_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mTbminG160.txt"
-    #   caption: "Cutflow for CR1 -- ''Z+jets''. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet < 2$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$, $\\mTbmin > 160\\gev$."
-    #
-    # hists/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsL2_ZCRmetG200_ZCRmeffG900_ZmassG80L100_mTbminG160/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsL2_ZCRmetG200_ZCRmeffG900_ZmassG80L100_mTbminG160.txt"
-    #   caption: "Cutflow for CR1 -- ''Z+jets''. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet < 2$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $80 < m_{Z}/\\gev < 100$, $\\mTbmin > 160\\gev$."
-    #
-    # hists/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG75L105/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG75L105.txt"
-    #   caption: "Cutflow for CR1 -- ''Z+jets''. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet = 0$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$."
-    #
-    # hists/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG80L100/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG80L100.txt"
-    #   caption: "Cutflow for CR1 -- ''Z+jets''. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet = 0$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $80 < m_{Z}/\\gev < 100$."
-    #
-    # hists/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG85L95/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG85L95.txt"
-    #   caption: "Cutflow for CR1 -- ''Z+jets''. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet = 0$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $85 < m_{Z}/\\gev < 95$."
-    #
-    # hists/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mNonbbG135/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nLeptEq2_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mNonbbG135.txt"
-    #   caption: "Cutflow for CR1 -- ''Z+jets''. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet = 0$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$, $\\mnonbb>135\\gev$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_ZCRmetG200_ZCRmeffG900_ZmassG75L105/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_ZCRmetG200_ZCRmeffG900_ZmassG75L105.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mCTbbG140/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mCTbbG140.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$, $\\mctbb > 140\\gev$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mCTbbG160/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mCTbbG160.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$, $\\mctbb > 160\\gev$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsL2_ZCRmetG200_ZCRmeffG900_ZmassG75L105/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsL2_ZCRmetG200_ZCRmeffG900_ZmassG75L105.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet < 2$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsL2_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mTbminG160/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsL2_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mTbminG160.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet < 2$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$, $\\mTbmin > 160\\gev$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsL2_ZCRmetG200_ZCRmeffG900_ZmassG80L100_mTbminG160/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsL2_ZCRmetG200_ZCRmeffG900_ZmassG80L100_mTbminG160.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet < 2$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $80 < m_{Z}/\\gev < 100$, $\\mTbmin > 160\\gev$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG75L105/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG75L105.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet = 0$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG700_ZmassG75L105/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG700_ZmassG75L105.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet = 0$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 700\\gev$, $75 < m_{Z}/\\gev < 105$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mNonbbG75L90/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mNonbbG75L90.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet = 0$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$, $75 < \\mnonbb/\\gev < 105$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG80L100/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG80L100.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet = 0$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $80 < m_{Z}/\\gev < 100$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG85L95/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG85L95.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet = 0$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $85 < m_{Z}/\\gev < 95$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mNonbbG135/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq0_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mNonbbG135.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet = 0$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$, $\\mnonbb>135\\gev$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq2_ZCRmetG200_ZCRmeffG900_ZmassG75L105/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq2_ZCRmetG200_ZCRmeffG900_ZmassG75L105.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet = 2$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq2_ZCRmetG200_ZCRmeffG700_ZmassG75L105/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq2_ZCRmetG200_ZCRmeffG700_ZmassG75L105.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet = 2$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 700\\gev$, $75 < m_{Z}/\\gev < 105$."
+    hists/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq2_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mbbG105L135_mNonbbG75L90/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_nJetsGeq4_nBJetsEq2_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mbbG105L135_mNonbbG75L90.txt"
+      caption: "Cutflow for CR$_1^{Z+{\\rm jets}}$. Selections: $2L$, $\\njet \\geq 4$, $\\nbjet = 2$, ${\\Etmiss}^{\\rm CR} > 200 \\gev$, ${\\meffj}^{\\rm CR} > 900\\gev$, $75 < m_{Z}/\\gev < 105$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 105$."
 
     # hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mCTbbG140/cutflow:
     #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mCTbbG140.txt"
     #   caption: "Cutflow for SR2. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\Etmiss > 250 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mTbmin > 160\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 105$."
-
+    #
     # hists/optimization_Wh_CR2_ttbar_diff_mbbG135_mNonbbG90_mCTbbL140/cutflow:
     #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR2_ttbar_diff_mbbG135_mNonbbG90_mCTbbL140.txt"
     #   caption: "Cutflow for CR2 -- ''$t\\bar{t}$''. Differences compared to SR2: $\\mbb > 135\\gev$, $\\mnonbb > 90\\gev$, $\\mctbb < 140\\gev$."

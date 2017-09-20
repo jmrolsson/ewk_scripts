@@ -179,6 +179,7 @@ if __name__ == "__main__":
 
   parser.add_argument('-i', '--input', dest='topLevel', type=str, help='Top level directory containing plots.', default='all')
   parser.add_argument('--file-ext', type=str, nargs='+', default=['root', 'pdf'], help='Output file extensions to make')
+  parser.add_argument('-o', '--output-path', type=str, help='Output file path', default='plots')
 
   # parse the arguments, throw errors if missing any
   args = parser.parse_args()
@@ -471,7 +472,7 @@ if __name__ == "__main__":
         canvas.Update()
 
         # make file_name and directories if needed
-        file_name = "plots/{0:s}".format(h.path)
+        file_name = "{0:s}/{1:s}".format(args.output_path, h.path)
         print("Saving {0:s}... \r".format(file_name), end='\r')
         plot_tag = plots_path.get('plot tag', None)
         if plot_tag is not None:

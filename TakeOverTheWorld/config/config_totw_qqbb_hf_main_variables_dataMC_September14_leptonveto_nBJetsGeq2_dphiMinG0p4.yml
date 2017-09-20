@@ -69,19 +69,14 @@ labeloptions: &labeloptions
 
 groups:
 
-  - name: dijets
+  - name: data
     files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361022*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361023*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361024*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361025*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361026*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361027*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361028*.hists
+       - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*period*.hists
     styles:
-      legendstyle: F
-      fillstyle: solid
-    stack it: true
+      legendstyle: p
+      color: black
+    do not scale me: true
+    stack it: false
 
   - name: "t#bar{t}"
     files:
@@ -131,14 +126,20 @@ groups:
       fillstyle: solid
     stack it: true
 
-  - name: data
+  - name: dijet
     files:
-       - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*period*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361021*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361022*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361023*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361024*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361025*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361026*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361027*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September14_HT_incl_filter/*361028*.hists
     styles:
-      legendstyle: p
-      color: black
-    do not scale me: true
-    stack it: false
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
 
   # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 300, m_{#tilde{#chi^{0}_{1}}} = 0"
   #   files:
@@ -246,7 +247,7 @@ plots:
         y: 0.84
         font: 43
         size: 20
-        label: "0L, #geq4j, #geq2b, E_{T}^{miss}>200 GeV, D#phi>0.4"
+        label: "0L, #geq4j, #geq2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
       -
         x: 0.25
         y: 0.80
@@ -285,43 +286,47 @@ plots:
       ymax: 1000000000
       ndivisions: 10
       ylabel: Events
-      xlabel: "Jet multiplicity"
+      xlabel: "Number of jets"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/bjets_n:
       xmin: 2
-      xmax: 8
+      xmax: 6
       ymin: 1
       ymax: 10000000
       ylabel: Events
-      xlabel: "b-jet multiplicity (77% eff)"
+      # xlabel: "b-jet multiplicity (77% eff)"
+      xlabel: "Number of b-tagged jets"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/bjets_n_60:
       xmin: 2
-      xmax: 8
+      xmax: 6
       ymin: 1
       ymax: 10000000
       ylabel: Events
-      xlabel: "b-jet multiplicity (60% eff)"
+      # xlabel: "b-jet multiplicity (60% eff)"
+      xlabel: "Number of b-tagged jets (60% eff)"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/bjets_n_70:
       xmin: 2
-      xmax: 8
+      xmax: 6
       ymin: 1
       ymax: 10000000
       ylabel: Events
-      xlabel: "b-jet multiplicity (70% eff)"
+      # xlabel: "b-jet multiplicity (70% eff)"
+      xlabel: "Number of b-tagged jets (70% eff)"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/bjets_n_85:
       xmin: 2
-      xmax: 8
+      xmax: 6
       ymin: 1
       ymax: 10000000
       ylabel: Events
-      xlabel: "b-jet multiplicity (85% eff)"
+      # xlabel: "b-jet multiplicity (85% eff)"
+      xlabel: "Number of b-tagged jets (85% eff)"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/pt_jet_1:
@@ -370,7 +375,8 @@ plots:
       ymin: 0.01
       ymax: 100000000000000
       ylabel: Events
-      xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      # xlabel: "min_{i=1-4} #Delta#Phi(jet_{i}, E_{T}^{miss})"
+      xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/dphi_1jet:
@@ -379,7 +385,8 @@ plots:
       ymin: 0.01
       ymax: 100000000000000
       ylabel: Events
-      xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      # xlabel: "#Delta#Phi(jet_{1}, E_{T}^{miss})"
+      xlabel: "#Delta#phi^{1j}"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/dphi_sum4jet:
@@ -388,7 +395,8 @@ plots:
       ymin: 0.01
       ymax: 100000000000000
       ylabel: Events
-      xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      # xlabel: "#Delta#Phi(di-boson, E_{T}^{miss})"
+      xlabel: "#Delta#phi^{#Sigma4j}"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/met:
@@ -401,12 +409,54 @@ plots:
       xlabel: "E_{T}^{miss} [GeV]"
       plot tag: logy
       ratio: true 
+    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/met_sig:
+      xmin: 200
+      xmax: 1000
+      ymin: 0.1
+      ymax: 10000000
+      rebin: 4
+      ylabel: Events
+      xlabel: "E_{T}^{miss} / #sqrt{H_{T}} [GeV]^{1/2}"
+      plot tag: logy
+      ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mTb_min:
       ymin: 0.1
       ymax: 1000000
       rebin: 2
       ylabel: Events
-      xlabel: "M_{T}^{b,min} [GeV]"
+      xlabel: "m_{T}^{b,min} [GeV]"
+      plot tag: logy
+      ratio: true 
+    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mT2_qqbb_minv0:
+      ymin: 0.1
+      ymax: 1000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T2}(m_{#chi^{0}_{1}}=0 GeV) [GeV]"
+      plot tag: logy
+      ratio: true 
+    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mT2_qqbb_minv50:
+      ymin: 0.1
+      ymax: 1000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T2}(m_{#chi^{0}_{1}}=50 GeV) [GeV]"
+      plot tag: logy
+      ratio: true 
+    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mT2_qqbb_minv100:
+      ymin: 0.1
+      ymax: 1000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T2}(m_{#chi^{0}_{1}}=100 GeV) [GeV]"
+      plot tag: logy
+      ratio: true 
+    hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mT2_qqbb_minv150:
+      ymin: 0.1
+      ymax: 1000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T2}(m_{#chi^{0}_{1}}=150 GeV) [GeV]"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/meff_4j:
@@ -416,7 +466,7 @@ plots:
       ymax: 100000000
       rebin: 4
       ylabel: Events
-      xlabel: "M_{eff}^{4j} [GeV]"
+      xlabel: "m_{eff}^{4j} [GeV]"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mT_4j:
@@ -426,7 +476,7 @@ plots:
       ymax: 1000000000
       rebin: 4
       ylabel: Events
-      xlabel: "M_{T}^{4j} [GeV]"
+      xlabel: "m_{T}^{4j} [GeV]"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/m_2j:
@@ -436,7 +486,7 @@ plots:
       ymax: 100000000
       rebin: 4
       ylabel: Events
-      xlabel: "M^{2j} [GeV]"
+      xlabel: "m^{2j} [GeV]"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mT_2j:
@@ -446,7 +496,7 @@ plots:
       ymax: 100000000
       rebin: 4
       ylabel: Events
-      xlabel: "M_{T}^{2j} [GeV]"
+      xlabel: "m_{T}^{2j} [GeV]"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/m_bb:
@@ -454,7 +504,7 @@ plots:
       ymax: 1000000
       rebin: 4
       ylabel: Events
-      xlabel: "M^{bb} [GeV]"
+      xlabel: "m^{bb} [GeV]"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mT_bb:
@@ -462,7 +512,7 @@ plots:
       ymax: 1000000
       rebin: 4
       ylabel: Events
-      xlabel: "M_{T}^{bb} [GeV]"
+      xlabel: "m_{T}^{bb} [GeV]"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mCT_bb:
@@ -470,7 +520,7 @@ plots:
       ymax: 1000000
       rebin: 2
       ylabel: Events
-      xlabel: "M_{CT}^{bb} [GeV]"
+      xlabel: "m_{CT}^{bb} [MeV]"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/m_non_bb:
@@ -478,7 +528,7 @@ plots:
       ymax: 1000000
       rebin: 4
       ylabel: Events
-      xlabel: "M^{non-bb} [GeV]"
+      xlabel: "m^{non-bb} [GeV]"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mT_non_bb:
@@ -486,7 +536,7 @@ plots:
       ymax: 1000000
       rebin: 4
       ylabel: Events
-      xlabel: "M_{T}^{non-bb} [GeV]"
+      xlabel: "m_{T}^{non-bb} [GeV]"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/mCT_non_bb:
@@ -494,6 +544,6 @@ plots:
       ymax: 1000000
       rebin: 2
       ylabel: Events
-      xlabel: "M_{CT}^{non-bb} [GeV]"
+      xlabel: "m_{CT}^{non-bb} [MeV]"
       plot tag: logy 
       ratio: true 

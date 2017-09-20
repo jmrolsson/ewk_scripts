@@ -61,9 +61,9 @@ if __name__ == "__main__":
                 exit(1)
             try:
                 tmp = weights[did]
-                tmp['tag'] = did_metadata[did][1]
-                tmp['generator'] = did_metadata[did][2]
-                tmp['fiducial'] = did_metadata[did][3]
+                tmp['tag'] = did_metadata[did][2]
+                tmp['generator'] = did_metadata[did][3]
+                tmp['fiducial'] = did_metadata[did][4]
             except KeyError:
                 print('ERROR: dataset {} does not have sample weight info, check {}'.format(did, args.weights))
                 exit(1)

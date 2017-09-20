@@ -17,7 +17,7 @@ while read did; do
 
 done <dids_to_process_HT_incl_filter.txt
 
-python YourMacrosAreBadAndYouShouldFeelBad.py --config config/config_qqbb_hf_main_variables_dataMC${date}.json --out_tdirectory hists --treename nominal --eventWeight "weight_mc*weight_btag*weight_elec*weight_muon*weight_jvt" --filters filters/filters_ht.json --newOutputs --copyMBJCutflow -o ${ntuple_path}/${tag}-histograms/hf_main_variables_signal_only/ ${ntuple_path}/${tag}/*C1N2_Wh*.merged
+#python YourMacrosAreBadAndYouShouldFeelBad.py --config config/config_qqbb_hf_main_variables_dataMC${date}.json --out_tdirectory hists --treename nominal --eventWeight "weight_mc*weight_btag*weight_elec*weight_muon*weight_jvt" --filters filters/filters_ht.json --newOutputs --copyMBJCutflow -o ${ntuple_path}/${tag}-histograms/hf_main_variables_signal_only/ ${ntuple_path}/${tag}/*C1N2_Wh*.merged
 
 # python YourMacrosAreBadAndYouShouldFeelBad.py --config config/config_qqbb_hf_main_variables_dataMC${date}.json --out_tdirectory hists --treename nominal --newOutputs --copyMBJCutflow --doData -o ${ntuple_path}/${tag}-histograms/hf_main_variables_dataMC${date}/ ${ntuple_path}/${tag}/*period*data*.merged &
 

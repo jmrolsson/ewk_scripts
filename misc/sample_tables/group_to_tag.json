@@ -1,11 +1,11 @@
 {
-  "dijet": "dijet",
-  "diboson": "diboson",
-  "Z_sherpa_220": "$Z$+jets",
-  "W_sherpa_220": "$W$+jets",
-  "Z_sherpa_221": "$Z$+jets",
-  "W_sherpa_221": "$W$+jets",
-  "ttbar": "$t\\bar{t}$",
-  "topEW": "$t\\bar{t}+X$",
-  "singletop": "single-top"
+  "ttbar": ["$t\\bar{t}$", 0],
+  "singletop": ["single-top", 1],
+  "Z_sherpa_220": ["$Z$+jets", 2],
+  "Z_sherpa_221": ["$Z$+jets", 2],
+  "W_sherpa_220": ["$W$+jets", 3],
+  "W_sherpa_221": ["$W$+jets", 3],
+  "topEW": ["$t\\bar{t}+X$", 4],
+  "diboson": ["diboson", 5],
+  "dijet": ["dijet", 6]
 }
