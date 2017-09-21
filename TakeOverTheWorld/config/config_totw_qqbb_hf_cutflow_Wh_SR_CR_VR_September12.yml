@@ -272,28 +272,7 @@ cutflows:
     # hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mCTbbG140/cutflow:
     #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbMinG160_mCTbbG140.txt"
     #   caption: "Cutflow for SR2. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\Etmiss > 250 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mTbmin > 160\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 105$."
-    #
-    # hists/optimization_Wh_CR2_ttbar_diff_mbbG135_mNonbbG90_mCTbbL140/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR2_ttbar_diff_mbbG135_mNonbbG90_mCTbbL140.txt"
-    #   caption: "Cutflow for CR2 -- ''$t\\bar{t}$''. Differences compared to SR2: $\\mbb > 135\\gev$, $\\mnonbb > 90\\gev$, $\\mctbb < 140\\gev$."
-    #
-    # hists/optimization_Wh_CR2_ttbar_diff_mbbG135_mCTbbL140/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR2_ttbar_diff_mbbG135_mCTbbL140.txt"
-    #   caption: "Cutflow for CR2 -- ''$t\\bar{t}$''. Differences compared to SR2: $\\mbb > 135\\gev$, $\\mctbb < 140\\gev$."
-    # hists/optimization_Wh_CR2_ttbar_diff_mbbG135_mCTbbL120/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR2_ttbar_diff_mbbG135_mCTbbL120.txt"
-    #   caption: "Cutflow for CR2 -- ''$t\\bar{t}$''. Differences compared to SR2: $\\mbb > 135\\gev$, $\\mctbb < 120\\gev$."
-    # hists/optimization_Wh_CR2_ttbar_diff_mbbG135_mTbminL160_mCTbbL140/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR2_ttbar_diff_mbbG135_mTbminL160_mCTbbL140.txt"
-    #   caption: "Cutflow for CR2 -- ''$t\\bar{t}$''. Differences compared to SR2: $\\mbb > 135\\gev$, $\\mTbmin < 160\\gev$, $\\mctbb < 140\\gev$."
-    # hists/optimization_Wh_CR2_ttbar_diff_mbbG135_mTbminL140_mCTbbL120/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR2_ttbar_diff_mbbG135_mTbminL140_mCTbbL120.txt"
-    #   caption: "Cutflow for CR2 -- ''$t\\bar{t}$''. Differences compared to SR2: $\\mbb > 135\\gev$, $\\mTbmin < 140\\gev$, $\\mctbb < 120\\gev$."
-    #
-    # hists/optimization_Wh_CR2_ttbar_diff_mNonbbG90_mCTbbL140/cutflow:
-    #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_CR2_ttbar_diff_mNonbbG90_mCTbbL140.txt"
-    #   caption: "Cutflow for CR2 -- ''$t\\bar{t}$''. Differences compared to SR2: $\\mnonbb > 90\\gev$, $\\mctbb < 140\\gev$."
-
+ 
     # hists/optimization_Wh_SR3_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG700_mTbMinG180_mCTbbG190/cutflow:
     #   outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_September12_HT_incl_filter/optimization_Wh_SR3_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG700_mTbMinG180_mCTbbG190.txt"
     #   caption: "Cutflow for SR3 -- ''low-$\\meffj$''. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\Etmiss > 200 \\gev$, $\\meffj > 700\\gev$, $\\mctbb > 190\\gev$, $\\mTbmin > 180\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 105$."

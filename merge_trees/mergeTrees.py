@@ -188,6 +188,7 @@ if __name__ == "__main__":
   parser.add_argument('--groups-sig', metavar='group', type=str, nargs='+', help='Groups of signal to collect but not merge', default=['Gtt', 'Gbb'])
 
   parser.add_argument('--output-suffix', metavar='tag#####', type=str, default='', help='Add a suffix to output files, perhaps to specify a nominal only: --output-suffix _nominal')
+  parser.add_argument('--output-path', metavar='./my/path/', type=str, default='./', help='Specify path where output files will be saved.')
 
   parser.add_argument('--do-data', action='store_true', help='Process and merge data files. Otherwise, skip this process.')
 
@@ -289,7 +290,7 @@ if __name__ == "__main__":
       logger.debug('\t{0:s}'.format(f))
       tc.Add(f)
     logger.info('Creating output file {0:s}{1:s}.root'.format('Data', args.output_suffix))
-    output_file = ROOT.TFile('Data{0:s}.root'.format(args.output_suffix), 'UPDATE')
+    output_file = ROOT.TFile(os.path.join(args.output_path, 'Data{0:s}.root'.format(args.output_suffix)), 'UPDATE')
     output_file.cd()
     #tree = tc.CopyTree('')
     tree = tc.CloneTree(-1, "fast")
@@ -436,7 +437,7 @@ if __name__ == "__main__":
         logger.debug('\t\t{0:s}'.format(f))
         tc.Add(f)
       # open the file
-      output_file = ROOT.TFile(output_filename, 'UPDATE')
+      output_file = ROOT.TFile(os.path.join(args.output_path, output_filename), 'UPDATE')
       output_file.cd()
       logger.debug('\tCloning TChain now')
       tree = tc.CloneTree(-1, "fast")
@@ -456,7 +457,7 @@ if __name__ == "__main__":
       output_file.Close()
       logger.info('\tTree {0:s} was written to file'.format("_".join([out_group, out_treename])))
 
-      output_file = ROOT.TFile(output_filename, 'UPDATE')
+      output_file = ROOT.TFile(os.path.join(args.output_path, output_filename), 'UPDATE')
       output_file.cd()
       tree = output_file.Get("_".join([out_group, out_treename]))
       # check if we need to do some splitting

@@ -520,7 +520,7 @@ plots:
       ymax: 1000000
       rebin: 2
       ylabel: Events
-      xlabel: "m_{CT}^{bb} [MeV]"
+      xlabel: "m_{CT}^{bb} [GeV]"
       plot tag: logy
       ratio: true 
     hists/leptonveto_nBJetsGeq2_dphiMinG0p4/m_non_bb:
@@ -544,6 +544,6 @@ plots:
       ymax: 1000000
       rebin: 2
       ylabel: Events
-      xlabel: "m_{CT}^{non-bb} [MeV]"
+      xlabel: "m_{CT}^{non-bb} [GeV]"
       plot tag: logy 
       ratio: true 

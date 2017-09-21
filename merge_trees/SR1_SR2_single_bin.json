@@ -1,9 +1,0 @@
-{
-
-"SR1":"baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n == 4 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 200 && meff_4j > 900 && mTb_min > 100 && mct_bb > 140",
-
-"SR2":"baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 250 && meff_4j > 900 && mTb_min > 160 && mct_bb > 140",
-
-"SR3":"baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && dphi_sum4jet > 2.6 && minv_bb > 105 && minv_bb < 135 && minv_non_bb > 75 && minv_non_bb < 90 && met > 200 && meff_4j > 700 && mTb_min > 180 && mct_bb > 190"
-
-}
