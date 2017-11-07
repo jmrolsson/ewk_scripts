@@ -65,7 +65,7 @@ if __name__ == '__main__':
   c = plotting.init_canvas(args.x_dim, args.y_dim)
   labels = ['sig','signal','bkgd', 'ratio']
   #zlabels = ['Significance in optimal cut','Exp. num. signal in optimal cut','Exp. num. bkgd in optimal cut', 'Signal/Background']
-  zlabels = ['Significance in {}'.format(args.region),'Exp. num. signal in {}'.format(args.region),'Exp. num. bkgd in {}'.format(args.region), 'Signal/Background']
+  zlabels = ['Z_{{n}} in {}'.format(args.region),'Exp. num. signal in {}'.format(args.region),'Exp. num. bkgd in {}'.format(args.region), 'Signal/Background']
   nSigs = [2, 3, 3, 2]
   for label,zlabel,nSig in zip(labels,zlabels,nSigs):
     h = plotting.init_hist(zlabel, args.g_min, args.g_max, args.l_min, args.l_max, args.x_bin_size, args.y_bin_size, "grid", args.x_label, args.y_label)

@@ -507,9 +507,6 @@ if __name__ == "__main__":
           else:
             cuts_sigs[h.GetTitle()] = {cut_label : [cut_order, cut_sig] }
 
-      # print(cuts_sigs)
-      # exit()
-
       if args.detailed_cutflow:
         for s in cuts_sigs:
           outfile = signals[s]['outfile']

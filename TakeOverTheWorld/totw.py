@@ -466,6 +466,14 @@ if __name__ == "__main__":
           hstack.xaxis.set_title_size(0)
           hstack.xaxis.set_title_color(0)
 
+          if len(soloHists) >0:
+            tl = ROOT.TLine(0.2, 0.23, 0.9, 0.23)
+            tl.SetLineColor(ROOT.kRed)
+            tl.SetLineWidth(1)
+            tl.SetLineStyle(1)
+            tl.SetNDC(True)
+            tl.Draw()
+
         # draw and update all
         legend.Draw()
         canvas.Modified()
