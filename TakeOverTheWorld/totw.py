@@ -178,6 +178,7 @@ if __name__ == "__main__":
   parser.add_argument('--lumi', required=False, type=int, dest='global_luminosity', metavar='<ifb>', help='luminosity to use for scaling')
 
   parser.add_argument('-i', '--input', dest='topLevel', type=str, help='Top level directory containing plots.', default='all')
+  parser.add_argument('--top-dir', action='store_true', help='If plots are in the top directory')
   parser.add_argument('--file-ext', type=str, nargs='+', default=['root', 'pdf'], help='Output file extensions to make')
   parser.add_argument('-o', '--output-path', type=str, help='Output file path', default='plots')
 
@@ -212,6 +213,8 @@ if __name__ == "__main__":
       plots_paths = plots.get('paths')
 
       hall = ph.HChain(args.topLevel)
+      if args.top_dir:
+        hall = ph.HChain(None)
       for group in configs['groups']:
         hc = ph.HGroup(group['name'])
         logger.log(25, "Group: {0:s}".format(group['name']))
