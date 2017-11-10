@@ -28,6 +28,8 @@ backgrounds:
   - name: "diboson"
     files:
       - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*diboson*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.33-5-0-52-g169a7c2-mCTbb-MEV-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*342284*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.33-5-0-52-g169a7c2-mCTbb-MEV-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*342285*.hists
 
   - name: "$t\\bar{t}$"
     files:
@@ -219,11 +221,11 @@ cutflows:
     hists/optimization_Wh_VR2_ttbar_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG250_meffG900_mTbminG140_mCTbbL140/cutflow:
       outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/optimization_Wh_VR2_ttbar_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG250_meffG900_mTbminG160_mCTbbL140.txt"
       caption: "Cutflow for \\vrttbartwo. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 250 \\gev$, $\\meffj > 900\\gev$, $\\mctbb < 140\\gev$, $\\mtbmin > 160\\gev$, $\\mbb\\gev > 135$, $75 < \\mnonbb/\\gev < 90$."
- 
+
     hists/optimization_Wh_CR2_singletop_1L_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG250_meffG700_mTbminG180_mCTbbG190/cutflow:
       outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/optimization_Wh_CR2_singletop_1L_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG250_meffG700_mTbminG180_mCTbbG190.txt"
       caption: "Cutflow for \\crtoptwo. Selections: $1L$ (1 signal lepton), $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 250 \\gev$, $\\meffj > 700\\gev$, $\\mbb > 195\\gev$, $75 < \\mnonbb/\\gev < 90$, $\\mtbmin > 180\\gev$, $\\mctbb > 200\\gev$."
- 
+
     hists/optimization_Wh_CR2_Zjets_2L_lep1PtG140_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_ZCRmetG250_ZCRmeffG900_ZmassG75L105_mbbG200/cutflow:
       outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/optimization_Wh_CR2_Zjets_2L_lep1PtG140_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_ZCRmetG250_ZCRmeffG900_ZmassG75L105_mbbG200.txt"
       caption: "Cutflow for \\crzjettwo. Selections: $2L$, $\\pt(l_1, l_2) = (>140, >20) \\gev$, $ 4\\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\zcrmet > 250 \\gev$, $\\zcrmeff > 900\\gev$, $75 < \\zmass/\\gev < 105$, $\\mbb > 200\\gev$."

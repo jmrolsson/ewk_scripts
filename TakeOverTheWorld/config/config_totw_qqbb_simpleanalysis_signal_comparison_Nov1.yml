@@ -70,7 +70,7 @@ labeloptions: &labeloptions
 groups:
 
 
-  - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 500, m_{#tilde{#chi^{0}_{1}}} = 0 (private JOs, jet-filter)"
+  - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 500, m_{#tilde{#chi^{0}_{1}}} = 0 (private JOs, old)"
     files:
       - /Users/joakim/ewk/truth_studies/simpleanalysis/Wh_500p0_0p0_100014_private.root
     styles:
@@ -88,14 +88,24 @@ groups:
       linewidth: 2
     stack it: false
 
-  - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 500, m_{#tilde{#chi^{0}_{1}}} = 0 (official JOs, jet-filter)"
+  - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 500, m_{#tilde{#chi^{0}_{1}}} = 0 (private JOs, 100% hbb)"
     files:
-      - /Users/joakim/ewk/truth_studies/simpleanalysis/Wh_500p0_0p0_10394338_official_test.root
+      - /Users/joakim/ewk/truth_studies/simpleanalysis/Wh_500p0_0p0_100014_hbb100_private.root
     styles:
       legendstyle: L
       drawstyle: E
       linewidth: 2
+      linestyle: 5
     stack it: false
+
+  # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 500, m_{#tilde{#chi^{0}_{1}}} = 0 (official JOs, jet-filter)"
+  #   files:
+  #     - /Users/joakim/ewk/truth_studies/simpleanalysis/Wh_500p0_0p0_10394338_official_test.root
+  #   styles:
+  #     legendstyle: L
+  #     drawstyle: E
+  #     linewidth: 2
+  #   stack it: false
 
   
 # plots:
@@ -151,18 +161,26 @@ plots:
     EwkWhAllHad2016__n_bjets:
       xmin: 0
       xmax: 6
-      # ymin: 1
-      # ymax: 1000000
-      ymin: 0
-      ymax: 1
-      #ylabel: Events
-      ylabel: Normalized to unity
+      ymin: 1
+      ymax: 1000000
+      ylabel: Events
+      # ylabel: Normalized to unity
       xlabel: "Number of b-tagged jets"
-      # plot tag: logy
+      plot tag: logy
       canvas:
         ndivisions: 5
-        logy: false
-      normalize: unity
+        # logy: false
+      # normalize: unity
+    # EwkWhAllHad2016__n_bjets:
+    #   xmin: 0
+    #   xmax: 6
+    #   ymin: 0
+    #   ymax: 400
+    #   ylabel: Events
+    #   xlabel: "Number of b-tagged jets"
+    #   canvas:
+    #     ndivisions: 5
+    #     logy: false
     # EwkWhAllHad2016__n_leptons:
     #   xmin: 0
     #   xmax: 6

@@ -326,7 +326,7 @@ if __name__ == "__main__":
 
   parser.add_argument('--config', required=True, type=str, dest='config_file', metavar='<file.yml>', help='YAML file specifying input files and asssociated names')
   parser.add_argument('--weights', required=True, type=str, dest='weights_file', metavar='<file.json>', help='json file specifying the weights by dataset id')
-  parser.add_argument('--lumi', required=False, type=int, dest='global_luminosity', metavar='<ifb>', help='luminosity to use for scaling')
+  parser.add_argument('--lumi', required=False, type=float, dest='global_luminosity', metavar='<ifb>', help='luminosity to use for scaling')
   parser.add_argument("--do", help="Do systemtic variations [0/1]", type=int, default=0)
   parser.add_argument('-l', '--latex', dest='do_latex', action='store_true', help='Save latex tables.', default=False)
   parser.add_argument('--json', dest='do_json', action='store_true', help='Save JSON tables.', default=False)
