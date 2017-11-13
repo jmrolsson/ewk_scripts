@@ -15,6 +15,11 @@ ntuple_path=/share/t3data2/jolsson/EWK/ewk_mbj_ntuples/histfitter
 dids_to_process=dids_to_process_HT_incl_filter_mCTbbMEV.txt
 suffix=root
 
+#tag="EWKqqbb.2.4.37-0_sherpa_220_221"
+#ntuple_path=/share/t3data2/jolsson/EWK/ewk_mbj_ntuples/histfitter
+#dids_to_process=dids_to_process_HT_incl_filter_sherpa_220_221.txt
+#suffix=merged
+
 cuts_tag=hf_cutflow_everycut_Wh_SR_CR_VR_October31
 
 event_weight="weight_mc*weight_btag*weight_elec*weight_muon*weight_jvt*weight_WZ_2_2"
