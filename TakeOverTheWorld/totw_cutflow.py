@@ -221,6 +221,7 @@ def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', d
         print(r"\begin{center}\renewcommand\arraystretch{1.6}", file=f)
         print(r"\sisetup{round-mode=figures, round-precision=2,", file=f)
         print(r"retain-explicit-plus=true, group-digits = true}", file=f)
+        print(r"\scalebox{0.68}{", file=f)
         print(r"\begin{tabular}{l | c | c | c | c | c }", file=f)
 
       print(toprule, file=f)
@@ -303,6 +304,7 @@ def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile='cutflow.txt', d
       print(bottomrule, file=f)
       if do_latex:
         print(r"\end{tabular}", file=f)
+        print(r"}", file=f)
         print("\caption{{{}}}".format(title), file=f)
         print(r"\end{center}", file=f)
         print(r"\end{table}", file=f)

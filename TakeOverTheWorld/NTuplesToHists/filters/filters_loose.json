@@ -1,0 +1,3 @@
+{
+  "*": "jets_n >= 4 && (met > 200 || ZCR_met > 200 || LCR_met > 200) && (meff_4j > 700 || meff_4j1L > 700 || meff_3j1L > 700)"
+}

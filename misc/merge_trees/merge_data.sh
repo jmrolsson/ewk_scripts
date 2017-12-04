@@ -1,4 +1,4 @@
-tag="2.4.37-0-5-g6d1fba4"
+tag="EWKqqbb.2.4.37-0"
 ntuple_path=/data/pool1/jolsson/EWK/ewk_mbj_ntuples/
 output_path=/share/t3data2/jolsson/EWK/ewk_mbj_ntuples/histfitter/${tag}/
 

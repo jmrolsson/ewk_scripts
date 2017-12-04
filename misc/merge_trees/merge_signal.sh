@@ -2,9 +2,13 @@
 #ntuple_path=/data/pool1/jolsson/EWK/ewk_mbj_ntuples/
 #output_path=/share/t3data2/jolsson/EWK/ewk_mbj_ntuples/histfitter/${tag}/
 
-tag="2.4.33-5-0-52-g169a7c2-mCTbb-MEV"
-ntuple_path=/share/t3data2/jolsson/EWK/ewk_mbj_ntuples/histfitter/${tag}/
-output_path=${ntuple_path}
+#tag="2.4.33-5-0-52-g169a7c2-mCTbb-MEV"
+#ntuple_path=/share/t3data2/jolsson/EWK/ewk_mbj_ntuples/histfitter/${tag}/
+#output_path=${ntuple_path}
+
+tag="EWKqqbb.2.4.37-0"
+ntuple_path=/data/pool1/jolsson/EWK/ewk_mbj_ntuples/
+output_path=/share/t3data2/jolsson/EWK/ewk_mbj_ntuples/histfitter/${tag}/
 
 FAIL=0
 

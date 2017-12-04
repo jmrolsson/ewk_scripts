@@ -16,14 +16,7 @@ backgrounds:
 
   - name: "dijet"
     files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*361021*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*361022*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*361023*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*361024*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*361025*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*361026*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*361027*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*361028*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*dijet*.hists
 
   - name: "diboson"
     files:
@@ -31,9 +24,21 @@ backgrounds:
       - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.33-5-0-52-g169a7c2-mCTbb-MEV-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*342284*.hists
       - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.33-5-0-52-g169a7c2-mCTbb-MEV-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*342285*.hists
 
-  - name: "$t\\bar{t}$"
+  # - name: "$t\\bar{t}$"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*ttbar*.hists
+  - name: "$t\\bar{t} (410000)$"
     files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*ttbar*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*410000*.hists
+  - name: "$t\\bar{t} (407009)$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*407009*.hists
+  - name: "$t\\bar{t} (407010)$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*407010*.hists
+  - name: "$t\\bar{t} (407011)$"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_Wh_SR_CR_VR_October18_HT_incl_filter/*407011*.hists
 
   - name: "single-top"
     files:

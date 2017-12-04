@@ -1,4 +1,140 @@
 {
+  "341270": {
+    "cross section": 0.5084999799728394,
+    "errors": [],
+    "filter efficiency": 0.43928998708724976,
+    "k-factor": 1.0,
+    "num events": 34310.0,
+    "rel uncert": 1.0
+  },
+  "341271": {
+    "cross section": 0.5084999799728394,
+    "errors": [],
+    "filter efficiency": 0.45517000555992126,
+    "k-factor": 1.0,
+    "num events": 506676.0,
+    "rel uncert": 1.0
+  },
+  "361021": {
+    "cross section": 78420000768.0,
+    "errors": [],
+    "filter efficiency": 0.0006719799712300301,
+    "k-factor": 1.0,
+    "num events": 72317046.02941847,
+    "rel uncert": 1.0
+  },
+  "361022": {
+    "cross section": 2433200128.0,
+    "errors": [],
+    "filter efficiency": 0.0003326399892102927,
+    "k-factor": 1.0,
+    "num events": 59320275.52221131,
+    "rel uncert": 1.0
+  },
+  "361023": {
+    "cross section": 26454000.0,
+    "errors": [],
+    "filter efficiency": 0.00031952999415807426,
+    "k-factor": 1.0,
+    "num events": 289155668.6487154,
+    "rel uncert": 1.0
+  },
+  "361024": {
+    "cross section": 254630.0,
+    "errors": [],
+    "filter efficiency": 0.0005300900083966553,
+    "k-factor": 1.0,
+    "num events": 201660714.25677633,
+    "rel uncert": 1.0
+  },
+  "361025": {
+    "cross section": 4553.5,
+    "errors": [],
+    "filter efficiency": 0.0009232499869540334,
+    "k-factor": 1.0,
+    "num events": 126274751.77141428,
+    "rel uncert": 1.0
+  },
+  "361026": {
+    "cross section": 257.5299987792969,
+    "errors": [],
+    "filter efficiency": 0.0009401600109413266,
+    "k-factor": 1.0,
+    "num events": 19138945.615507007,
+    "rel uncert": 1.0
+  },
+  "361027": {
+    "cross section": 16.21500015258789,
+    "errors": [],
+    "filter efficiency": 0.0003928199876099825,
+    "k-factor": 1.0,
+    "num events": 50187994.408672094,
+    "rel uncert": 1.0
+  },
+  "361028": {
+    "cross section": 0.6250200271606445,
+    "errors": [],
+    "filter efficiency": 0.010161999613046646,
+    "k-factor": 1.0,
+    "num events": 1743200.0,
+    "rel uncert": 1.0
+  },
+  "361091": {
+    "cross section": 24.885000228881836,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 0.9100000262260437,
+    "num events": 477048.8134109229,
+    "rel uncert": 1.0
+  },
+  "361092": {
+    "cross section": 24.85700035095215,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 0.9100000262260437,
+    "num events": 477549.86094613373,
+    "rel uncert": 1.0
+  },
+  "361093": {
+    "cross section": 11.494000434875488,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 0.9100000262260437,
+    "num events": 495934.47696608305,
+    "rel uncert": 1.0
+  },
+  "361094": {
+    "cross section": 3.4233999252319336,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 0.9100000262260437,
+    "num events": 37127.728532485664,
+    "rel uncert": 1.0
+  },
+  "361095": {
+    "cross section": 6.7769999504089355,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 0.9100000262260437,
+    "num events": 743153.4582180083,
+    "rel uncert": 1.0
+  },
+  "361096": {
+    "cross section": 16.44499969482422,
+    "errors": [],
+    "filter efficiency": 0.14306999742984772,
+    "k-factor": 0.9100000262260437,
+    "num events": 323506.1387570943,
+    "rel uncert": 1.0
+  },
+  "361097": {
+    "cross section": 16.43199920654297,
+    "errors": [],
+    "filter efficiency": 0.28207001090049744,
+    "k-factor": 0.9100000262260437,
+    "num events": 2985373.8966482924,
+    "rel uncert": 1.0
+  },
   "363102": {
     "cross section": 71.68699645996094,
     "errors": [],
@@ -1341,6 +1477,230 @@
     "filter efficiency": 0.131400004029274,
     "k-factor": 0.9702000021934509,
     "num events": 5680.835121870041,
+    "rel uncert": 1.0
+  },
+  "407009": {
+    "cross section": 696.219970703125,
+    "errors": [],
+    "filter efficiency": 0.02292099967598915,
+    "k-factor": 1.1949000358581543,
+    "num events": 6.794234174299504,
+    "rel uncert": 1.0
+  },
+  "407010": {
+    "cross section": 696.219970703125,
+    "errors": [],
+    "filter efficiency": 0.003204334992915392,
+    "k-factor": 1.1949000358581543,
+    "num events": 3.9809588803665292,
+    "rel uncert": 1.0
+  },
+  "407011": {
+    "cross section": 696.22998046875,
+    "errors": [],
+    "filter efficiency": 0.0005652339896187186,
+    "k-factor": 1.1949000358581543,
+    "num events": 1.350392573526392,
+    "rel uncert": 1.0
+  },
+  "407012": {
+    "cross section": 696.219970703125,
+    "errors": [],
+    "filter efficiency": 0.009219475090503693,
+    "k-factor": 1.1949000358581543,
+    "num events": 0.06803448540222234,
+    "rel uncert": 1.0
+  },
+  "407018": {
+    "cross section": 34.00899887084961,
+    "errors": [],
+    "filter efficiency": 0.08846119791269302,
+    "k-factor": 1.0540000200271606,
+    "num events": 0.08365388827792941,
+    "rel uncert": 1.0
+  },
+  "407019": {
+    "cross section": 34.00899887084961,
+    "errors": [],
+    "filter efficiency": 0.011282499879598618,
+    "k-factor": 1.0540000200271606,
+    "num events": 0.016440519673068366,
+    "rel uncert": 1.0
+  },
+  "407020": {
+    "cross section": 33.98899841308594,
+    "errors": [],
+    "filter efficiency": 0.08841519802808762,
+    "k-factor": 1.0540000200271606,
+    "num events": 0.07507772444157013,
+    "rel uncert": 1.0
+  },
+  "407021": {
+    "cross section": 33.98899841308594,
+    "errors": [],
+    "filter efficiency": 0.011259100399911404,
+    "k-factor": 1.0540000200271606,
+    "num events": 0.011112704640737547,
+    "rel uncert": 1.0
+  },
+  "410000": {
+    "cross section": 696.1099853515625,
+    "errors": [],
+    "filter efficiency": 0.5429999828338623,
+    "k-factor": 1.1949000358581543,
+    "num events": 8866200.0,
+    "rel uncert": 1.0
+  },
+  "410011": {
+    "cross section": 43.73899841308594,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.0094000101089478,
+    "num events": 0.2181651488077918,
+    "rel uncert": 1.0
+  },
+  "410012": {
+    "cross section": 25.777999877929688,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.0192999839782715,
+    "num events": 0.12869469328287408,
+    "rel uncert": 1.0
+  },
+  "410013": {
+    "cross section": 34.00899887084961,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.0540000200271606,
+    "num events": 4046400.0,
+    "rel uncert": 1.0
+  },
+  "410014": {
+    "cross section": 33.98899841308594,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.0540000200271606,
+    "num events": 4985600.0,
+    "rel uncert": 1.0
+  },
+  "410025": {
+    "cross section": 2.0517001152038574,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.0046000480651855,
+    "num events": 0.002048567510679611,
+    "rel uncert": 1.0
+  },
+  "410026": {
+    "cross section": 1.2615000009536743,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.0214999914169312,
+    "num events": 0.0012565198617278117,
+    "rel uncert": 1.0
+  },
+  "410066": {
+    "cross section": 0.17655999958515167,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.3200000524520874,
+    "num events": 1986400.0,
+    "rel uncert": 1.0
+  },
+  "410067": {
+    "cross section": 0.14061999320983887,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.3200000524520874,
+    "num events": 2355815.1317760646,
+    "rel uncert": 1.0
+  },
+  "410068": {
+    "cross section": 0.13680000603199005,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.3200000524520874,
+    "num events": 1282597.0725458562,
+    "rel uncert": 1.0
+  },
+  "410073": {
+    "cross section": 0.1732099950313568,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.4700000286102295,
+    "num events": 1659000.0,
+    "rel uncert": 1.0
+  },
+  "410074": {
+    "cross section": 0.16532999277114868,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.4700000286102295,
+    "num events": 2385552.9338029325,
+    "rel uncert": 1.0
+  },
+  "410075": {
+    "cross section": 0.17427000403404236,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.4700000286102295,
+    "num events": 1377693.0950496495,
+    "rel uncert": 1.0
+  },
+  "410080": {
+    "cross section": 0.009162199683487415,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.0041999816894531,
+    "num events": 198800.0,
+    "rel uncert": 1.0
+  },
+  "410111": {
+    "cross section": 0.00962349958717823,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.5099999904632568,
+    "num events": 289000.0,
+    "rel uncert": 1.0
+  },
+  "410112": {
+    "cross section": 0.017343999817967415,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.5099999904632568,
+    "num events": 336056.99136710167,
+    "rel uncert": 1.0
+  },
+  "410113": {
+    "cross section": 0.009646199643611908,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.5099999904632568,
+    "num events": 295000.0,
+    "rel uncert": 1.0
+  },
+  "410114": {
+    "cross section": 0.017361000180244446,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.5099999904632568,
+    "num events": 339402.94191661477,
+    "rel uncert": 1.0
+  },
+  "410115": {
+    "cross section": 0.009887400083243847,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.5099999904632568,
+    "num events": 295000.0,
+    "rel uncert": 1.0
+  },
+  "410116": {
+    "cross section": 0.01779000088572502,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.5099999904632568,
+    "num events": 338152.417270869,
     "rel uncert": 1.0
   },
 }

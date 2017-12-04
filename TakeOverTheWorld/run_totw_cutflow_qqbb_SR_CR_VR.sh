@@ -5,5 +5,5 @@
 #python totw_cutflow.py -b --config config/config_totw_qqbb_hf_cutflow_Wh_SR_CR_VR_September12.yml --weights weights_qqbb.json -i hists --lumi 36.1 --debug --latex --json
 #python totw_cutflow.py -b --config config/config_totw_qqbb_hf_cutflow_Wh_SR_CR_VR_September15.yml --weights weights_qqbb.json -i hists --lumi 36.1 --debug --latex --json
 #python totw_cutflow.py -b --config config/config_totw_qqbb_hf_cutflow_Wh_SR_CR_VR_September30.yml --weights weights_qqbb.json -i hists --lumi 36.1 --debug --latex --json
-#python totw_cutflow.py -b --config config/config_totw_qqbb_hf_cutflow_Wh_SR_CR_VR_October18.yml --weights weights_qqbb.json -i hists --lumi 36.1 --debug --latex --json
-python totw_cutflow.py -b --config config/config_totw_qqbb_hf_cutflow_Wh_SR_CR_VR_October18_official_signal.yml --weights weights_qqbb.json -i hists --lumi 36.1 --debug --latex --json
+#python totw_cutflow.py -b --config config/config_totw_qqbb_hf_cutflow_Wh_SR_CR_VR_October18_official_signal.yml --weights weights_qqbb_backup_old_November16.json -i hists --lumi 36.1 --debug --latex --json
+python totw_cutflow.py -b --config config/config_totw_qqbb_hf_cutflow_Wh_SR_CR_VR_November16.yml --weights weights_qqbb.json -i hists --lumi 36.1 --debug --latex --json

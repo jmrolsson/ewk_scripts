@@ -1,10 +1,11 @@
 {
-  "410000": "gen_filt_met < 200",
-  "407012": "gen_filt_met > 200",
-  "410013": "gen_filt_met<200",
-  "410014": "gen_filt_met<200",
-  "ttbar": [
-    ["bb","ttbar_class>0"],
-    ["cc","ttbar_class<0"],
-    ["light","ttbar_class==0"]]
+  "*": "jets_n >= 4 && (met > 200 || ZCR_met > 200 || LCR_met > 200) && (meff_4j > 700 || meff_4j1L > 700 || meff_3j1L > 700)",
+  "410000": "gen_filt_met < 200 && jets_n >= 4 && (met > 200 || ZCR_met > 200 || LCR_met > 200) && (meff_4j > 700 || meff_4j1L > 700 || meff_3j1L > 700)",
+  "407012": "gen_filt_met > 200 && gen_filt_met < 300 && jets_n >= 4 && (met > 200 || ZCR_met > 200 || LCR_met > 200) && (meff_4j > 700 || meff_4j1L > 700 || meff_3j1L > 700)",
+  "407322": "gen_filt_met > 300 && gen_filt_met < 400 && jets_n >= 4 && (met > 200 || ZCR_met > 200 || LCR_met > 200) && (meff_4j > 700 || meff_4j1L > 700 || meff_3j1L > 700)",
+  "407323": "gen_filt_met > 400 && jets_n >= 4 && (met > 200 || ZCR_met > 200 || LCR_met > 200) && (meff_4j > 700 || meff_4j1L > 700 || meff_3j1L > 700)",
+  "410013": "gen_filt_met < 200 && jets_n >= 4 && (met > 200 || ZCR_met > 200 || LCR_met > 200) && (meff_4j > 700 || meff_4j1L > 700 || meff_3j1L > 700)",
+  "410014": "gen_filt_met < 200 && jets_n >= 4 && (met > 200 || ZCR_met > 200 || LCR_met > 200) && (meff_4j > 700 || meff_4j1L > 700 || meff_3j1L > 700)",
+  "407019": "gen_filt_met > 200 && jets_n >= 4 && (met > 200 || ZCR_met > 200 || LCR_met > 200) && (meff_4j > 700 || meff_4j1L > 700 || meff_3j1L > 700)",
+  "417021": "gen_filt_met > 200 && jets_n >= 4 && (met > 200 || ZCR_met > 200 || LCR_met > 200) && (meff_4j > 700 || meff_4j1L > 700 || meff_3j1L > 700)"
 }
