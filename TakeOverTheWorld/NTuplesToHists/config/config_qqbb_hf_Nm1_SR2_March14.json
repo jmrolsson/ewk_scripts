@@ -1,0 +1,120 @@
+{
+  "cuts": [
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && met > 250 && pass_MET == 1 && meff_4j > 900 && mTb_min > 160 && mCT_bb > 140",
+    "name": "Wh_SR2"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && met > 250 && pass_MET == 1 && meff_4j > 900 && mCT_bb > 140",
+    "name": "Wh_SR2_Nm1_mTbmin"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && met > 250 && pass_MET == 1 && meff_4j > 900 && mTb_min > 160",
+    "name": "Wh_SR2_Nm1_mCTbb"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && met > 250 && pass_MET == 1 && mTb_min > 160 && mCT_bb > 140",
+    "name": "Wh_SR2_Nm1_meff"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && bjets_n == 2 && dphi_min > 0.4 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && met > 250 && pass_MET == 1 && meff_4j > 900 && mTb_min > 160 && mCT_bb > 140",
+    "name": "Wh_SR2_Nm1_nJets"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && dphi_min > 0.4 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && met > 250 && pass_MET == 1 && meff_4j > 900 && mTb_min > 160 && mCT_bb > 140",
+    "name": "Wh_SR2_Nm1_nBJets"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && met > 250 && pass_MET == 1 && meff_4j > 900 && mTb_min > 160 && mCT_bb > 140",
+    "name": "Wh_SR2_Nm1_dphiMin"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && m_non_bb > 75 && m_non_bb < 90 && met > 250 && pass_MET == 1 && meff_4j > 900 && mTb_min > 160 && mCT_bb > 140",
+    "name": "Wh_SR2_Nm1_mbb"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && m_bb > 105 && m_bb < 135 && met > 250 && pass_MET == 1 && meff_4j > 900 && mTb_min > 160 && mCT_bb > 140",
+    "name": "Wh_SR2_Nm1_mNonbb"},
+
+    {"cut": "jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && met > 250 && pass_MET == 1 && meff_4j > 900 && mTb_min > 160 && mCT_bb > 140",
+    "name": "Wh_SR2_Nm1_leptonveto"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && met > 250 && pass_MET == 1 && meff_4j > 900 && mTb_min > 160 && mCT_bb > 140",
+    "name": "Wh_SR2_Nm2_mbb_mNonbb"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && met > 250 && pass_MET == 1 && meff_4j > 900",
+    "name": "Wh_SR2_Nm2_mTbmin_mCTbb"}
+
+  ],
+  "draw": [
+    {
+      "draw": "n_vtx",
+      "name": "cutflow",
+      "min": -1e8,
+      "max": 1e8,
+      "nbins": 1
+    },
+    {
+      "draw": "jets_n",
+      "name": "jets_n",
+      "min": 0,
+      "max": 10,
+      "nbins": 10
+    },
+    {
+      "draw": "bjets_n",
+      "name": "bjets_n",
+      "min": 0,
+      "max": 10,
+      "nbins": 10
+    },
+    {
+      "draw": "pt_jet_1",
+      "name": "pt_jet_1",
+      "min": 0,
+      "max": 2000,
+      "nbins": 200
+    },
+    {
+      "draw": "dphi_min",
+      "name": "dphi_min",
+      "min": 0,
+      "max": 4,
+      "nbins": 40
+    },
+    {
+      "draw": "met",
+      "name": "met",
+      "min": 0,
+      "max": 1000,
+      "nbins": 100
+    },
+    {
+      "draw": "meff_4j",
+      "name": "meff_4j",
+      "min": 0,
+      "max": 3000,
+      "nbins": 300
+    },
+    {
+      "draw": "m_bb",
+      "name": "m_bb",
+      "min": 0,
+      "max": 2000,
+      "nbins": 200
+    },
+    {
+      "draw": "m_non_bb",
+      "name": "m_non_bb",
+      "min": 0,
+      "max": 2000,
+      "nbins": 200
+    },
+    {
+      "draw": "mCT_bb.",
+      "name": "mCT_bb",
+      "min": 0,
+      "max": 1000,
+      "nbins": 100
+    },
+    {
+      "draw": "mTb_min",
+      "name": "mTb_min",
+      "min": 0,
+      "max": 1000,
+      "nbins": 100
+    }
+  ]
+}

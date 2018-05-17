@@ -30,6 +30,7 @@ import subprocess
 import glob
 import yaml
 import json
+from uncertainties import ufloat
 
 '''
   with tempfile.NamedTemporaryFile() as tmpFile:
@@ -66,26 +67,35 @@ import plotHelpers as ph
 
 
 class Cut:
-  def __init__(self, n=0.0, err=0.0, wn=0.0, werr=0.0):
-      self.n = n
-      self.err = err
-      self.wn = wn
-      self.werr = werr
+  """
+  n: number of raw events
+  wn: sum of event weights (weight = wn/n)
+  wsn: sum of event weights and scaled to cross section (scale factor = wsn/wn)
+  """
+  def __init__(self, n=0.0, err=0.0, wn=0.0, werr=0.0, wsn=0.0, wserr=0.0):
+    self.n = n
+    self.err = err
+    self.wn = wn
+    self.werr = werr
+    self.wsn = wsn
+    self.wserr = wserr
 
   def print_cut(self):
-      return "(Cut: n = {:.2f}+/-{:.2f}, wn = {:.2f}+/-{:.2f})".format(self.n, self.err, self.wn, self.werr)
+    return "(Cut: n = {:.2f}+/-{:.2f}, wn = {:.2f}+/-{:.2f}, wsn = {:.2f}+/-{:.2f})".format(self.n, self.err, self.wn, self.werr, self.wsn, self.wserr)
   def __str__(self):
-      return self.print_cut()
+    return self.print_cut()
   def __unicode__(self):
-      return self.print_cut()
+    return self.print_cut()
   def __repr__(self):
-      return self.print_cut()
+    return self.print_cut()
 
-  def add(self, n, err, wn, werr):
-      self.n += n
-      self.err = np.sqrt(self.err**2 + err**2)
-      self.wn += wn
-      self.werr = np.sqrt(self.werr**2 + werr**2)
+  def add(self, n, err, wn, werr, wsn, wserr):
+    self.n += n
+    self.err = np.sqrt(self.err**2 + err**2)
+    self.wn += wn
+    self.werr = np.sqrt(self.werr**2 + werr**2)
+    self.wsn += wsn
+    self.wserr = np.sqrt(self.wserr**2 + wserr**2)
 
 def format_arg_value(arg_val):
   """ Return a string representing a (name, value) pair.
@@ -194,83 +204,13 @@ def scale_hists(h, weights, groups):
       hist.scale(scaleFactor)
       logger.info("Scale factor for %s: %0.6f" % (did, scaleFactor))
 
-def save_cutflow(sig_hists, bkg_hists, title='cutflow', outfile=''):
+def save_detailed_cutflow(cuts, tag='<cutflow>', outfile='detailed_cutflow.txt', do_latex=False):
 
-  toprule = '*' * (160)
-  line = '-' * (160)
-
-  try:
-      ensure_dir(outfile)
-      f = open(outfile, 'w')
-
-      print(toprule, file=f)
-      print("Cutflow: {}".format(title), file=f)
-      print(toprule, file=f)
-
-      print("Background", file=f)
-      print(line, file=f)
-      print("{} | Num. Events             | W. Num. Events".format(" "*25), file=f)
-      print(line, file=f)
-      tot_bkg = 0.
-      tot_bkg_err = 0.0
-      w_tot_bkg = 0.
-      w_tot_bkg_err = 0.0
-      for h in bkg_hists:
-          name = h.GetTitle()
-          evt = h.GetEntries()
-          err = np.sqrt(evt)
-          wevt = h.GetBinContent(1)
-          werr = h.GetBinError(1)
-          tot_bkg += h.GetEntries()
-          tot_bkg_err += err**2
-          w_tot_bkg += h.GetBinContent(1)
-          w_tot_bkg_err += werr**2
-          print("{0: <25} | {1:10.2f} +/- {2:8.2f} | {3:10.2f} +/- {4:8.2f}".format(
-              name, evt, err, wevt, werr), file=f)
-      print(line, file=f)
-      tot_bkg_err = np.sqrt(tot_bkg_err)
-      w_tot_bkg_err = np.sqrt(w_tot_bkg_err)
-      print("{0: <25} | {1:10.2f} +/- {2:8.2f} | {3:10.2f} +/- {4:8.2f}".format(
-          "Tot. Background", tot_bkg, tot_bkg_err, w_tot_bkg, w_tot_bkg_err), file=f)
-      print(toprule, file=f)
-      print("Signal", file=f)
-      print(line, file=f)
-      # print("{} | Num. Events             | W. Num. Events          | S/sqrt(B_tot)   | S/sqrt(B_tot+1.5+(0.3*B_tot)^2) | BinomialExpZ(S,B_tot,0.30)".format(" "*25))
-      print("{} | Num. Events             | W. Num. Events          | S/sqrt(B_tot)   | BinomialExpZ(S,B_tot,0.30)".format(" "*25), file=f)
-      print(line, file=f)
-      for h in sig_hists:
-          name = h.GetTitle()
-          evt = h.GetEntries()
-          err = np.sqrt(evt)
-          wevt = h.GetBinContent(1)
-          werr = h.GetBinError(1)
-          signif_1 = wevt/np.sqrt(w_tot_bkg)
-          # signif_2 = wevt/np.sqrt(w_tot_bkg+1.5+(0.3*w_tot_bkg)**2)
-          signif_2 = ROOT.RooStats.NumberCountingUtils.BinomialExpZ(wevt, w_tot_bkg, 0.1)
-          signif_3 = ROOT.RooStats.NumberCountingUtils.BinomialExpZ(wevt, w_tot_bkg, 0.3)
-
-          # testP = ROOT.RooStats.NumberCountingUtils.BinomialExpP(50, 100, 0.3)
-          # testZ = ROOT.RooStats.NumberCountingUtils.BinomialExpZ(50, 100, 0.3)
-          # print("testP", testP)
-          # print("testZ", testZ)
-
-          # print("{0: <25} | {1:10.2f} +/- {2:8.2f} | {3:10.2f} +/- {4:8.2f} | {5:15.2f} | {6:31.2f} | {7:10.2f}".format(
-          #     name, evt, err, wevt, werr, signif_1, signif_2, signif_3))
-          print("{0: <25} | {1:10.2f} +/- {2:8.2f} | {3:10.2f} +/- {4:8.2f} | {5:15.3f} | {6:10.3f}".format(
-              name, evt, err, wevt, werr, signif_1, signif_3), file=f)
-      print(thickline, file=f)
-
-  except IOError:
-      print ('Could not open file', outfile)
-
-
-def save_detailed_cutflow(cuts_sig, cuts_bkg, tag='<cutflow>', outfile='detailed_cutflow.txt', do_latex=False):
-
-  # order cuts based on the number of raw events in the signal sample
+  # order cuts based on the number of raw events in sample
   # unless 'order' is specified in the yml, then order based on that
   order = []
   ordered_cuts = []
-  for label, cut in cuts_sig.iteritems():
+  for label, cut in cuts.iteritems():
     if (len(ordered_cuts) == 0):
       order.append(cut[0])
       ordered_cuts.append((label, cut[1]))
@@ -312,86 +252,53 @@ def save_detailed_cutflow(cuts_sig, cuts_bkg, tag='<cutflow>', outfile='detailed
       print(r"\begin{table}[!ht]", file=f)
       print(r"\tiny", file=f)
       print(r"\begin{center}\renewcommand\arraystretch{1.6}", file=f)
-      print(r"\sisetup{round-mode=figures, round-precision=2,", file=f)
-      print(r"retain-explicit-plus=true, group-digits = true}", file=f)
-      # print(r"\begin{tabular}{l | c | c | c | c | c | c | c | c | c | c | c | c | c | c}", file=f)
+      print(r"\sisetup{round-mode=figures, round-precision=2, group-digits = true}", file=f)
       print(r"\scalebox{0.9}{", file=f)
       print(r"\begin{tabular}{l | ", file=f)
-      print(r"S[table-format=5.0, table-number-alignment=left, round-mode=places, round-precision=0]@{\quad$\pm\,$}", file=f)
-      print(r"S[table-format=3.0, table-number-alignment=right, round-mode=figures, round-precision=2]|", file=f)
-      print(r"S[table-format=4.0, table-number-alignment=left, round-mode=figures, round-precision=2]@{\quad$\pm\,$}", file=f)
-      print(r"S[table-format=3.2, table-number-alignment=right, round-mode=figures, round-precision=2]|", file=f)
-      print(r"S[table-format=2.2, table-number-alignment=left, round-mode=figures, round-precision=2]|", file=f)
-      print(r"S[table-format=2.2, table-number-alignment=left, round-mode=figures, round-precision=2]|", file=f)
-      print(r"S[table-format=8.0, table-number-alignment=left, round-mode=figures, round-precision=2]@{\quad$\pm\,$}", file=f)
-      print(r"S[table-format=6.0, table-number-alignment=right, round-mode=figures, round-precision=2]|", file=f)
-      print(r"S[table-format=12.0, table-number-alignment=left, round-mode=figures, round-precision=2]@{\quad$\pm\,$}", file=f)
-      print(r"S[table-format=11.2, table-number-alignment=right, round-mode=figures, round-precision=2]|", file=f)
-      print(r"S[table-format=4.0, table-number-alignment=left, round-mode=figures, round-precision=2]|", file=f)
-      print(r"S[table-format=4.0, table-number-alignment=left, round-mode=figures, round-precision=2]|", file=f)
-      print(r"S[table-format=4.0, table-number-alignment=left, round-mode=figures, round-precision=2]|", file=f)
-      print(r"S[table-format=4.0, table-number-alignment=left, round-mode=figures, round-precision=2]", file=f)
+      print(r"S[round-mode=places]|", file=f)
+      print(r"S[scientific-notation = true]|", file=f)
+      print(r"S[scientific-notation = true]|", file=f)
+      print(r"S|", file=f)
+      print(r"S", file=f)
       print(r"}", file=f)
     print(toprule, file=f)
     if do_latex:
-      print("\multicolumn{{15}}{{c}}{{ {} }} \\\\[0.2cm]".format(tag), file=f)
+      print("\multicolumn{{6}}{{c}}{{ {} }} \\\\[0.2cm]".format(tag), file=f)
     else:
       print(tag, file=f)
     print(toprule, file=f)
     if do_latex:
-      print(r"Cut & \multicolumn{2}{c|}{$N_S^{\rm raw}$} & \multicolumn{2}{c|}{$N_S$} & {$\eff_S$ [\%]} & {$\releff_S$ [\%]} & \multicolumn{2}{c|}{$N_{B}^{\rm raw}$} & \multicolumn{2}{c|}{$N_B$} & {$\eff_B$ [\%]} & {$\releff_B$ [\%]} & {$N_S/\sqrt{N_B}$} & {$\Zn$} \\", file=f)
-
+      print(r"Cut & {$N^{\mathrm{raw}}$} & {$N^{\mathrm{w}}$} & {$N$} & {$\eff$ [\%]} & {$\releff$ [\%]} \\", file=f)
     else:
-      print("{: <25} | {: <21} | {: <21} | {: <8} | {: <8} | {: <21} | {: <21} | {: <8} | {: <8} | {: <8} | {: <8}".format(
-        "Cut", "nSraw", "nS", "effS", "effSrel", "nBraw", "nB", "effB", "effBrel", "SsqrtB", "Zn"), file=f)
+      print("{: <25} | {: <21} | {: <21} | {: <21} | {: <8} | {: <8}".format(
+        "Cut", "nraw", "nweighted", "n", "eff", "effrel"), file=f)
     print(midrule, file=f)
 
-    seff = sreleff = beff = breleff = 100.
-    s_wn_prev = -1
-    b_wn_prev = -1
-    for i, (cut, s) in enumerate(ordered_cuts):
-      b = cuts_bkg[cut]
+    eff = releff = 100.
+    wsn_prev = -1
+    for i, (cut, c) in enumerate(ordered_cuts):
       if (i==0):
-        s_wn_initial = s.wn
-        b_wn_initial = b.wn
+        wsn_initial = c.wsn
       if (i!=0):
-        if (s_wn_initial>0): seff = s.wn/s_wn_initial*100.
-        else: seff = 0
-        if (b_wn_initial>0): beff = b.wn/b_wn_initial*100.
-        else: beff = 0
-        if (s_wn_prev>0): sreleff = s.wn/s_wn_prev*100.
-        else: sreleff = 0
-        if (b_wn_prev>0): breleff = b.wn/b_wn_prev*100.
-        else: breleff = 0
-      s_wn_prev = s.wn
-      b_wn_prev = b.wn
-      sq = s.wn/np.sqrt(b.wn)
-      zn = ROOT.RooStats.NumberCountingUtils.BinomialExpZ(s.wn, b.wn, 0.3)
-      if (zn <0): zn = 0
+        if (wsn_initial>0): eff = c.wsn/wsn_initial*100.
+        else: eff = 0
+        if (wsn_prev>0): releff = c.wsn/wsn_prev*100.
+        else: releff = 0
+      wsn_prev = c.wsn
       if do_latex:
-          cutflow_str = "{} &{:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f}".format(
-          cut, s.n, s.err, s.wn, s.werr, seff, sreleff)
-          cutflow_str += "& {:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f} \\\\".format(
-          b.n, b.err, b.wn, b.werr, beff, breleff, sq, zn)
+          cutflow_str = "{} & \\num{{{:.1f}}} & \\num{{{:.1uS}}} & \\num{{{:.1uS}}} & \\num{{{:g}}} & \\num{{{:g}}} \\\\".format(
+          cut, ufloat(c.n, c.err), ufloat(c.wn, c.werr), ufloat(c.wsn, c.wserr), eff, releff)
+          cutflow_str = cutflow_str.replace(r'+/-', r'\pm')
+          cutflow_str = cutflow_str.replace(r'0.0\pm0', r'0.0\pm0.0')
       else:
-        cutflow_str = "{: <25} | {:.2e} +/- {:.2e} | {:.2e} +/- {:.2e} | {:.2e} | {:.2e}".format(
-          cut, s.n, s.err, s.wn, s.werr, seff, sreleff)
-        cutflow_str += " | {:.2e} +/- {:.2e} | {:.2e} +/- {:.2e} | {:.2e} | {:.2e} | {:8.2f} | {:8.2f}".format(
-          b.n, b.err, b.wn, b.werr, beff, breleff, sq, zn)
+        cutflow_str = "{: <25} | {:.2e} +/- {:.2e} | {:.2e} +/- {:.2e} | {:.2e} +/- {:.2e} | {:.2e} | {:.2e}".format(
+          cut, c.n, c.err, c.wn, c.werr, c.wsn, c.wserr, eff, releff)
       print(cutflow_str, file=f)
     print(bottomrule, file=f)
     if do_latex:
       print(r"\end{tabular}", file=f)
       print(r"}", file=f)
       print(r"\\[0.2cm]", file=f)
-      # caption_str = "\\caption{{Event yields and efficiencies for the {} signal sample and the total background. ".format(tag)
-      # caption_str += r"The raw number of events ($N_{S,B}^{\rm raw}$), the number of events scaled to cross section ($N_{S,B}$), "
-      # caption_str += r"the absolute efficiency ($\eff_{S,B}$), and the relative efficiency ($\releff_{S,B}$) are shown for both "
-      # caption_str += r"signal and background. Estimates of the significance are shown using both $N_S/\sqrt{N_B}$ and the RooStats "
-      # caption_str += r"[cite] function $\Zn = {\rm BinomalExpZ}(N_S,N_B, 0.30)$, with an estimated flat uncertainty of $30\%$. "
-      # caption_str += r"Only statistical uncertainties are shown.}"
-      # print(caption_str, file=f)
-      # print(r"\label{tab:cutflow:wh:SR1}", file=f)
       print(r"\end{center}", file=f)
       print(r"\end{table}", file=f)
 
@@ -442,90 +349,69 @@ if __name__ == "__main__":
       ROOT.gROOT.SetBatch(args.batch_mode)
 
       configs = yaml.load(file(args.config_file))
-      # get the backgrounds and signals configuration
-      backgrounds = dict([(group['name'], group) for group in configs['backgrounds']])
-      signals = dict([(group['name'], group) for group in configs['signals']])
+      # get the samples configuration
+      samples = dict([(group['name'], group) for group in configs['samples']])
       # get the cutflows configuration
       cutflows = configs.get('cutflows')
-      # paths to cutflow histograms
+      # get the cutflows paths
       cutflows_paths = cutflows.get('paths')
 
       # get the weights configurations for scaling
       weights = json.load(file(args.weights_file))
 
-      # load all the signal and background files
-      bkgall = add_files('backgrounds')
-      sigall = add_files('signals')
+      # load all the files
+      hall = add_files('samples')
 
-      # store the signal and background cuts (using the cutflows: paths: label as 'key')
-      cuts_bkg = dict()
-      cuts_sigs = dict()
+      # store the cuts (using the cutflows: paths: label as 'key')
+      cuts = dict()
 
       for path in cutflows_paths.keys():
 
-        hbkg = reduce(lambda x,y: getattr(x, y, None), (item for item in path.split('/') if item != args.topLevel), bkgall)
-        hsig = reduce(lambda x,y: getattr(x, y, None), (item for item in path.split('/') if item != args.topLevel), sigall)
+        # histograms where sample scale factor to cross section is not applied
+        hsample = reduce(lambda x,y: getattr(x, y, None), (item for item in path.split('/') if item != args.topLevel), hall)
+        hists = map(lambda hgroup: hgroup.flatten, hsample)
 
-        scale_hists(hbkg, weights, backgrounds)
-        scale_hists(hsig, weights, signals)
+        # histograms with sample scale factors applied
+        hsample_scaled = reduce(lambda x,y: getattr(x, y, None), (item for item in path.split('/') if item != args.topLevel), hall)
+        scale_hists(hsample_scaled, weights, samples)
+        hists_scaled = map(lambda hgroup: hgroup.flatten, hsample_scaled)
 
-        bkg_hists = map(lambda hgroup: hgroup.flatten, hbkg)
-        sig_hists = map(lambda hgroup: hgroup.flatten, hsig)
-
-        # background cutflows
-        cut_bkg = Cut()
-        for h in bkg_hists:
-          n = h.GetEntries()
-          err = np.sqrt(n)
-          wn = h.GetBinContent(1)
-          werr = h.GetBinError(1)
-          # adding all background samples together
-          cut_bkg.add(n, err, wn, werr)
-
-        # background dictonary (one key for each cut)
+        # order cuts
         try:
-            cut_label = cutflows_paths.get(hsig.path, {})['label']
+            cut_label = cutflows_paths.get(hsample.path, {})['label']
         except KeyError:
             cut_label = "Unkown cut"
         try:
-            cut_order = cutflows_paths.get(hsig.path, {})['order']
+            cut_order = cutflows_paths.get(hsample.path, {})['order']
         except KeyError:
             cut_order = -1
-        cuts_bkg[cut_label] = cut_bkg
 
-        # signal cutflows
-        for h in sig_hists:
+        # cutflows
+        for h, hs in zip(hists, hists_scaled):
+          # raw number of events
           n = h.GetEntries()
           err = np.sqrt(n)
+          # sum of event weights
           wn = h.GetBinContent(1)
           werr = h.GetBinError(1)
-          cut_sig = Cut(n, err, wn, werr)
+          # number of events with sample weights applied
+          wsn = hs.GetBinContent(1)
+          wserr = hs.GetBinError(1)
+          # create a cut
+          cut = Cut(n, err, wn, werr, wsn, wserr)
           key = h.GetTitle()
-          if key in cuts_sigs:
-            tmp_dict = cuts_sigs[h.GetTitle()]
-            tmp_dict[cut_label] = [cut_order, cut_sig]
+          if key in cuts:
+            tmp_dict = cuts[h.GetTitle()]
+            tmp_dict[cut_label] = [cut_order, cut]
           else:
-            cuts_sigs[h.GetTitle()] = {cut_label : [cut_order, cut_sig] }
+            cuts[h.GetTitle()] = {cut_label : [cut_order, cut] }
 
       if args.detailed_cutflow:
-        for s in cuts_sigs:
-          outfile = signals[s]['outfile']
+        for label, cut in cuts.iteritems():
+          outfile = samples[label]['outfile']
           print("----> Saving detailed cutflow: ", outfile)
-          print("tag", s)
-          save_detailed_cutflow(cuts_sigs[s], cuts_bkg, s, outfile, args.do_latex)
-
-       # if args.detailed_cutflow:
-
-         # print(bkg_hists)
-         # print(sig_hists)
-         #
-         # print(path)
-
-       # else:
-       #
-       #   cutflow_label = cutflows_paths.get(hsig.path, {})['label']
-       #   outfile = cutflows_paths.get(hsig.path, {})['outfile']
-       #   save_cutflow(sig_hists, bkg_hists, cutflow_label, outfile)
+          print("tag", label)
+          save_detailed_cutflow(cut, label, outfile, args.do_latex)
 
       if not args.debug:
         ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")
@@ -536,7 +422,3 @@ if __name__ == "__main__":
       ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")
 
     logger.exception("{0}\nAn exception was caught!".format("-"*20))
-
-#  # here we close it all
-#  map(lambda hgroup: map(lambda hist: hist.get_file().close(), hgroup), bkgall)
-#  map(lambda hgroup: map(lambda hist: hist.get_file().close(), hgroup), sigall)

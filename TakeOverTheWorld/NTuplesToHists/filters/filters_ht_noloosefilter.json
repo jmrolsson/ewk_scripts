@@ -3,7 +3,6 @@
   "407009": "gen_filt_ht > 600 && gen_filt_ht < 1000",
   "407010": "gen_filt_ht > 1000 && gen_filt_ht < 1500",
   "407011": "gen_filt_ht > 1500",
-
   "410013": "gen_filt_ht < 500",
   "410014": "gen_filt_ht < 500",
   "407018": "gen_filt_ht > 500",

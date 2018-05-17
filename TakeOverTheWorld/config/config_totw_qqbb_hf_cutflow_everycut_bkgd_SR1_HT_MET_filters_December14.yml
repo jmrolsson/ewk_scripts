@@ -1,0 +1,209 @@
+---
+# defines samples groups for the cutflows
+# wildcards for file patterns are allowed
+# NOTE indentation matters
+#
+# ex. 
+# samples:
+#   - name: dijets
+#     files:
+#       - *36102*.hists
+#   - name: "t#bar{t}" 
+#     files:
+#       - *ttbar*.hists     
+# 
+groups:
+
+  # HT-filtered samples
+
+  - name: "\\srone cuts: \\ttbar, combined -- HT-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*ttbar*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_ttbar_combined_detailed_cutflow_HT_filter.txt"
+    caption: "Cutflow for HT-filtered combined \\ttbar samples in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ttbar-combined-ht"
+
+  - name: "\\srone cuts: \\ttbar, inclusive (410000) -- HT-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*410000*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_ttbar_410000_detailed_cutflow_HT_filter.txt"
+    caption: "Cutflow for HT-filtered inclusive \\ttbar sample in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ttbar-410000-ht"
+
+  - name: "\\srone cuts: \\ttbar, $600<\\HT/\\gev<1000$ (407009) -- HT-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*407009*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_ttbar_407009_detailed_cutflow_HT_filter.txt"
+    caption: "Cutflow for HT-filtered ($600<\\HT/\\gev<1000$) \\ttbar sample in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ttbar-407009-ht"
+
+  - name: "\\srone cuts: \\ttbar, $1000<\\HT/\\gev<1500$ (407010) -- HT-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*407010*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_ttbar_407010_detailed_cutflow_HT_filter.txt"
+    caption: "Cutflow for HT-filtered ($1000<\\HT/\\gev<1500$) \\ttbar sample in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ttbar-407010-ht"
+
+  - name: "\\srone cuts: \\ttbar, $\\HT/\\gev>1500$ (407011) -- HT-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*407011*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_ttbar_407011_detailed_cutflow_HT_filter.txt"
+    caption: "Cutflow for HT-filtered ($\\HT/\\gev>1500$) \\ttbar sample in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ttbar-407011-ht"
+
+  - name: "\\srone cuts: single-top Wt, combined -- HT-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*410013*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*410014*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*407018*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*407020*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_singletop_Wt_combined_detailed_cutflow_HT_filter.txt"
+    caption: "Cutflow for HT-filtered combined single-top samples in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-singletop-combined-ht"
+
+  - name: "\\srone cuts: single-top, Wt top, inclusive (410013) -- HT-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*410013*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_singletop_410013_detailed_cutflow_HT_filter.txt"
+    caption: "Cutflow for HT-filtered inclusive Wt single-top samples in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-singletop-410013-ht"
+
+  - name: "\\srone cuts: single-top, Wt anti-top, inclusive (410014) -- HT-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*410014*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_singletop_410014_detailed_cutflow_HT_filter.txt"
+    caption: "Cutflow for HT-filtered inclusive Wt single-top samples in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-singletop-410014-ht"
+
+  - name: "\\srone cuts: single-top, Wt top, $\\HT/\\gev>500$ (407018) -- HT-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*407018*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_singletop_407018_detailed_cutflow_HT_filter.txt"
+    caption: "Cutflow for HT-filtered ($\\HT/\\gev>500$) Wt single-top samples in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-singletop-407018-ht"
+
+  - name: "\\srone cuts: single-top, Wt anti-top, $\\HT/\\gev>500$ (407020) -- HT-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*407020*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_singletop_407020_detailed_cutflow_HT_filter.txt"
+    caption: "Cutflow for HT-filtered ($\\HT/\\gev>500$) Wt single-top samples in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-singletop-407020-ht"
+
+
+  # MET-filtered samples
+
+  - name: "\\srone cuts: \\ttbar, combined -- MET-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_MET_filter_only/*ttbar*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_ttbar_combined_detailed_cutflow_MET_filter.txt"
+    caption: "Cutflow for MET-filtered combined \\ttbar samples in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ttbar-combined-met"
+
+  - name: "\\srone cuts: \\ttbar, inclusive (410000) -- MET-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_MET_filter_only/*410000*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_ttbar_410000_detailed_cutflow_MET_filter.txt"
+    caption: "Cutflow for MET-filtered inclusive \\ttbar sample in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ttbar-410000-met"
+
+  - name: "\\srone cuts: \\ttbar, $200<\\met/\\gev<300$ (407012) -- MET-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_MET_filter_only/*407012*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_ttbar_407012_detailed_cutflow_MET_filter.txt"
+    caption: "Cutflow for MET-filtered ($200<\\met/\\gev<300$) \\ttbar sample in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ttbar-407012-met"
+
+  - name: "\\srone cuts: \\ttbar, $300<\\met/\\gev<400$ (407322) -- MET-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_MET_filter_only/*407322*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_ttbar_407322_detailed_cutflow_MET_filter.txt"
+    caption: "Cutflow for MET-filtered ($300<\\met/\\gev<400$) \\ttbar sample in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ttbar-407322-met"
+
+  - name: "\\srone cuts: \\ttbar, $\\met>400\\gev$ (407323) -- MET-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_MET_filter_only/*407323*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_ttbar_407323_detailed_cutflow_MET_filter.txt"
+    caption: "Cutflow for MET-filtered ($300<\\met/\\gev<400$) \\ttbar sample in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ttbar-407323-met"
+
+  - name: "\\srone cuts: single-top Wt, combined -- MET-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_MET_filter_only/*410013*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_MET_filter_only/*410014*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_MET_filter_only/*407019*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_MET_filter_only/*407021*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_singletop_Wt_combined_detailed_cutflow_MET_filter.txt"
+    caption: "Cutflow for MET-filtered combined single-top samples in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-singletop-combined-met"
+
+  - name: "\\srone cuts: single-top, Wt top, inclusive (410013) -- MET-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_MET_filter_only/*410013*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_singletop_410013_detailed_cutflow_MET_filter.txt"
+    caption: "Cutflow for MET-filtered inclusive Wt single-top samples in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-singletop-410013-met"
+
+  - name: "\\srone cuts: single-top, Wt anti-top, inclusive (410014) -- MET-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_MET_filter_only/*410014*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_singletop_410014_detailed_cutflow_MET_filter.txt"
+    caption: "Cutflow for MET-filtered inclusive Wt single-top samples in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-singletop-410014-met"
+
+  - name: "\\srone cuts: single-top, Wt top, $\\met/\\gev>200$ (407019) -- MET-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_MET_filter_only/*407019*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_singletop_407019_detailed_cutflow_MET_filter.txt"
+    caption: "Cutflow for MET-filtered ($\\met/\\gev>200$) Wt single-top samples in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-singletop-407019-met"
+
+  - name: "\\srone cuts: single-top, Wt anti-top, $\\met/\\gev>200$ (407021) -- MET-filter"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_MET_filter_only/*407021*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_HT_MET_filters_December14/bkgd_SR1_singletop_407021_detailed_cutflow_MET_filter.txt"
+    caption: "Cutflow for MET-filtered ($\\met/\\gev>200$) Wt single-top samples in \\srone. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-singletop-407021-met"
+
+# specify the path to each cutflow histogram
+# one cutflow will be saved for each path
+#
+
+cutflows:
+  paths:
+    hists/all/cutflow:
+      label: "All events"
+      order: 0
+    hists/default/cutflow:
+      label: "Preselection"
+      order: 1
+    hists/optimization_Wh_SR1_nJetsEq4/cutflow:
+      label: "$\\njet = 4$"
+      order: 2
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200/cutflow:
+      label: "\\Etmiss>200\\gev"
+      order: 3
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto/cutflow:
+      label: "$0L$"
+      order: 4
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2/cutflow:
+      label: "$\\nbjet = 2$"
+      order: 5
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4/cutflow:
+      label: "$\\dphimin>0.4$"
+      order: 6
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900/cutflow:
+      label: "$\\meffj>900\\gev$"
+      order: 7
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900_mTbminG140/cutflow:
+      label: "$\\mTbmin>140\\gev$"
+      order: 8
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900_mTbminG140_mCTbbG140/cutflow:
+      label: "$\\mctbb>140\\gev$"
+      order: 9
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900_mTbminG140_mCTbbG140_mbbG105L135/cutflow:
+      label: "$105<\\mbb/\\gev<135$"
+      order: 10
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900_mTbminG140_mCTbbG140_mbbG105L135_mNonbbG75L90/cutflow:
+      label: "$75<\\mnonbb/\\gev<90$"
+      order: 11

@@ -1,0 +1,185 @@
+---
+# defines samples groups for the cutflows
+# wildcards for file patterns are allowed
+# NOTE indentation matters
+#
+# ex. 
+# samples:
+#   - name: dijets
+#     files:
+#       - *36102*.hists
+#   - name: "t#bar{t}" 
+#     files:
+#       - *ttbar*.hists     
+# 
+groups:
+
+  - name: "\\srtwo cuts: dijet"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*361021*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*361022*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*361023*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*361024*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*361025*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*361026*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*361027*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*361028*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_dijet_detailed_cutflow.txt"
+    caption: "Cutflow for dijet samples in \\srtwo. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-dijet"
+
+  - name: "\\srtwo cuts: diboson"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*diboson*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_diboson_detailed_cutflow.txt"
+    caption: "Cutflow for diboson samples in \\srtwo. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-diboson"
+
+  - name: "\\srtwo cuts: VH"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*342284*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*342285*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_VH_detailed_cutflow.txt"
+    caption: "Cutflow for VH samples in \\srtwo. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-VH"
+
+  - name: "\\srtwo cuts: \\ttbar"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*ttbar*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_ttbar_detailed_cutflow.txt"
+    caption: "Cutflow for \\ttbar samples in \\srtwo. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ttbar"
+
+  # - name: "\\srtwo cuts: \\ttbar (inclusive, 410000) -- after"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*410000*.hists
+  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_ttbar_410000_detailed_cutflow.txt"
+  #
+  # - name: "\\srtwo cuts: \\ttbar (600<HT<1000, 407009) -- after"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*407009*.hists
+  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_ttbar_407009_detailed_cutflow.txt"
+  #
+  # - name: "\\srtwo cuts: \\ttbar (1000<HT<1500, 407010) -- after"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*407010*.hists
+  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_ttbar_407010_detailed_cutflow.txt"
+  #
+  # - name: "\\srtwo cuts: \\ttbar (HT>1500, 407011) -- after"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*407011*.hists
+  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_ttbar_407011_detailed_cutflow.txt"
+
+  - name: "\\srtwo cuts: single-top"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*singletop*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_singletop_detailed_cutflow.txt"
+    caption: "Cutflow for single-top samples in \\srtwo. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ht-singletop"
+
+  # - name: "\\srtwo cuts: single-top (Wt anti-top, HT > 500 GeV, 407020) -- after"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*407020*.hists
+  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_singletop_407020_detailed_cutflow.txt"
+  #
+  # - name: "\\srtwo cuts: single-top (Wt top, inclusive, 410013) -- after"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*410013*.hists
+  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_singletop_410013_detailed_cutflow.txt"
+
+  - name: "\\srtwo cuts: \\ttbarX"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*topEW*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_topEW_detailed_cutflow.txt"
+    caption: "Cutflow for \\ttbarX samples in \\srtwo. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ht-topEW"
+
+  # - name: "\\srtwo cuts: \\ttbarX (ttH semilep, 341270) -- after"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*341270*.hists
+  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_topEW_341270_detailed_cutflow.txt"
+  #
+  # - name: "\\srtwo cuts: \\ttbarX (ttZnnqq Np0, 410073) -- after"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*410073*.hists
+  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_topEW_410073_detailed_cutflow.txt"
+
+  - name: "\\srtwo cuts: ttH"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*341177*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*341270*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*341271*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_ttH_detailed_cutflow.txt"
+    caption: "Cutflow for $\\ttbar H$ samples in \\srtwo. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-ht-ttH"
+
+  - name: "\\srtwo cuts: \\Wjets, Sherpa 2.2.0"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*W_sherpa_220*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_W_sherpa_220_detailed_cutflow.txt"
+    caption: "Cutflow for \\Wjets Sherpa 2.2.0 samples in \\srtwo. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-Wjets-sherpa220"
+
+  - name: "\\srtwo cuts: \\Zjets, Sherpa 2.2.0"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*Z_sherpa_220*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_Z_sherpa_220_detailed_cutflow.txt"
+    caption: "Cutflow for \\Zjets Sherpa 2.2.0 samples in \\srtwo. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-Zjets-sherpa220"
+
+  - name: "\\srtwo cuts: \\Wjets, Sherpa 2.2.1"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*W_sherpa_221*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_W_sherpa_221_detailed_cutflow.txt"
+    caption: "Cutflow for \\Wjets Sherpa 2.2.1 samples in \\srtwo. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-Wjets-sherpa221"
+
+  - name: "\\srtwo cuts: \\Zjets, Sherpa 2.2.1"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*Z_sherpa_221*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_November16_HT_incl_filter/bkgd_SR2_Z_sherpa_221_detailed_cutflow.txt"
+    caption: "Cutflow for \\Zjets Sherpa 2.2.1 samples in \\srtwo. $N^{\\mathrm{raw}}$ is the number of simulated events, $N^{\\mathrm{w}}$ is the sum of weighted events (including generator weights, $b$-tagging weights, etc.), and $N$ is the sum of weigthed events normalized to cross section and an integrated luminosity of \\intlumi."
+    label: "tab:cutflow-Zjets-sherpa221"
+
+# specify the path to each cutflow histogram
+# one cutflow will be saved for each path
+#
+
+cutflows:
+  paths:
+    hists/all/cutflow:
+      label: "All events"
+      order: 0
+    hists/default/cutflow:
+      label: "Preselection"
+      order: 1
+    hists/optimization_Wh_SR2_nJetsGeq4Leq5/cutflow:
+      label: "$\\njet = 4$"
+      order: 2
+    hists/optimization_Wh_SR2_nJetsGeq4Leq5_passMET_metG250/cutflow:
+      label: "\\Etmiss>200\\gev"
+      order: 3
+    hists/optimization_Wh_SR2_nJetsGeq4Leq5_passMET_metG250_leptonveto/cutflow:
+      label: "$0L$"
+      order: 4
+    hists/optimization_Wh_SR2_nJetsGeq4Leq5_passMET_metG250_leptonveto_nBJetsEq2/cutflow:
+      label: "$\\nbjet = 2$"
+      order: 5
+    hists/optimization_Wh_SR2_nJetsGeq4Leq5_passMET_metG250_leptonveto_nBJetsEq2_dphiMinG0p4/cutflow:
+      label: "$\\dphimin>0.4$"
+      order: 6
+    hists/optimization_Wh_SR2_nJetsGeq4Leq5_passMET_metG250_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900/cutflow:
+      label: "$\\meffj>900\\gev$"
+      order: 7
+    hists/optimization_Wh_SR2_nJetsGeq4Leq5_passMET_metG250_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900_mTbminG160/cutflow:
+      label: "$\\mTbmin>140\\gev$"
+      order: 8
+    hists/optimization_Wh_SR2_nJetsGeq4Leq5_passMET_metG250_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900_mTbminG160_mCTbbG140/cutflow:
+      label: "$\\mctbb>140\\gev$"
+      order: 9
+    hists/optimization_Wh_SR2_nJetsGeq4Leq5_passMET_metG250_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900_mTbminG160_mCTbbG140_mbbG105L135/cutflow:
+      label: "$105<\\mbb/\\gev<135$"
+      order: 10
+    hists/optimization_Wh_SR2_nJetsGeq4Leq5_passMET_metG250_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900_mTbminG160_mCTbbG140_mbbG105L135_mNonbbG75L90/cutflow:
+      label: "$75<\\mnonbb/\\gev<90$"
+      order: 11

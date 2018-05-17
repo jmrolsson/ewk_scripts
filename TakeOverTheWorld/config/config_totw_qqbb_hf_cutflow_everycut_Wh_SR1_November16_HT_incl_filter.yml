@@ -1,0 +1,508 @@
+---
+# defines background groups for the cutflows
+# wildcards for file patterns are allowed
+# NOTE indentation matters
+#
+# ex. 
+# backgrounds:
+#   - name: dijets
+#     files:
+#       - *36102*.hists
+#   - name: "t#bar{t}" 
+#     files:
+#       - *ttbar*.hists     
+# 
+#
+groups: 
+
+  
+  # background samples
+ 
+  - name: "dijet" 
+    type: background
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*dijet*.hists
+
+  - name: "diboson"
+    type: background
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*diboson*.hists
+
+  - name: "ttbar"
+    type: background
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*ttbar*.hists
+
+  - name: "singletop"
+    type: background
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*singletop*.hists
+
+  - name: "ttbar+X"
+    type: background
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*topEW*.hists
+
+  - name: "W+jets"
+    type: background
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*W_sherpa_220*.hists
+
+  - name: "Z+jets"
+    type: background
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*Z_sherpa_220*.hists
+
+  # signal samples
+
+  - name: "(350, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394329*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_350_0_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (350, 0) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-350-0"
+
+  - name: "(350, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394330*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_350_50_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (350, 50) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-350-50"
+
+  - name: "(400, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394331*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_400_0_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (400, 0) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-400-0"
+
+  - name: "(400, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394332*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_400_50_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (400, 50) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-400-50"
+
+  - name: "(400, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394333*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_400_100_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (400, 100) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-400-100"
+
+  - name: "(450, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394334*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_450_0_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (450, 0) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-450-0"
+
+  - name: "(450, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394335*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_450_50_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (450, 50) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-450-50"
+
+  - name: "(450, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394336*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_450_100_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (450, 100) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-450-100"
+
+  - name: "(450, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394337*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_450_150_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (450, 150) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-450-150"
+
+  - name: "(500, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394338*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_500_0_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (500, 0) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-500-0"
+
+  - name: "(500, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394339*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_500_50_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (500, 50) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-500-50"
+
+  - name: "(500, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394340*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_500_100_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (500, 100) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-500-100"
+
+  - name: "(500, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394341*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_500_150_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (500, 150) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-500-150"
+
+  - name: "(500, 175)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394342*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_500_175_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (500, 175) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-500-175"
+
+  - name: "(550, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394343*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_550_0_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (550, 0) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-550-0"
+
+  - name: "(550, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394344*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_550_50_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (550, 50) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-550-50"
+
+  - name: "(550, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394345*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_550_100_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (550, 100) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-550-100"
+
+  - name: "(550, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394346*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_550_150_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (550, 150) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-550-150"
+
+  - name: "(550, 175)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394347*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_550_175_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (550, 175) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-550-175"
+
+  - name: "(600, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394348*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_600_0_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (600, 0) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-600-0"
+
+  - name: "(600, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394349*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_600_50_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (600, 50) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-600-50"
+
+  - name: "(600, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394350*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_600_100_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (600, 100) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-600-100"
+
+  - name: "(600, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394351*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_600_150_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (600, 150) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-600-150"
+
+  - name: "(600, 175)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394352*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_600_175_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (600, 175) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-600-175"
+
+  - name: "(650, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394353*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_650_0_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (650, 0) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-650-0"
+
+  - name: "(650, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394354*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_650_50_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (650, 50) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-650-50"
+
+  - name: "(650, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394355*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_650_100_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (650, 100) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-650-100"
+
+  - name: "(650, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394356*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_650_150_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (650, 150) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-650-150"
+
+  - name: "(700, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394357*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_700_0_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (700, 0) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-700-0"
+
+  - name: "(700, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394358*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_700_50_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (700, 50) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-700-50"
+
+  - name: "(550, 200)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394751*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_550_200_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (550, 200) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-550-200"
+
+  - name: "(550, 250)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394752*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_550_250_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (550, 250) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-550-250"
+
+  - name: "(600, 200)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394753*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_600_200_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (600, 200) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-600-200"
+
+  - name: "(600, 250)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394754*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_600_250_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (600, 250) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-600-250"
+
+  - name: "(650, 175)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394755*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_650_175_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (650, 175) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-650-175"
+
+  - name: "(650, 200)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394756*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_650_200_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (650, 200) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-650-200"
+
+  - name: "(650, 250)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394757*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_650_250_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (650, 250) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-650-250"
+
+  - name: "(700, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394758*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_700_100_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (700, 100) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-700-100"
+
+  - name: "(700, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394759*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_700_150_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (700, 150) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-700-150"
+
+  - name: "(700, 175)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394760*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_700_175_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (700, 175) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-700-175"
+
+  - name: "(700, 200)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394761*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_700_200_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (700, 200) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-700-200"
+
+  - name: "(750, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394762*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_750_0_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (750, 0) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-750-0"
+
+  - name: "(750, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394763*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_750_50_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (750, 50) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-750-50"
+
+  - name: "(750, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394764*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_750_100_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (750, 100) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-750-100"
+
+  - name: "(750, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394765*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_750_150_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (750, 150) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-750-150"
+
+  - name: "(800, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394766*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_800_0_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (800, 0) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-800-0"
+
+  - name: "(800, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394767*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_800_50_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (800, 50) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-800-50"
+
+  - name: "(800, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394768*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_800_100_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (800, 100) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-800-100"
+
+  - name: "(800, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394769*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_800_150_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (800, 150) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-800-150"
+
+  - name: "(850, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394770*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_850_0_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (850, 0) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-850-0"
+
+  - name: "(850, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_cutflow_everycut_Wh_SR_CR_VR_November16_HT_incl_filter/*394771*.hists
+    outfile: "cutflow_resolved/cutflow_everycut_Wh_SR_November16_HT_incl_filter/optimization_Wh_SR1_850_50_detailed_cutflow.txt"
+    caption: "Cutflow for $(\\mheavy, \\mneut) = (850, 50) \\gev$ with \\srone-cuts, HT-sliced \\ttbar and single-top samples."
+    label: "tab:sig:ht-filter-srone-850-50"
+ 
+# specify the path to each cutflow histogram
+# one cutflow will be saved for each path
+#
+  
+
+cutflows:
+  paths:
+    hists/all/cutflow:
+      label: "All events"
+      order: 0
+    hists/default/cutflow:
+      label: "Preselection"
+      order: 1
+    hists/optimization_Wh_SR1_nJetsEq4/cutflow:
+      label: "$\\njet = 4$"
+      order: 2
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200/cutflow:
+      label: "\\Etmiss>200\\gev"
+      order: 3
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto/cutflow:
+      label: "$0L$"
+      order: 4
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2/cutflow:
+      label: "$\\nbjet = 2$"
+      order: 5
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4/cutflow:
+      label: "$\\dphimin>0.4$"
+      order: 6
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900/cutflow:
+      label: "$\\meffj>900\\gev$"
+      order: 7
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900_mTbminG140/cutflow:
+      label: "$\\mTbmin>140\\gev$"
+      order: 8
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900_mTbminG140_mCTbbG140/cutflow:
+      label: "$\\mctbb>140\\gev$"
+      order: 9
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900_mTbminG140_mCTbbG140_mbbG105L135/cutflow:
+      label: "$105<\\mbb/\\gev<135$"
+      order: 10
+    hists/optimization_Wh_SR1_nJetsEq4_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG900_mTbminG140_mCTbbG140_mbbG105L135_mNonbbG75L90/cutflow:
+      label: "$75<\\mnonbb/\\gev<90$"
+      order: 11

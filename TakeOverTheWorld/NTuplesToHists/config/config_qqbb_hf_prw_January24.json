@@ -1,0 +1,26 @@
+{
+  "cuts": [
+
+    {"cut": "jets_n>=4 && met>200 && pass_MET == 1 && signal_leptons_n==0",
+    "name": "signalleptonveto_nJetsGeq4_metG200"},
+
+    {"cut": "jets_n>=4 && met>200 && pass_MET == 1 && signal_leptons_n==0 && bjets_n>=2",
+    "name": "signalleptonveto_nJetsGeq4_nBJetsGeq2_metG200"},
+
+    {"cut": "jets_n>=4 && met>200 && pass_MET == 1 && signal_leptons_n==0 && bjets_n>=2 && dphi_min>0.4",
+    "name": "signalleptonveto_nJetsGeq4_nBJetsGeq2_metG200_dphiMinG0p4"},
+
+    {"cut": "jets_n>=4 && met>200 && pass_MET == 1 && baseline_leptons_n==0 && bjets_n>=2 && dphi_min>0.4",
+    "name": "leptonveto_nJetsGeq4_nBJetsGeq2_metG200_dphiMinG0p4"}
+
+  ],
+  "draw": [
+    {
+      "draw": "average_int_per_crossing",
+      "name": "average_int_per_crossing",
+      "min": 0,
+      "max": 50,
+      "nbins": 50
+    }
+  ]
+}

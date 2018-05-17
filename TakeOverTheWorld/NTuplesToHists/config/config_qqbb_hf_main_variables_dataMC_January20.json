@@ -1,0 +1,24 @@
+{
+  "cuts": [
+
+    {"cut": "jets_n>=4 && met>200 && pass_MET == 1 && baseline_electrons_n==0 && baseline_muons_n==0 && dphi_min>0.4",
+    "name": "leptonveto_nJetsGeq4_metG200_dphiMinG0p4"}
+
+  ],
+  "draw": [
+    {
+      "draw": "jets_n",
+      "name": "jets_n",
+      "min": 0,
+      "max": 10,
+      "nbins": 10
+    },
+    {
+      "draw": "bjets_n",
+      "name": "bjets_n",
+      "min": 0,
+      "max": 10,
+      "nbins": 10
+    }
+  ]
+}

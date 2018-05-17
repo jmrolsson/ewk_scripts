@@ -1,0 +1,26 @@
+{
+  "cuts": [
+
+    {"cut": "1",
+    "name": "default"},
+
+    {"cut": "jets_n>=4 && met>200 && pass_MET == 1 && baseline_electrons_n==0 && baseline_muons_n==0 && dphi_min>0.4",
+    "name": "leptonveto_nJetsGeq4_metG200_dphiMinG0p4"},
+
+    {"cut": "jets_n>=4 && met>200 && pass_MET == 1 && baseline_electrons_n==0 && baseline_muons_n==0 && bjets_n>=2 && dphi_min>0.4",
+    "name": "leptonveto_nJetsGeq4_nBJetsGeq2_metG200_dphiMinG0p4"},
+
+    {"cut": "jets_n>=4 && met>200 && pass_MET == 1 && baseline_electrons_n==0 && baseline_muons_n==0 && bjets_n==2 && dphi_min>0.4",
+    "name": "leptonveto_nJetsGeq4_nBJetsEq2_metG200_dphiMinG0p4"}
+
+  ],
+  "draw": [
+    {
+      "draw": "n_vtx",
+      "name": "cutflow",
+      "min": -1e8,
+      "max": 1e8,
+      "nbins": 1
+    }
+  ]
+}

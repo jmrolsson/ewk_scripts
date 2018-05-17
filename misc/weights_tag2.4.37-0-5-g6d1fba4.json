@@ -6165,6 +6165,22 @@
     "num events": 7180009365.759155,
     "rel uncert": 1.0
   },
+  "342284": {
+    "cross section": 1.1021000146865845,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.2521549463272095,
+    "num events": 99400.000000,
+    "rel uncert": 1.0
+  },
+  "342285": {
+    "cross section": 0.6007199883460999,
+    "errors": [],
+    "filter efficiency": 1.0,
+    "k-factor": 1.4475961923599243,
+    "num events": 99200.000000,
+    "rel uncert": 1.0
+  },
   "unknown": {
     "cross section": 0.0,
     "errors": [],

@@ -1,0 +1,311 @@
+opening /Users/joakim/ewk/ewk_simpleanalysis/user.jolsson.407012.simple_ttbar.EwkWhAllHad2016.20180121/407012.root
+	making tdirectory all
+	making 1D histogram n_jets
+	10 bins from 0 to 10
+		drawing n_jets
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram n_bjets
+	10 bins from 0 to 10
+		drawing n_bjets
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram pt_jet_1
+	200 bins from 0 to 2000
+		drawing pt_jet_1
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram pt_jet_2
+	200 bins from 0 to 2000
+		drawing pt_jet_2
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram pt_bjet_1
+	200 bins from 0 to 2000
+		drawing pt_bjet_1
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram pt_bjet_2
+	200 bins from 0 to 2000
+		drawing pt_bjet_2
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram pt_lep_1
+	200 bins from 0 to 1000
+		drawing pt_lep_1
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram dphi_min
+	40 bins from 0 to 4
+		drawing dphi_min
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram gen_filt_ht
+	100 bins from 0 to 2000
+		drawing gen_filt_ht
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram gen_filt_met
+	100 bins from 0 to 2000
+		drawing gen_filt_met
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram met
+	100 bins from 0 to 1000
+		drawing met
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram met_phi
+	80 bins from -4 to 4
+		drawing met_phi
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram ZCR_met
+	100 bins from 0 to 1000
+		drawing ZCR_met
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram meff_4j
+	300 bins from 0 to 3000
+		drawing meff_4j
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram ZCR_meff_4j
+	300 bins from 0 to 3000
+		drawing ZCR_meff_4j
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram m_bb
+	200 bins from 0 to 2000
+		drawing m_bb
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram mCT_bb
+	100 bins from 0 to 1000
+		drawing mCT_bb
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram mTb_min
+	100 bins from 0 to 1000
+		drawing mTb_min
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram m_non_bb
+	200 bins from 0 to 2000
+		drawing m_non_bb
+		with cut (mc_weight)*(loose_inclb_leptonveto)
+		writing to file
+	making 1D histogram n_jets
+	10 bins from 0 to 10
+		drawing n_jets
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram n_bjets
+	10 bins from 0 to 10
+		drawing n_bjets
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram pt_jet_1
+	200 bins from 0 to 2000
+		drawing pt_jet_1
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram pt_jet_2
+	200 bins from 0 to 2000
+		drawing pt_jet_2
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram pt_bjet_1
+	200 bins from 0 to 2000
+		drawing pt_bjet_1
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram pt_bjet_2
+	200 bins from 0 to 2000
+		drawing pt_bjet_2
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram pt_lep_1
+	200 bins from 0 to 1000
+		drawing pt_lep_1
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram dphi_min
+	40 bins from 0 to 4
+		drawing dphi_min
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram gen_filt_ht
+	100 bins from 0 to 2000
+		drawing gen_filt_ht
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram gen_filt_met
+	100 bins from 0 to 2000
+		drawing gen_filt_met
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram met
+	100 bins from 0 to 1000
+		drawing met
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram met_phi
+	80 bins from -4 to 4
+		drawing met_phi
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram ZCR_met
+	100 bins from 0 to 1000
+		drawing ZCR_met
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram meff_4j
+	300 bins from 0 to 3000
+		drawing meff_4j
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram ZCR_meff_4j
+	300 bins from 0 to 3000
+		drawing ZCR_meff_4j
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram m_bb
+	200 bins from 0 to 2000
+		drawing m_bb
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram mCT_bb
+	100 bins from 0 to 1000
+		drawing mCT_bb
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram mTb_min
+	100 bins from 0 to 1000
+		drawing mTb_min
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram m_non_bb
+	200 bins from 0 to 2000
+		drawing m_non_bb
+		with cut (mc_weight)*(loose_Geq2b)
+		writing to file
+	making 1D histogram n_jets
+	10 bins from 0 to 10
+		drawing n_jets
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram n_bjets
+	10 bins from 0 to 10
+		drawing n_bjets
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram pt_jet_1
+	200 bins from 0 to 2000
+		drawing pt_jet_1
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram pt_jet_2
+	200 bins from 0 to 2000
+		drawing pt_jet_2
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram pt_bjet_1
+	200 bins from 0 to 2000
+		drawing pt_bjet_1
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram pt_bjet_2
+	200 bins from 0 to 2000
+		drawing pt_bjet_2
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram pt_lep_1
+	200 bins from 0 to 1000
+		drawing pt_lep_1
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram dphi_min
+	40 bins from 0 to 4
+		drawing dphi_min
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram gen_filt_ht
+	100 bins from 0 to 2000
+		drawing gen_filt_ht
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram gen_filt_met
+	100 bins from 0 to 2000
+		drawing gen_filt_met
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram met
+	100 bins from 0 to 1000
+		drawing met
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram met_phi
+	80 bins from -4 to 4
+		drawing met_phi
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram ZCR_met
+	100 bins from 0 to 1000
+		drawing ZCR_met
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram meff_4j
+	300 bins from 0 to 3000
+		drawing meff_4j
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram ZCR_meff_4j
+	300 bins from 0 to 3000
+		drawing ZCR_meff_4j
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram m_bb
+	200 bins from 0 to 2000
+		drawing m_bb
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram mCT_bb
+	100 bins from 0 to 1000
+		drawing mCT_bb
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram mTb_min
+	100 bins from 0 to 1000
+		drawing mTb_min
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram m_non_bb
+	200 bins from 0 to 2000
+		drawing m_non_bb
+		with cut (mc_weight)*(loose_Eq2b)
+		writing to file
+	making 1D histogram n_jets
+	10 bins from 0 to 10
+		drawing n_jets
+		with cut (mc_weight)*(SR2)
+		writing to file
+	making 1D histogram n_bjets
+	10 bins from 0 to 10
+		drawing n_bjets
+		with cut (mc_weight)*(SR2)
+		writing to file
+	making 1D histogram pt_jet_1
+	200 bins from 0 to 2000
+		drawing pt_jet_1
+		with cut (mc_weight)*(SR2)
+		writing to file
+	making 1D histogram pt_jet_2
+	200 bins from 0 to 2000
+		drawing pt_jet_2
+		with cut (mc_weight)*(SR2)
+		writing to file
+	making 1D histogram pt_bjet_1
+	200 bins from 0 to 2000
+		drawing pt_bjet_1
+		with cut (mc_weight)*(SR2)

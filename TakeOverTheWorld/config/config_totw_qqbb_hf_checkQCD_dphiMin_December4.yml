@@ -1,0 +1,655 @@
+---
+# we can have text properties which specify what text to draw (think atlas, prelim, internal)
+# NOTE indentation matters
+#   # this one pulls in all of the reference that's pre-defined
+#   texts:
+#     - *atlas
+#   # this one merges the &internal with the current hash so everything but the label is the same
+#   texts:
+#     - label: preliminary
+#       <<: *internal
+#   texts:
+#     - x: <position>
+#       y: <position>
+#       font: <number> (for SetTextFont(...))
+#       size: <number> (for SetTextSize(...))
+#       label: <string> (what to actually say)
+
+atlas: &atlas
+  x: 0.25
+  y: 0.88
+  font: 73
+  size: 25
+  label: ATLAS
+
+internal: &internal
+  x: 0.36
+  font: 43
+  label: Internal
+  <<: *atlas
+
+atlasinternal: &atlasinternal
+  - *atlas
+  - *internal
+
+labeloptions: &labeloptions
+  xtitleoffset: 1.4
+  ytitleoffset: 1.4
+  xtitlesize: 0.05
+  ytitlesize: 0.05
+  xlabelsize: 0.05
+  ylabelsize: 0.05
+
+# top level defines the label / grouping
+# second level is a list of files under that group, one can also specify a wildcard to match files so they all get grouped
+# third level specifies extra information for a given file such as plots to ignore
+# groups:
+#   - name: <group name>
+#     files:
+#       - <a file path or a file pattern to match a set of files>
+#     styles:
+#       <name of style>: <value for style>
+#   - name: <group name>
+#     files: [file1, file2, ...]
+#     styles: {style1: val1, style2: val2, ...}
+
+# styles are set on all hists associated with that group
+# styles:
+#   - drawstyle (passed into Draw(...), think 'same' or 'hist')
+#   - legendstyle (passed into Legend(...), think 'F')
+#   - markercolor (also set with 'color')
+#   - markerstyle
+#   - markersize
+#   - fillcolor (also set with 'color')
+#   - fillstyle
+#   - linecolor (also set with 'color')
+#   - linestyle
+#   - linewidth
+#   - color (sets markercolor, fillcolor, linecolor)
+
+groups:
+
+  - name: "t#bar{t}"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_checkQCD_December4_HT_incl_filter/*ttbar*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "single top"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_checkQCD_December4_HT_incl_filter/*singletop*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "t#bar{t}+X"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_checkQCD_December4_HT_incl_filter/*topEW*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "W+jets"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_checkQCD_December4_HT_incl_filter/*W_sherpa_220*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "Z+jets"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_checkQCD_December4_HT_incl_filter/*Z_sherpa_220*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "diboson"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_checkQCD_December4_HT_incl_filter/*diboson*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: dijet
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_checkQCD_December4_HT_incl_filter/*dijet*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 400, m_{#tilde{#chi^{0}_{1}}} = 0"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_checkQCD_December4_HT_incl_filter/*394331*.hists
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+
+  - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 700, m_{#tilde{#chi^{0}_{1}}} = 50"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_checkQCD_December4_HT_incl_filter/*394358*.hists
+    styles:
+      legendstyle: L
+      drawstyle: hist
+      linewidth: 2
+    stack it: false
+  
+# plots:
+#   config:  # here we set global configurations that are applied uniformly such as...
+#     canvas:
+#     legend:
+#     texts:
+
+plots:
+  config:
+    texts:
+      - *atlas
+      - *internal
+      - &topline
+        x: 0.25
+        y: 0.84
+        font: 43
+        size: 20
+        label: "36.1 fb^{-1}"
+    canvas:
+      width: 800
+      height: 600
+      logy: true
+      ndivisions: 10
+    legend:
+      numcolumns: 1
+      topmargin: 0.02
+      leftmargin: 0.38
+      #rightmargin: 0.8
+      textsize: 20
+      entrysep: 0.03
+      entryheight: 0.006
+
+  paths:
+
+    hists/leptonveto_nJetsGeq4_nBJetsEq2_metG200/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.1
+      ymax: 1000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, 2b, E_{T}^{miss}>200 GeV"
+
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.1
+      ymax: 1000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200_meffG700/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.1
+      ymax: 1000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>700 GeV"
+
+    hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.1
+      ymax: 1000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>900 GeV"
+    hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900/m_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 0.1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{bb} [GeV]"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>900 GeV"
+    hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900/m_non_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 0.1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{non-bb} [GeV]"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>900 GeV"
+    hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900/mCT_bb:
+      xmin: 0
+      xmax: 600
+      ymin: 0.1
+      ymax: 1000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{CT}^{bb} [GeV]"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>900 GeV"
+    hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900/meff_4j:
+      xmin: 400
+      xmax: 1600
+      ymin: 0.01
+      ymax: 100000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "m_{eff}^{4j}^{4j} [GeV]"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>900 GeV"
+    hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900/met:
+      xmin: 200
+      xmax: 1000
+      ymin: 0.1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "E_{T}^{miss} [GeV]"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>900 GeV"
+    hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900/mTb_min:
+      xmin: 0
+      xmax: 600
+      ymin: 0.1
+      ymax: 1000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T}^{b,min} [GeV]"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>900 GeV"
+ 
+    hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900_mTbminG140/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.1
+      ymax: 1000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>900 GeV, m_{T}^{b,min}>140 GeV"
+
+    hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900_mCTbbG140/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.1
+      ymax: 1000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>900 GeV, m_{CT}^{bb}>140 GeV"
+
+    hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900_mTbminG140_mCTbbG140/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.1
+      ymax: 1000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>900 GeV"
+        - 
+          x: 0.25
+          y: 0.70
+          font: 43
+          size: 20
+          label: "m_{T}^{b,min}>140 GeV"
+        - 
+          x: 0.25
+          y: 0.65
+          font: 43
+          size: 20
+          label: "m_{CT}^{bb}>140 GeV"
+
+    hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900_mbbG105L135/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.1
+      ymax: 1000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>900 GeV"
+        - 
+          x: 0.25
+          y: 0.70
+          font: 43
+          size: 20
+          label: "105<m_{bb}/GeV<135"
+ 
+    hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900_mNonbbG75L90/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.1
+      ymax: 1000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>900 GeV"
+        - 
+          x: 0.25
+          y: 0.70
+          font: 43
+          size: 20
+          label: "75<m_{non-bb}/GeV<90"
+ 
+    hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900_mbbG105L135_mNonbbG75L90/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.1
+      ymax: 1000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "m_{eff}^{4j}>900 GeV"
+        - 
+          x: 0.25
+          y: 0.70
+          font: 43
+          size: 20
+          label: "105<m_{bb}/GeV<135"
+        - 
+          x: 0.25
+          y: 0.65
+          font: 43
+          size: 20
+          label: "75<m_{non-bb}/GeV<90"
+ 
+    hists/optimization_Wh_SR1_Nm1_dphiMin/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "N-1: SR_{1} - #Delta#phi^{4j}_{min}"
+
+    hists/optimization_Wh_SR2_Nm1_dphiMin/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "N-1: SR_{2} - #Delta#phi^{4j}_{min}"
+
+    hists/optimization_Wh_SR3_Nm1_dphiMin/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 1000
+      rebin: 4
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "N-1: SR_{3} - #Delta#phi^{4j}_{min}"
+
+    hists/optimization_Wh_CR1_ttbar_Nm1_dphiMin/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 10000
+      rebin: 4
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "N-1: CR_{1}^{t#bar{t}} - #Delta#phi^{4j}_{min}"
+
+    hists/optimization_Wh_CR1_singletop_Nm1_dphiMin/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 10000
+      rebin: 4
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "N-1: CR_{1}^{st} - #Delta#phi^{4j}_{min}"
+
+    hists/optimization_Wh_CR1_Zjets_Nm1_dphiMin/dphi_min:
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.01
+      ymax: 1000
+      rebin: 4
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "N-1: CR_{1}^{Z+jets} - #Delta#phi^{4j}_{min}"

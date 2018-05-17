@@ -295,6 +295,9 @@ if __name__ == "__main__":
 
         # set a list of colors to loop through if not set
         default_colors = cycle(tableau.Tableau_20.colors)
+        #default_colors = cycle(tableau.Tableau_20.colors[2:])
+        # print(tableau.Tableau_20.colors)
+        # import pdb; pdb.set_trace()
         hists = map(lambda hgroup: hgroup.flatten, h)
         soloHists = []
         stackHists = []
@@ -348,6 +351,14 @@ if __name__ == "__main__":
             for hist in soloHists:
               if (hist.integral() != 0):
                 hist.scale(1.0/hist.integral())
+          elif "stack" in normalizeTo:
+            for hist in soloHists:
+              if (hist.integral() != 0):
+                print(hist)
+                print(hstack.Integral()/hist.integral())
+                exit()
+                hist.scale(hstack.Integral()/hist.integral())
+
           else:
             if normalizeTo not in [hist.title for hist in soloHists]: raise ValueError("Could not find %s as a solo hist for normalizing to." % normalizeTo)
             for hist in soloHists:
@@ -427,9 +438,11 @@ if __name__ == "__main__":
           p.cd()
 
           # do ratio for each histogram in solo hist
-          for hist in soloHists:
+          for i,hist in enumerate(soloHists):
+            # if (i>0): continue
+
             ratio = Hist.divide(hist, sum(hstack))
-            ratio.draw()
+            ratio.draw("same")
             #set_minmax(ratio, plots_path)
             #get_axis(ratio, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
 
@@ -440,6 +453,9 @@ if __name__ == "__main__":
             get_axis(ratio, 'x').set_title_size(canvasConfigs.get('xtitle size', 30))
             get_axis(ratio, 'y').set_label_size(plots_path.get('ratio ylabel size', plots_config.get('ratio ylabel size', 30)))
             get_axis(ratio, 'y').set_title_size(plots_path.get('ratio ytitle size', plots_config.get('ratio ytitle size', 30)))
+            # set ratio range and number of divisions
+            ratio.yaxis.set_range_user(*plots_path.get('ratio range', plots_config.get('ratio range', [0, 2])))
+            ratio.yaxis.SetNdivisions(plots_path.get('ratio ndivisions', plots_config.get('ratio ndivisions', 5)))
             # set label/title fonts
             get_axis(ratio, 'x').set_label_font(canvasConfigs.get('label font', 43))
             get_axis(ratio, 'x').set_title_font(canvasConfigs.get('title font', 43))
@@ -447,8 +463,6 @@ if __name__ == "__main__":
             get_axis(ratio, 'y').set_title_font(canvasConfigs.get('title font', 43))
 
             ratio.yaxis.set_decimals(True)
-            ratio.yaxis.set_range_user(0, 2)
-            ratio.yaxis.SetNdivisions(5)
 
             # copy over some other settings for colors on x-axis
             ratio.xaxis.set_label_color(hstack.xaxis.get_label_color())
@@ -470,8 +484,10 @@ if __name__ == "__main__":
           hstack.xaxis.set_title_color(0)
 
           if len(soloHists) >0:
-            tl = ROOT.TLine(0.2, 0.23, 0.9, 0.23)
+            #tl = ROOT.TLine(0.2, 0.23, 0.9, 0.23)
+            tl = ROOT.TLine(0.2, 0.2067, 0.9, 0.2067)
             tl.SetLineColor(ROOT.kRed)
+            #tl.SetLineColor(ROOT.kBlack)
             tl.SetLineWidth(1)
             tl.SetLineStyle(1)
             tl.SetNDC(True)
@@ -485,7 +501,7 @@ if __name__ == "__main__":
         # make file_name and directories if needed
         file_name = "{0:s}/{1:s}".format(args.output_path, h.path)
         print("Saving {0:s}... \r".format(file_name), end='\r')
-        plot_tag = plots_path.get('plot tag', None)
+        plot_tag = plots_path.get('plot tag', plots_config.get('plot tag', None))
         if plot_tag is not None:
           file_name += '_'+plot_tag
         ensure_dir(file_name)

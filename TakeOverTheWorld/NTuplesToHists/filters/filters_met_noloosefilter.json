@@ -1,0 +1,10 @@
+{
+  "410000": "gen_filt_met < 200",
+  "407012": "gen_filt_met > 200 && gen_filt_met < 300",
+  "407322": "gen_filt_met > 300 && gen_filt_met < 400",
+  "407323": "gen_filt_met > 400",
+  "410013": "gen_filt_met < 200",
+  "410014": "gen_filt_met < 200",
+  "407019": "gen_filt_met > 200",
+  "407021": "gen_filt_met > 200"
+}

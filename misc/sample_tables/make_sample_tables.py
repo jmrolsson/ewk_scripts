@@ -22,8 +22,8 @@ def print_table_begin(f):
 def print_table_end(f, group, tag, extra=''):
     print(r'\bottomrule', file=f)
     print(r'\end{tabular}', file=f)
-    print('\caption{{The {0:s} MC samples used{1:s}.}}'.format(tag, extra), file=f)
-    print('\\label{{tab:app:datamc:{0:s}}}'.format(group), file=f)
+    print('\\caption{{The {0:s} MC samples used{1:s}.}}'.format(tag, extra), file=f)
+    print('\\label{{tab:app:datamc{}}}'.format(group), file=f)
     print(r'\end{center}', file=f)
     print(r'\end{table}', file=f)
 
@@ -55,7 +55,8 @@ if __name__ == "__main__":
             if bool(did in args.dids) == bool(args.blacklist_dids): continue
             checked_dids.append(did)
             try:
-                group = did_metadata[did][0]
+                #group = did_metadata[did][0]
+                group = did_metadata[did][1]
             except KeyError:
                 print('ERROR: dataset {} is not associated with a group, check {}'.format(did, args.did_metadata))
                 exit(1)
@@ -74,13 +75,11 @@ if __name__ == "__main__":
 
         # Save latex tables
         for group, metadata in table_data.iteritems():
-
             try:
                 output = os.path.join(args.output_path, '{}_{}.tex'.format(args.output_prefix, group))
 
                 with open(output, 'w') as f:
                     print_table_begin(f)
-                    # print(r'\multirow{1}{*}{\PowhegPythia} & $t\bar{t}$, at least one lepton & 410000 & 49874000 & 378.8 & 1.195 \\', file=f)
                     ordered_dids = sorted(metadata.keys())
                     page_i = 0
                     for i,did in enumerate(ordered_dids):
@@ -99,10 +98,12 @@ if __name__ == "__main__":
                         kfactor = metadata[did]['k-factor']
                         xsec_filtereff = float(xsec)*float(eff)
                         print('{0:s} & {1:s} & {2:s} & {3:} & {4:} & {5:} \\\\'.format(generator, fiducial, did, nevents, xsec_filtereff, kfactor), file=f)
+
                     if (page_i>0):
                         print_table_end(f, group, metadata[did]['tag'], ' (continued)')
                     else:
-                        print_table_end(f, group, metadata[did]['tag'])
+                        print_table_end(f, group, metadata[did]['tag'], '')
+
 
             except IOError:
                 print('ERROR: Could not crate output file {}'.format(output))
@@ -110,9 +111,3 @@ if __name__ == "__main__":
     except Exception, e:
 
         print("An exception was caught!")
-
-
-
-
-
-

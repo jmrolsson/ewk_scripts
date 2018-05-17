@@ -1,4 +1,5 @@
 from root_optimize import plotting
+import numpy as np
 import os
 
 if __name__ == '__main__':
@@ -13,7 +14,8 @@ if __name__ == '__main__':
 
   parser = argparse.ArgumentParser(description='Author: J. Olsson, G. Stark. v.{0}'.format(__version__),
                                    formatter_class=lambda prog: CustomFormatter(prog, max_help_position=30))
-  parser.add_argument('--summary', type=str, required=True, help='Summary json')
+  # parser.add_argument('--summary', type=str, required=True, help='Summary json')
+  parser.add_argument('--summary', type=str, required=True, metavar='<summary.json>', nargs='+', help='Summary json')
   parser.add_argument('--lumi', type=float, required=False, help='Luminosity to write on plot [ifb]', default=35)
   parser.add_argument('--text-file', type=str, required=False, help='text csv file', default=None)
   parser.add_argument('--out-directory', type=str, required=False, help='output directory', default='plots')
@@ -46,19 +48,73 @@ if __name__ == '__main__':
   args = parser.parse_args()
   print(plotting)
 
+  if not os.path.exists(args.out_directory):
+    os.makedirs(args.out_directory)
+
   import ROOT
   ROOT.PyConfig.IgnoreCommandLineOptions = True
   ROOT.gROOT.SetBatch(args.batch_mode)
 
   import json
-  summary = json.load(file(args.summary)).get('signal')
 
-  plot_array={'sig':      [r['significance'] for r in summary],
-              'signal':   [r['signal'] for r in summary],
-              'bkgd':     [r['bkgd'] for r in summary],
-              'mgluino':  [r['m_c1n2'] for r in summary],
-              'mlsp':     [r['m_n1'] for r in summary],
-              'ratio':    [r['ratio'] for r in summary]}
+  if len(args.summary) > 1:
+
+    plot_array = dict()
+    for s in args.summary:
+
+      summary = json.load(file(s)).get('signal')
+
+      sig = np.zeros(len(summary))
+      signal = np.zeros(len(summary))
+      bkgd = np.zeros(len(summary))
+      ratio = np.zeros(len(summary))
+
+      for i,r in enumerate(summary):
+        if (r['significance'] >=0): sig[i] = r['significance']
+        signal[i] = r['signal']
+        bkgd[i] = r['bkgd']
+        ratio[i] = r['ratio']
+
+      if 'sig' not in plot_array:
+        plot_array['sig'] = sig
+        print(plot_array['sig'])
+      else:
+        print(plot_array['sig'])
+        print(sig)
+        plot_array['sig'] = np.sqrt(plot_array['sig']**2 + sig**2)
+        print(plot_array['sig'])
+
+      if 'signal' not in plot_array:
+        plot_array['signal'] = signal
+      else:
+        plot_array['signal'] += signal
+
+      if 'bkgd' not in plot_array:
+        plot_array['bkgd'] = bkgd
+      else:
+        plot_array['bkgd'] += bkgd
+
+      if 'ratio' not in plot_array:
+        plot_array['ratio'] = ratio
+      else:
+        plot_array['ratio'] += ratio
+
+      if 'mgluino' not in plot_array:
+        plot_array['mgluino'] = np.array([r['m_c1n2'] for r in summary])
+
+      if 'mlsp' not in plot_array:
+        plot_array['mlsp'] = np.array([r['m_n1'] for r in summary])
+
+  else:
+
+    summary = json.load(file(args.summary[0])).get('signal')
+
+    plot_array={'sig':      [r['significance'] for r in summary],
+                'signal':   [r['signal'] for r in summary],
+                'bkgd':     [r['bkgd'] for r in summary],
+                'mgluino':  [r['m_c1n2'] for r in summary],
+                'mlsp':     [r['m_n1'] for r in summary],
+                'ratio':    [r['ratio'] for r in summary]}
 
   plotting.init_palette()
 
@@ -66,7 +122,7 @@ if __name__ == '__main__':
   labels = ['sig','signal','bkgd', 'ratio']
   #zlabels = ['Significance in optimal cut','Exp. num. signal in optimal cut','Exp. num. bkgd in optimal cut', 'Signal/Background']
   zlabels = ['Z_{{n}} in {}'.format(args.region),'Exp. num. signal in {}'.format(args.region),'Exp. num. bkgd in {}'.format(args.region), 'Signal/Background']
-  nSigs = [2, 3, 3, 2]
+  nSigs = [2, 2, 2, 2]
   for label,zlabel,nSig in zip(labels,zlabels,nSigs):
     h = plotting.init_hist(zlabel, args.g_min, args.g_max, args.l_min, args.l_max, args.x_bin_size, args.y_bin_size, "grid", args.x_label, args.y_label)
     plotting.fill_hist(h,plot_array,label, label=='sig')
@@ -74,6 +130,7 @@ if __name__ == '__main__':
     plotting.draw_labels(args.lumi, "#tilde{#chi}^{#pm}_{1}#tilde{#chi}^{0}_{2} #rightarrow #tilde{#chi}^{0}_{1}#tilde{#chi}^{0}_{1} Wh #rightarrow b#bar{b}q#bar{q} + E_{T}^{miss}")
     plotting.draw_text(args.text_file)
     # plotting.draw_line(args.g_min, args.l_min, args.g_max, args.l_max, args.top_mass)
+
     savefilename = os.path.join(args.out_directory, '_'.join([args.output, label]))
     if args.do_run1:
       gr = plotting.get_run1(args.run1_excl,1,3,args.run1_color)

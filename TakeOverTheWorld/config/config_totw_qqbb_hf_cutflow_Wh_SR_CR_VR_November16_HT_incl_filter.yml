@@ -1,0 +1,388 @@
+---
+# defines background groups for the cutflows
+# wildcards for file patterns are allowed
+# NOTE indentation matters
+#
+# ex. 
+# backgrounds:
+#   - name: dijets
+#     files:
+#       - *36102*.hists
+#   - name: "t#bar{t}" 
+#     files:
+#       - *ttbar*.hists     
+# 
+groups:
+
+  # background samples, grouped
+
+  - name: "$t\\bar{t}$"
+    type: background
+    order: 0
+    files:
+    - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*ttbar*ht_filter*.hists
+
+  - name: "single-top"
+    type: background
+    order: 1
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*singletop*ht_filter*.hists
+
+  - name: "$t\\bar{t}+X$"
+    type: background
+    order: 2
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*topEW*.hists
+
+  - name: "$W$+jets 2.2.0"
+    type: background
+    order: 3
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*W_sherpa_220*.hists
+
+  - name: "$Z$+jets 2.2.0"
+    type: background
+    order: 4
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*Z_sherpa_220*.hists
+
+  # - name: "$W$+jets 2.2.1"
+  #   type: background
+  #   order: 3
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*W_sherpa_221*.hists
+  #
+  # - name: "$Z$+jets 2.2.1"
+  #   type: background
+  #   order: 4
+  #   files:
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*Z_sherpa_221*.hists
+
+  - name: "diboson"
+    type: background
+    order: 5
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*diboson*.hists
+
+  - name: "dijet"
+    type: background
+    order: 6
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*dijet*.hists
+
+  # signal samples
+ 
+  - name: "(350, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394329*.hists
+  - name: "(350, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394330*.hists
+  - name: "(400, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394331*.hists
+  - name: "(400, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394332*.hists
+  - name: "(400, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394333*.hists
+  - name: "(450, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394334*.hists
+  - name: "(450, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394335*.hists
+  - name: "(450, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394336*.hists
+  - name: "(450, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394337*.hists
+  - name: "(500, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394338*.hists
+  - name: "(500, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394339*.hists
+  - name: "(500, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394340*.hists
+  - name: "(500, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394341*.hists
+  - name: "(500, 175)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394342*.hists
+  - name: "(550, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394343*.hists
+  - name: "(550, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394344*.hists
+  - name: "(550, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394345*.hists
+  - name: "(550, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394346*.hists
+  - name: "(550, 175)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394347*.hists
+  - name: "(550, 200)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394751*.hists
+  - name: "(550, 250)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394752*.hists
+  - name: "(600, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394348*.hists
+  - name: "(600, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394349*.hists
+  - name: "(600, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394350*.hists
+  - name: "(600, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394351*.hists
+  - name: "(600, 175)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394352*.hists
+  - name: "(600, 200)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394753*.hists
+  - name: "(600, 250)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394754*.hists
+  - name: "(650, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394353*.hists
+  - name: "(650, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394354*.hists
+  - name: "(650, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394355*.hists
+  - name: "(650, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394356*.hists
+  - name: "(650, 175)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394755*.hists
+  - name: "(650, 200)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394756*.hists
+  - name: "(650, 250)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394757*.hists
+  - name: "(700, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394357*.hists
+  - name: "(700, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394358*.hists
+  - name: "(700, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394758*.hists
+  - name: "(700, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394759*.hists
+  - name: "(700, 175)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394760*.hists
+  - name: "(700, 200)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394761*.hists
+  - name: "(750, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394762*.hists
+  - name: "(750, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394763*.hists
+  - name: "(750, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394764*.hists
+  - name: "(750, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394765*.hists
+  - name: "(800, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394766*.hists
+  - name: "(800, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394767*.hists
+  - name: "(800, 100)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394768*.hists
+  - name: "(800, 150)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394769*.hists
+  - name: "(850, 0)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394770*.hists
+  - name: "(850, 50)"
+    type: signal
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms/hf_cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/*394771*.hists
+
+# specify the path to each cutflow histogram
+# one cutflow will be saved for each path
+cutflows:
+  paths:
+
+    hists/optimization_Wh_SR1_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbminG140_mCTbbG140/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_SR1_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG900_mTbminG140_mCTbbG140.txt"
+      caption: "Cutflow for \\srone, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $\\njet = 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 200 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mtbmin > 140\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 90$."
+      label: "tab:cutflow:ht-filter-srone"
+ 
+    hists/optimization_Wh_SB1_mbbG135/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_SB1_mbbG135.txt"
+      caption: "Cutflow for \\vrbbhighone, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $\\njet = 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 200 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mtbmin > 140\\gev$, $\\mbb > 135 \\gev$, $75 < \\mnonbb/\\gev < 90$."
+      label: "tab:cutflow:ht-filter-vrbbhighone"
+
+    hists/optimization_Wh_SB1_mbbL105orG135_mNonbbL75orG90/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_SB1_mbbL105orG135_mNonbbL75orG90.txt"
+      caption: "Cutflow for \\vrbbnonone, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $\\njet = 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 200 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mtbmin > 140\\gev$, $\\mbb < 105~{\\rm or}~> 135 \\gev$, $\\mnonbb < 75~{\\rm or}~> 90 \\gev$."
+      label: "tab:cutflow:ht-filter-vrbbnonone"
+
+    hists/optimization_Wh_CR1_ttbar_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG200_meffG900_mTbminL140_mCTbbL140/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_CR1_ttbar_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG200_meffG900_mTbminL140_mCTbbL140.txt"
+      caption: "Cutflow for $\\crttbarone$, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $\\njet = 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 200 \\gev$, $\\meffj > 900\\gev$, $\\mctbb < 140\\gev$, $\\mtbmin < 140\\gev$, $\\mbb > 135 \\gev$, $75 < \\mnonbb/\\gev < 90$."
+      label: "tab:cutflow:ht-filter-crttbarone"
+
+    hists/optimization_Wh_VR1_ttbar_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG200_meffG900_mTbminG140_mCTbbL140/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_VR1_ttbar_leptonveto_nJetsEq4_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG200_meffG900_mTbminG140_mCTbbL140.txt"
+      caption: "Cutflow for \\vrttbarone, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $\\njet = 4$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 200 \\gev$, $\\meffj > 900\\gev$, $\\mtbmin < 140\\gev$, $\\mctbb > 140\\gev$, $\\mbb/\\gev > 135$, $75 < \\mnonbb/\\gev < 90$."
+      label: "tab:cutflow:ht-filter-vrttbarone"
+
+    hists/optimization_Wh_CR1_singletop_1L_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG700_mTbminG180_mCTbbG190/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_CR1_singletop_1L_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG700_mTbminG180_mCTbbG190.txt"
+      caption: "Cutflow for \\crtopone, HT-sliced \\ttbar and single-top samples. Selections: $1L$ (1 signal lepton), $4  \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 200 \\gev$, $\\meffj > 700\\gev$, $\\mbb > 195\\gev$, $ 75 < \\mnonbb/\\gev < 90$, $\\mtbmin > 180\\gev$, $\\mctbb > 200\\gev$."
+      label: "tab:cutflow:ht-filter-crtopone"
+
+    hists/optimization_Wh_CR1_Zjets_2L_lep1PtG140_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mbbG200/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_CR1_Zjets_2L_lep1PtG140_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_ZCRmetG200_ZCRmeffG900_ZmassG75L105_mbbG200.txt"
+      caption: "Cutflow for \\crzjetone, HT-sliced \\ttbar and single-top samples. Selections: $2L$, $\\pt(l_1, l_2) = (>140, >20) \\gev$, $ 4\\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\zcrmet > 200 \\gev$, $\\zcrmeff > 900\\gev$, $75 < \\zmass/\\gev < 105$, $\\mbb > 200\\gev$."
+      label: "tab:cutflow:ht-filter-crzjetone"
+
+    hists/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbminG160_mCTbbG140/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG250_meffG900_mTbminG160_mCTbbG140.txt"
+      caption: "Cutflow for \\srtwo, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 250 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mtbmin > 160\\gev$, $105 < \\mbb < 135 \\gev$, $75 < \\mnonbb/\\gev < 90$."
+      label: "tab:cutflow:ht-filter-srtwo"
+
+    hists/optimization_Wh_SB2_mbbG135/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_SB2_mbbG135.txt"
+      caption: "Cutflow for \\vrbbhightwo, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 250 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mtbmin > 160\\gev$, $\\mbb > 135 \\gev$, $75 < \\mnonbb/\\gev < 90$."
+      label: "tab:cutflow:ht-filter-vrbbhightwo"
+
+    hists/optimization_Wh_SB2_mbbL105orG135_mNonbbL75orG90/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_SB2_mbbL105orG135_mNonbbL75orG90.txt"
+      caption: "Cutflow for \\vrbbnontwo, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 250 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mtbmin > 160\\gev$, $\\mbb < 105~{\\rm or}~> 135 \\gev$, $\\mnonbb < 75~{\\rm or}~> 90 \\gev$."
+      label: "tab:cutflow:ht-filter-vrbbnontwo"
+
+    hists/optimization_Wh_CR2_ttbar_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG250_meffG900_mTbminL140_mCTbbL140/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_CR2_ttbar_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG250_meffG900_mTbminL140_mCTbbL140.txt"
+      caption: "Cutflow for $\\crttbartwo$, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 250 \\gev$, $\\meffj > 900\\gev$, $\\mctbb < 140\\gev$, $\\mtbmin < 140\\gev$, $\\mbb > 135 \\gev$, $75 < \\mnonbb/\\gev < 90$."
+      label: "tab:cutflow:ht-filter-crttbartwo"
+
+    hists/optimization_Wh_VR2_ttbar_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG250_meffG900_mTbminG160_mCTbbL140/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_VR2_ttbar_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG250_meffG900_mTbminG160_mCTbbL140.txt"
+      caption: "Cutflow for \\vrttbartwo, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 250 \\gev$, $\\meffj > 900\\gev$, $\\mctbb < 140\\gev$, $\\mtbmin > 160\\gev$, $\\mbb\\gev > 135$, $75 < \\mnonbb/\\gev < 90$."
+      label: "tab:cutflow:ht-filter-vrttbartwo"
+
+    hists/optimization_Wh_CR2_singletop_1L_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG250_meffG700_mTbminG180_mCTbbG190/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_CR2_singletop_1L_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG250_meffG700_mTbminG180_mCTbbG190.txt"
+      caption: "Cutflow for \\crtoptwo, HT-sliced \\ttbar and single-top samples. Selections: $1L$ (1 signal lepton), $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 250 \\gev$, $\\meffj > 700\\gev$, $\\mbb > 195\\gev$, $75 < \\mnonbb/\\gev < 90$, $\\mtbmin > 180\\gev$, $\\mctbb > 200\\gev$."
+      label: "tab:cutflow:ht-filter-crtoptwo"
+
+    hists/optimization_Wh_CR2_Zjets_2L_lep1PtG140_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_ZCRmetG250_ZCRmeffG900_ZmassG75L105_mbbG200/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_CR2_Zjets_2L_lep1PtG140_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_ZCRmetG250_ZCRmeffG900_ZmassG75L105_mbbG200.txt"
+      caption: "Cutflow for \\crzjettwo, HT-sliced \\ttbar and single-top samples. Selections: $2L$, $\\pt(l_1, l_2) = (>140, >20) \\gev$, $ 4\\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\zcrmet > 250 \\gev$, $\\zcrmeff > 900\\gev$, $75 < \\zmass/\\gev < 105$, $\\mbb > 200\\gev$."
+      label: "tab:cutflow:ht-filter-crzjettwo"
+
+    hists/optimization_Wh_SR3_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG700_mTbminG180_mCTbbG190/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_SR3_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG105L135_mNonbbG75L90_metG200_meffG700_mTbminG180_mCTbbG190.txt"
+      caption: "Cutflow for \\srthree, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 200 \\gev$, $\\meffj > 700\\gev$, $\\mctbb > 190\\gev$, $\\mtbmin > 180\\gev$, $105 < \\mbb/\\gev < 135$, $75 < \\mnonbb/\\gev < 105$."
+      label: "tab:cutflow:ht-filter-srthree"
+
+    hists/optimization_Wh_SB3_mbbG135/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_SB3_mbbG135.txt"
+      caption: "Cutflow for \\vrbbhighthree, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 250 \\gev$, $\\meffj > 900\\gev$, $\\mctbb > 140\\gev$, $\\mtbmin > 160\\gev$, $\\mbb > 135 \\gev$, $75 < \\mnonbb/\\gev < 90$."
+      label: "tab:cutflow:ht-filter-vrbbhighthree"
+
+    hists/optimization_Wh_SB3_mbbL105orG135_mNonbbL75orG90/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_SB3_mbbL105orG135_mNonbbL75orG90.txt"
+      caption: "Cutflow for \\vrbbnonthree, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 200 \\gev$, $\\meffj > 700\\gev$, $\\mctbb > 190\\gev$, $\\mtbmin > 180\\gev$, $\\mbb < 105~{\\rm or}~> 135 \\gev$, $\\mnonbb < 75~{\\rm or}~> 90 \\gev$."
+      label: "tab:cutflow:ht-filter-vrbbnonthree"
+
+    hists/optimization_Wh_CR3_ttbar_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG200_meffG700_mTbminL140_mCTbbL140/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_CR3_ttbar_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG200_meffG700_mTbminL140_mCTbbL140.txt"
+      caption: "Cutflow for \\crttbarthree, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 200 \\gev$, $\\meffj > 700\\gev$, $\\mctbb < 140\\gev$, $\\mtbmin < 140\\gev$, $\\mbb > 135\\gev$, $75 < \\mnonbb/\\gev < 105$."
+      label: "tab:cutflow:ht-filter-crttbarthree"
+
+    hists/optimization_Wh_VR3_ttbar_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG200_meffG700_mTbminG180_mCTbbL190/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_VR3_ttbar_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG135_mNonbbG75L90_metG200_meffG700_mTbminG180_mCTbbL190.txt"
+      caption: "Cutflow for \\vrttbarthree, HT-sliced \\ttbar and single-top samples. Selections: $0L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 200 \\gev$, $\\meffj > 700\\gev$, $\\mctbb < 190\\gev$, $\\mtbmin > 180\\gev$, $\\mbb/\\gev > 135$, $75 < \\mnonbb/\\gev < 105$."
+      label: "tab:cutflow:ht-filter-vrttbarthree"
+
+    hists/optimization_Wh_CR3_singletop_1L_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG700_mTbminG180_mCTbbG190/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_CR3_singletop_1L_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_mbbG195_mNonbbG75L90_metG200_meffG700_mTbminG180_mCTbbG190.txt"
+      caption: "Cutflow for \\crtopthree, HT-sliced \\ttbar and single-top samples. Selections: $1L$, $4 \\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\met > 200 \\gev$, $\\meffj > 700\\gev$, $\\mctbb > 200\\gev$, $\\mtbmin > 180\\gev$, $\\mbb > 195\\gev$, $75 < \\mnonbb/\\gev < 105$."
+      label: "tab:cutflow:ht-filter-crtopthree"
+
+    hists/optimization_Wh_CR3_Zjets_2L_lep1PtG140_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_ZCRmetG200_ZCRmeffG700_ZmassG75L105_mbbG200/cutflow:
+      outfile: "cutflow_resolved/cutflow_Wh_SR_CR_VR_November16_HT_incl_filter/optimization_Wh_CR3_Zjets_2L_lep1PtG140_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_ZCRmetG200_ZCRmeffG700_ZmassG75L105_mbbG200.txt"
+      caption: "Cutflow for \\crzjetthree, HT-sliced \\ttbar and single-top samples. Selections: $2L$, $\\pt(l_1, l_2) = (>140, >20) \\gev$, $ 4\\leq \\njet \\leq 5$, $\\nbjet = 2$, $\\dphimin > 0.4$, $\\zcrmet > 200 \\gev$, $\\zcrmeff > 700\\gev$, $75 < \\zmass/\\gev < 105$, $\\mbb > 200\\gev$."
+      label: "tab:cutflow:ht-filter-crzjetthree"

@@ -1,0 +1,2012 @@
+---
+# we can have text properties which specify what text to draw (think atlas, prelim, internal)
+# NOTE indentation matters
+#   # this one pulls in all of the reference that's pre-defined
+#   texts:
+#     - *atlas
+#   # this one merges the &internal with the current hash so everything but the label is the same
+#   texts:
+#     - label: preliminary
+#       <<: *internal
+#   texts:
+#     - x: <position>
+#       y: <position>
+#       font: <number> (for SetTextFont(...))
+#       size: <number> (for SetTextSize(...))
+#       label: <string> (what to actually say)
+
+atlas: &atlas
+  x: 0.25
+  y: 0.88
+  font: 73
+  size: 25
+  label: ATLAS
+
+internal: &internal
+  x: 0.36
+  font: 43
+  label: Internal
+  <<: *atlas
+
+atlasinternal: &atlasinternal
+  - *atlas
+  - *internal
+
+labeloptions: &labeloptions
+  xtitleoffset: 1.4
+  ytitleoffset: 1.4
+  xtitlesize: 0.05
+  ytitlesize: 0.05
+  xlabelsize: 0.05
+  ylabelsize: 0.05
+
+# top level defines the label / grouping
+# second level is a list of files under that group, one can also specify a wildcard to match files so they all get grouped
+# third level specifies extra information for a given file such as plots to ignore
+# groups:
+#   - name: <group name>
+#     files:
+#       - <a file path or a file pattern to match a set of files>
+#     styles:
+#       <name of style>: <value for style>
+#   - name: <group name>
+#     files: [file1, file2, ...]
+#     styles: {style1: val1, style2: val2, ...}
+
+# styles are set on all hists associated with that group
+# styles:
+#   - drawstyle (passed into Draw(...), think 'same' or 'hist')
+#   - legendstyle (passed into Legend(...), think 'F')
+#   - markercolor (also set with 'color')
+#   - markerstyle
+#   - markersize
+#   - fillcolor (also set with 'color')
+#   - fillstyle
+#   - linecolor (also set with 'color')
+#   - linestyle
+#   - linewidth
+#   - color (sets markercolor, fillcolor, linecolor)
+
+groups:
+
+  - name: "Nominal"
+    files:
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*410013*.hists
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*410014*.hists
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407019*.hists
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407021*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: true
+
+  - name: "Generator"
+    files:
+      # - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407324*.hists
+      # - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407325*.hists
+      # - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407326*.hists
+      # - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407327*.hists
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407328*.hists
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407329*.hists
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407330*.hists
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407331*.hists
+      # - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407332*.hists
+      # - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407333*.hists
+      # - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407334*.hists
+      # - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407335*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: false
+    scale factor: 9.61232659878
+
+  - name: "Shower"
+    files:
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*410147*.hists
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*410148*.hists
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407062*.hists
+      # - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407064*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: false
+
+  # - name: "Shower, MET<200"
+  #   files:
+  #     - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*410147*.hists
+  #     - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*410148*.hists
+  #     # - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407062*.hists
+  #     # - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407064*.hists
+  #   styles:
+  #     legendstyle: F
+  #     fillstyle: solid
+  #   stack it: false
+  #
+  # - name: "Shower, MET>200"
+  #   files:
+  #     # - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*410147*.hists
+  #     # - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*410148*.hists
+  #     - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407062*.hists
+  #     - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*407064*.hists
+  #   styles:
+  #     legendstyle: F
+  #     fillstyle: solid
+  #   stack it: false
+
+  - name: "radHi"
+    files:
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*410099*.hists
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*410101*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: false
+
+  - name: "radLo"
+    files:
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*410100*.hists
+      - /Users/joakim/ewk/ewk_simpleanalysis/hists_simpleanalysis_February1/*410102*.hists
+    styles:
+      legendstyle: F
+      fillstyle: solid
+    stack it: false
+  
+# plots:
+#   config:  # here we set global configurations that are applied uniformly such as...
+#     canvas:
+#     legend:
+#     texts:
+
+plots:
+  config:
+    texts:
+      - *atlas
+      - *internal
+      - &topline
+        x: 0.25
+        y: 0.84
+        font: 43
+        size: 20
+        label: "36.1 fb^{-1}"
+      -
+        x: 0.25
+        y: 0.75
+        font: 43
+        size: 20
+        label: "single top systematics"
+    canvas:
+      width: 800
+      height: 600
+      logy: true
+      ndivisions: 510
+    legend:
+      numcolumns: 1
+      topmargin: 0.02
+      # leftmargin: 0.5
+      # rightmargin: 0.7
+      textsize: 20
+      entrysep: 0.035
+      entryheight: 0.007
+    ratio range: [0, 3]
+
+  paths:
+
+    ##### loose_geq2b
+
+    all/loose_geq2b/n_jets:
+      xmin: 4
+      xmax: 10
+      ymin: 1
+      ymax: 10000000
+      ndivisions: 10
+      ylabel: Events
+      xlabel: "Number of jets"
+      ratio: true 
+      canvas:
+        ndivisions: 10
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, #geq2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+
+    all/loose_geq2b/n_bjets:
+      xmin: 2
+      xmax: 6
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "Number of b-tagged jets"
+      ratio: true 
+      canvas:
+        ndivisions: 5
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, #geq2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_geq2b/pt_jet_1:
+      xmin: 50
+      xmax: 800
+      ymin: 1
+      ymax: 10000000
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, #geq2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_geq2b/dphi_min:
+      xmin: 0.
+      xmax: 3
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, #geq2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_geq2b/met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "E_{T}^{miss} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, #geq2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_geq2b/gen_filt_met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "gen_filt_met [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, #geq2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_geq2b/mTb_min:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T}^{b,min} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, #geq2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_geq2b/meff_4j:
+      xmin: 400
+      xmax: 1600
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "m_{eff}^{4j} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, #geq2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_geq2b/m_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, #geq2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_geq2b/mCT_bb:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{CT}^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, #geq2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_geq2b/m_non_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{non-bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, #geq2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+
+    ##### loose_eq2b
+
+    all/loose_eq2b/n_jets:
+      xmin: 4
+      xmax: 10
+      ymin: 1
+      ymax: 10000000
+      ndivisions: 10
+      ylabel: Events
+      xlabel: "Number of jets"
+      ratio: true 
+      canvas:
+        ndivisions: 10
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, =2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+
+    all/loose_eq2b/n_bjets:
+      xmin: 2
+      xmax: 6
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "Number of b-tagged jets"
+      ratio: true 
+      canvas:
+        ndivisions: 5
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, =2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_eq2b/pt_jet_1:
+      xmin: 50
+      xmax: 800
+      ymin: 1
+      ymax: 10000000
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, =2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_eq2b/dphi_min:
+      xmin: 0.
+      xmax: 3
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, =2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_eq2b/met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "E_{T}^{miss} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, =2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_eq2b/gen_filt_met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "gen_filt_met [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, =2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_eq2b/mTb_min:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T}^{b,min} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, =2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_eq2b/meff_4j:
+      xmin: 400
+      xmax: 1600
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "m_{eff}^{4j} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, =2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_eq2b/m_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, =2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_eq2b/mCT_bb:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{CT}^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, =2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+    all/loose_eq2b/m_non_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{non-bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, #geq4j, =2b, E_{T}^{miss}>200 GeV, #Delta#phi^{4j}_{min}>0.4"
+
+    ##### SR2
+
+    all/SR2/n_jets:
+      xmin: 4
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ndivisions: 10
+      ylabel: Events
+      xlabel: "Number of jets"
+      ratio: true 
+      canvas:
+        ndivisions: 10
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2"
+
+    all/SR2/n_bjets:
+      xmin: 2
+      xmax: 6
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "Number of b-tagged jets"
+      ratio: true 
+      canvas:
+        ndivisions: 5
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2"
+    all/SR2/pt_jet_1:
+      xmin: 50
+      xmax: 800
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2"
+    all/SR2/dphi_min:
+      xmin: 0.
+      xmax: 3
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2"
+    all/SR2/met:
+      xmin: 200
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 5
+      ylabel: Events
+      xlabel: "E_{T}^{miss} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2"
+    all/SR2/gen_filt_met:
+      xmin: 200
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 5
+      ylabel: Events
+      xlabel: "gen_filt_met [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2"
+    all/SR2/mTb_min:
+      xmin: 0
+      xmax: 600
+      ymin: 0.01
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T}^{b,min} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2"
+    all/SR2/meff_4j:
+      xmin: 400
+      xmax: 1600
+      ymin: 0.01
+      ymax: 100
+      rebin: 5
+      ylabel: Events
+      xlabel: "m_{eff}^{4j} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2"
+    all/SR2/m_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 0.01
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2"
+    all/SR2/mCT_bb:
+      xmin: 0
+      xmax: 600
+      ymin: 0.01
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{CT}^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2"
+    all/SR2/m_non_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 0.01
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{non-bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2"
+
+    ##### SR2_NOmct_NOmtb
+
+    all/SR2_NOmct_NOmtb/n_jets:
+      xmin: 4
+      xmax: 10
+      ymin: 0.01
+      ymax: 100
+      ndivisions: 10
+      ylabel: Events
+      xlabel: "Number of jets"
+      ratio: true 
+      canvas:
+        ndivisions: 10
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}"
+
+    all/SR2_NOmct_NOmtb/n_bjets:
+      xmin: 2
+      xmax: 6
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "Number of b-tagged jets"
+      ratio: true 
+      canvas:
+        ndivisions: 5
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}"
+    all/SR2_NOmct_NOmtb/pt_jet_1:
+      xmin: 50
+      xmax: 800
+      ymin: 0.01
+      ymax: 100
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}"
+    all/SR2_NOmct_NOmtb/dphi_min:
+      xmin: 0.
+      xmax: 3
+      ymin: 0.01
+      ymax: 100
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}"
+    all/SR2_NOmct_NOmtb/met:
+      xmin: 200
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 5
+      ylabel: Events
+      xlabel: "E_{T}^{miss} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}"
+    all/SR2_NOmct_NOmtb/gen_filt_met:
+      xmin: 200
+      xmax: 1000
+      ymin: 0.01
+      ymax: 100
+      rebin: 5
+      ylabel: Events
+      xlabel: "gen_filt_met [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}"
+    all/SR2_NOmct_NOmtb/mTb_min:
+      xmin: 0
+      xmax: 600
+      ymin: 0.01
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T}^{b,min} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}"
+    all/SR2_NOmct_NOmtb/meff_4j:
+      xmin: 400
+      xmax: 1600
+      ymin: 0.01
+      ymax: 100
+      rebin: 5
+      ylabel: Events
+      xlabel: "m_{eff}^{4j} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}"
+    all/SR2_NOmct_NOmtb/m_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 0.01
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}"
+    all/SR2_NOmct_NOmtb/mCT_bb:
+      xmin: 0
+      xmax: 600
+      ymin: 0.01
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{CT}^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}"
+    all/SR2_NOmct_NOmtb/m_non_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 0.01
+      ymax: 100
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{non-bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}"
+
+    ##### SR2_NOmct_NOmtb_NOmnonbb
+
+    all/SR2_NOmct_NOmtb_NOmnonbb/n_jets:
+      xmin: 4
+      xmax: 10
+      ymin: 1
+      ymax: 10000000
+      ndivisions: 10
+      ylabel: Events
+      xlabel: "Number of jets"
+      ratio: true 
+      canvas:
+        ndivisions: 10
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+
+    all/SR2_NOmct_NOmtb_NOmnonbb/n_bjets:
+      xmin: 2
+      xmax: 6
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "Number of b-tagged jets"
+      ratio: true 
+      canvas:
+        ndivisions: 5
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/SR2_NOmct_NOmtb_NOmnonbb/pt_jet_1:
+      xmin: 50
+      xmax: 800
+      ymin: 1
+      ymax: 10000000
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/SR2_NOmct_NOmtb_NOmnonbb/dphi_min:
+      xmin: 0.
+      xmax: 3
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/SR2_NOmct_NOmtb_NOmnonbb/met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "E_{T}^{miss} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/SR2_NOmct_NOmtb_NOmnonbb/gen_filt_met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "gen_filt_met [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/SR2_NOmct_NOmtb_NOmnonbb/mTb_min:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T}^{b,min} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/SR2_NOmct_NOmtb_NOmnonbb/meff_4j:
+      xmin: 400
+      xmax: 1600
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "m_{eff}^{4j} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/SR2_NOmct_NOmtb_NOmnonbb/m_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/SR2_NOmct_NOmtb_NOmnonbb/mCT_bb:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{CT}^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/SR2_NOmct_NOmtb_NOmnonbb/m_non_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{non-bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+
+    ##### SR2_NOmct_NOmtb_NOmnonbb_meffG700_metG200
+
+    all/SR2_NOmct_NOmtb_NOmnonbb_meffG700_metG200/n_jets:
+      xmin: 4
+      xmax: 10
+      ymin: 1
+      ymax: 10000000
+      ndivisions: 10
+      ylabel: Events
+      xlabel: "Number of jets"
+      ratio: true 
+      canvas:
+        ndivisions: 10
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, m^{non-bb}, and loose meff/met"
+
+    all/SR2_NOmct_NOmtb_NOmnonbb_meffG700_metG200/n_bjets:
+      xmin: 2
+      xmax: 6
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "Number of b-tagged jets"
+      ratio: true 
+      canvas:
+        ndivisions: 5
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, m^{non-bb}, and loose meff/met"
+    all/SR2_NOmct_NOmtb_NOmnonbb_meffG700_metG200/pt_jet_1:
+      xmin: 50
+      xmax: 800
+      ymin: 1
+      ymax: 10000000
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, m^{non-bb}, and loose meff/met"
+    all/SR2_NOmct_NOmtb_NOmnonbb_meffG700_metG200/dphi_min:
+      xmin: 0.
+      xmax: 3
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, m^{non-bb}, and loose meff/met"
+    all/SR2_NOmct_NOmtb_NOmnonbb_meffG700_metG200/met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "E_{T}^{miss} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, m^{non-bb}, and loose meff/met"
+    all/SR2_NOmct_NOmtb_NOmnonbb_meffG700_metG200/gen_filt_met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "gen_filt_met [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, m^{non-bb}, and loose meff/met"
+    all/SR2_NOmct_NOmtb_NOmnonbb_meffG700_metG200/mTb_min:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T}^{b,min} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, m^{non-bb}, and loose meff/met"
+    all/SR2_NOmct_NOmtb_NOmnonbb_meffG700_metG200/meff_4j:
+      xmin: 400
+      xmax: 1600
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "m_{eff}^{4j} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, m^{non-bb}, and loose meff/met"
+    all/SR2_NOmct_NOmtb_NOmnonbb_meffG700_metG200/m_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, m^{non-bb}, and loose meff/met"
+    all/SR2_NOmct_NOmtb_NOmnonbb_meffG700_metG200/mCT_bb:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{CT}^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, m^{non-bb}, and loose meff/met"
+    all/SR2_NOmct_NOmtb_NOmnonbb_meffG700_metG200/m_non_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{non-bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "SR2: no m_{CT}^{bb}, m_{T}^{b,min}, m^{non-bb}, and loose meff/met"
+
+    ##### CR2tt
+
+    all/CR2tt/n_jets:
+      xmin: 4
+      xmax: 10
+      ymin: 1
+      ymax: 10000000
+      ndivisions: 10
+      ylabel: Events
+      xlabel: "Number of jets"
+      ratio: true 
+      canvas:
+        ndivisions: 10
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt"
+
+    all/CR2tt/n_bjets:
+      xmin: 2
+      xmax: 6
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "Number of b-tagged jets"
+      ratio: true 
+      canvas:
+        ndivisions: 5
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt"
+    all/CR2tt/pt_jet_1:
+      xmin: 50
+      xmax: 800
+      ymin: 1
+      ymax: 10000000
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt"
+    all/CR2tt/dphi_min:
+      xmin: 0.
+      xmax: 3
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt"
+    all/CR2tt/met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "E_{T}^{miss} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt"
+    all/CR2tt/gen_filt_met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "gen_filt_met [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt"
+    all/CR2tt/mTb_min:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T}^{b,min} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt"
+    all/CR2tt/meff_4j:
+      xmin: 400
+      xmax: 1600
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "m_{eff}^{4j} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt"
+    all/CR2tt/m_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt"
+    all/CR2tt/mCT_bb:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{CT}^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt"
+    all/CR2tt/m_non_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{non-bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt"
+
+    ##### CR2top
+
+    all/CR2top/n_jets:
+      xmin: 4
+      xmax: 10
+      ymin: 1
+      ymax: 10000000
+      ndivisions: 10
+      ylabel: Events
+      xlabel: "Number of jets"
+      ratio: true 
+      canvas:
+        ndivisions: 10
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top"
+
+    all/CR2top/n_bjets:
+      xmin: 2
+      xmax: 6
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "Number of b-tagged jets"
+      ratio: true 
+      canvas:
+        ndivisions: 5
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top"
+    all/CR2top/pt_jet_1:
+      xmin: 50
+      xmax: 800
+      ymin: 1
+      ymax: 10000000
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top"
+    all/CR2top/dphi_min:
+      xmin: 0.
+      xmax: 3
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top"
+    all/CR2top/met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "E_{T}^{miss} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top"
+    all/CR2top/gen_filt_met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "gen_filt_met [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top"
+    all/CR2top/mTb_min:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T}^{b,min} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top"
+    all/CR2top/meff_4j:
+      xmin: 400
+      xmax: 1600
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "m_{eff}^{4j} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top"
+    all/CR2top/m_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top"
+    all/CR2top/mCT_bb:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{CT}^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top"
+    all/CR2top/m_non_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{non-bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top"
+
+    ##### CR2tt_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200
+
+    all/CR2tt_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/n_jets:
+      xmin: 4
+      xmax: 10
+      ymin: 1
+      ymax: 10000000
+      ndivisions: 10
+      ylabel: Events
+      xlabel: "Number of jets"
+      ratio: true 
+      canvas:
+        ndivisions: 10
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+
+    all/CR2tt_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/n_bjets:
+      xmin: 2
+      xmax: 6
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "Number of b-tagged jets"
+      ratio: true 
+      canvas:
+        ndivisions: 5
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2tt_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/pt_jet_1:
+      xmin: 50
+      xmax: 800
+      ymin: 1
+      ymax: 10000000
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2tt_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/dphi_min:
+      xmin: 0.
+      xmax: 3
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2tt_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "E_{T}^{miss} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2tt_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/gen_filt_met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "gen_filt_met [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2tt_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/mTb_min:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T}^{b,min} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2tt_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/meff_4j:
+      xmin: 400
+      xmax: 1600
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "m_{eff}^{4j} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2tt_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/m_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2tt_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/mCT_bb:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{CT}^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2tt_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/m_non_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{non-bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2tt: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+
+    ##### CR2top_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200
+
+    all/CR2top_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/n_jets:
+      xmin: 4
+      xmax: 10
+      ymin: 1
+      ymax: 10000000
+      ndivisions: 10
+      ylabel: Events
+      xlabel: "Number of jets"
+      ratio: true 
+      canvas:
+        ndivisions: 10
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+
+    all/CR2top_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/n_bjets:
+      xmin: 2
+      xmax: 6
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "Number of b-tagged jets"
+      ratio: true 
+      canvas:
+        ndivisions: 5
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2top_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/pt_jet_1:
+      xmin: 50
+      xmax: 800
+      ymin: 1
+      ymax: 10000000
+      rebin: 4
+      ylabel: Events
+      xlabel: "p_{T,1} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2top_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/dphi_min:
+      xmin: 0.
+      xmax: 3
+      ymin: 1
+      ymax: 10000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2top_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "E_{T}^{miss} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2top_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/gen_filt_met:
+      xmin: 200
+      xmax: 1000
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "gen_filt_met [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2top_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/mTb_min:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{T}^{b,min} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2top_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/meff_4j:
+      xmin: 400
+      xmax: 1600
+      ymin: 1
+      ymax: 10000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "m_{eff}^{4j} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2top_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/m_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2top_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/mCT_bb:
+      xmin: 0
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m_{CT}^{bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"
+    all/CR2top_NOmct_NOmtb_NOmnonbb_NOdphi_meffG700_metG200/m_non_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 1
+      ymax: 10000000
+      rebin: 2
+      ylabel: Events
+      xlabel: "m^{non-bb} [GeV]"
+      ratio: true 
+      texts:
+        -
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "CR2top: no m_{CT}^{bb}, m_{T}^{b,min}, and m^{non-bb}"

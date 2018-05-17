@@ -30,6 +30,7 @@ import subprocess
 import glob
 import yaml
 import json
+from uncertainties import ufloat
 
 '''
   with tempfile.NamedTemporaryFile() as tmpFile:
@@ -66,26 +67,35 @@ import plotHelpers as ph
 
 
 class Cut:
-  def __init__(self, n=0.0, err=0.0, wn=0.0, werr=0.0):
-      self.n = n
-      self.err = err
-      self.wn = wn
-      self.werr = werr
+  """
+  n: number of raw events
+  wn: sum of event weights (weight = wn/n)
+  wsn: sum of event weights and scaled to cross section (scale factor = wsn/wn)
+  """
+  def __init__(self, n=0.0, err=0.0, wn=0.0, werr=0.0, wsn=0.0, wserr=0.0):
+    self.n = n
+    self.err = err
+    self.wn = wn
+    self.werr = werr
+    self.wsn = wsn
+    self.wserr = wserr
 
   def print_cut(self):
-      return "(Cut: n = {:.2f}+/-{:.2f}, wn = {:.2f}+/-{:.2f})".format(self.n, self.err, self.wn, self.werr)
+    return "(Cut: n = {:.2f}+/-{:.2f}, wn = {:.2f}+/-{:.2f}, wsn = {:.2f}+/-{:.2f})".format(self.n, self.err, self.wn, self.werr, self.wsn, self.wserr)
   def __str__(self):
-      return self.print_cut()
+    return self.print_cut()
   def __unicode__(self):
-      return self.print_cut()
+    return self.print_cut()
   def __repr__(self):
-      return self.print_cut()
+    return self.print_cut()
 
-  def add(self, n, err, wn, werr):
-      self.n += n
-      self.err = np.sqrt(self.err**2 + err**2)
-      self.wn += wn
-      self.werr = np.sqrt(self.werr**2 + werr**2)
+  def add(self, n, err, wn, werr, wsn, wserr):
+    self.n += n
+    self.err = np.sqrt(self.err**2 + err**2)
+    self.wn += wn
+    self.werr = np.sqrt(self.werr**2 + werr**2)
+    self.wsn += wsn
+    self.wserr = np.sqrt(self.wserr**2 + wserr**2)
 
 def format_arg_value(arg_val):
   """ Return a string representing a (name, value) pair.
@@ -242,48 +252,47 @@ def save_detailed_cutflow_samples(cuts, tag='<cutflow>', outfile='detailed_cutfl
       print(r"\begin{table}[!ht]", file=f)
       print(r"\tiny", file=f)
       print(r"\begin{center}\renewcommand\arraystretch{1.6}", file=f)
-      print(r"\sisetup{round-mode=figures, round-precision=2,", file=f)
-      print(r"retain-explicit-plus=true, group-digits = true}", file=f)
+      print(r"\sisetup{round-mode=figures, round-precision=2, group-digits = true}", file=f)
       print(r"\scalebox{0.9}{", file=f)
       print(r"\begin{tabular}{l | ", file=f)
-      print(r"S[table-format=12.2, table-number-alignment=left, round-mode=places, round-precision=0]@{\quad$\pm\,$}", file=f)
-      print(r"S[table-format=8.2, table-number-alignment=right, round-mode=figures, round-precision=2]|", file=f)
-      print(r"S[table-format=12.2, table-number-alignment=left, round-mode=figures, round-precision=2]@{\quad$\pm\,$}", file=f)
-      print(r"S[table-format=8.2, table-number-alignment=right, round-mode=figures, round-precision=2]|", file=f)
-      print(r"S[table-format=2.2, table-number-alignment=left, round-mode=figures, round-precision=2]|", file=f)
-      print(r"S[table-format=2.2, table-number-alignment=left, round-mode=figures, round-precision=2]", file=f)
+      print(r"S[round-mode=places]|", file=f)
+      print(r"S[scientific-notation = true]|", file=f)
+      print(r"S[scientific-notation = true]|", file=f)
+      print(r"S|", file=f)
+      print(r"S", file=f)
       print(r"}", file=f)
     print(toprule, file=f)
     if do_latex:
-      print("\multicolumn{{7}}{{c}}{{ {} }} \\\\[0.2cm]".format(tag), file=f)
+      print("\multicolumn{{6}}{{c}}{{ {} }} \\\\[0.2cm]".format(tag), file=f)
     else:
       print(tag, file=f)
     print(toprule, file=f)
     if do_latex:
-      print(r"Cut & \multicolumn{2}{c|}{$N^{\rm raw}$} & \multicolumn{2}{c|}{$N$} & {$\eff$ [\%]} & {$\releff$ [\%]} \\", file=f)
-
+      print(r"Cut & {$N^{\mathrm{raw}}$} & {$N^{\mathrm{w}}$} & {$N$} & {$\eff$ [\%]} & {$\releff$ [\%]} \\", file=f)
     else:
-      print("{: <25} | {: <21} | {: <21} | {: <8} | {: <8}".format(
-        "Cut", "nraw", "n", "eff", "effrel"), file=f)
+      print("{: <25} | {: <21} | {: <21} | {: <21} | {: <8} | {: <8}".format(
+        "Cut", "nraw", "nweighted", "n", "eff", "effrel"), file=f)
     print(midrule, file=f)
 
     eff = releff = 100.
-    wn_prev = -1
+    wsn_prev = -1
     for i, (cut, c) in enumerate(ordered_cuts):
       if (i==0):
-        wn_initial = c.wn
+        wsn_initial = c.wsn
       if (i!=0):
-        if (wn_initial>0): eff = c.wn/wn_initial*100.
+        if (wsn_initial>0): eff = c.wsn/wsn_initial*100.
         else: eff = 0
-        if (wn_prev>0): releff = c.wn/wn_prev*100.
+        if (wsn_prev>0): releff = c.wsn/wsn_prev*100.
         else: releff = 0
-      wn_prev = c.wn
+      wsn_prev = c.wsn
       if do_latex:
-          cutflow_str = "{} &{:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f} & {:.2f} \\\\".format(
-          cut, c.n, c.err, c.wn, c.werr, eff, releff)
+          cutflow_str = "{} & \\num{{{:.1f}}} & \\num{{{:.1uS}}} & \\num{{{:.1uS}}} & \\num{{{:g}}} & \\num{{{:g}}} \\\\".format(
+          cut, ufloat(c.n, c.err), ufloat(c.wn, c.werr), ufloat(c.wsn, c.wserr), eff, releff)
+          cutflow_str = cutflow_str.replace(r'+/-', r'\pm')
+          cutflow_str = cutflow_str.replace(r'0.0\pm0', r'0.0\pm0.0')
       else:
-        cutflow_str = "{: <25} | {:.2e} +/- {:.2e} | {:.2e} +/- {:.2e} | {:.2e} | {:.2e}".format(
-          cut, c.n, c.err, c.wn, c.werr, eff, releff)
+        cutflow_str = "{: <25} | {:.2e} +/- {:.2e} | {:.2e} +/- {:.2e} | {:.2e} +/- {:.2e} | {:.2e} | {:.2e}".format(
+          cut, c.n, c.err, c.wn, c.werr, c.wsn, c.wserr, eff, releff)
       print(cutflow_str, file=f)
     print(bottomrule, file=f)
     if do_latex:
@@ -344,7 +353,7 @@ if __name__ == "__main__":
       samples = dict([(group['name'], group) for group in configs['samples']])
       # get the cutflows configuration
       cutflows = configs.get('cutflows')
-      # paths to cutflow histograms
+      # get the cutflows paths
       cutflows_paths = cutflows.get('paths')
 
       # get the weights configurations for scaling
@@ -358,11 +367,16 @@ if __name__ == "__main__":
 
       for path in cutflows_paths.keys():
 
+        # histograms where sample scale factor to cross section is not applied
         hsample = reduce(lambda x,y: getattr(x, y, None), (item for item in path.split('/') if item != args.topLevel), hall)
-        scale_hists(hsample, weights, samples)
         hists = map(lambda hgroup: hgroup.flatten, hsample)
 
-        # cut_urder
+        # histograms with sample scale factors applied
+        hsample_scaled = reduce(lambda x,y: getattr(x, y, None), (item for item in path.split('/') if item != args.topLevel), hall)
+        scale_hists(hsample_scaled, weights, samples)
+        hists_scaled = map(lambda hgroup: hgroup.flatten, hsample_scaled)
+
+        # order cuts
         try:
             cut_label = cutflows_paths.get(hsample.path, {})['label']
         except KeyError:
@@ -373,12 +387,18 @@ if __name__ == "__main__":
             cut_order = -1
 
         # cutflows
-        for h in hists:
+        for h, hs in zip(hists, hists_scaled):
+          # raw number of events
           n = h.GetEntries()
           err = np.sqrt(n)
+          # sum of event weights
           wn = h.GetBinContent(1)
           werr = h.GetBinError(1)
-          cut = Cut(n, err, wn, werr)
+          # number of events with sample weights applied
+          wsn = hs.GetBinContent(1)
+          wserr = hs.GetBinError(1)
+          # create a cut
+          cut = Cut(n, err, wn, werr, wsn, wserr)
           key = h.GetTitle()
           if key in cuts:
             tmp_dict = cuts[h.GetTitle()]
@@ -387,11 +407,11 @@ if __name__ == "__main__":
             cuts[h.GetTitle()] = {cut_label : [cut_order, cut] }
 
       if args.detailed_cutflow:
-        for c in cuts:
-          outfile = samples[c]['outfile']
+        for label, cut in cuts.iteritems():
+          outfile = samples[label]['outfile']
           print("----> Saving detailed cutflow: ", outfile)
-          print("tag", c)
-          save_detailed_cutflow_samples(cuts[c], c, outfile, args.do_latex)
+          print("tag", label)
+          save_detailed_cutflow_samples(cut, label, outfile, args.do_latex)
 
       if not args.debug:
         ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")

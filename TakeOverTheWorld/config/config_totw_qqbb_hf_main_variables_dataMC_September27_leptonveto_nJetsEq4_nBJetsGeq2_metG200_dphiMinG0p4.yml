@@ -71,7 +71,7 @@ groups:
 
   - name: data
     files:
-       - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*period*.hists
+       - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*period*.hists
     styles:
       legendstyle: p
       color: black
@@ -80,7 +80,7 @@ groups:
 
   - name: "t#bar{t}"
     files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*ttbar*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*ttbar*.hists
     styles:
       legendstyle: F
       fillstyle: solid
@@ -88,7 +88,7 @@ groups:
 
   - name: "single top"
     files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*singletop*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*singletop*.hists
     styles:
       legendstyle: F
       fillstyle: solid
@@ -96,7 +96,7 @@ groups:
 
   - name: "t#bar{t}+X"
     files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*topEW*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*topEW*.hists
     styles:
       legendstyle: F
       fillstyle: solid
@@ -104,7 +104,7 @@ groups:
 
   - name: "W+jets"
     files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*W_sherpa_220*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*W_sherpa_220*.hists
     styles:
       legendstyle: F
       fillstyle: solid
@@ -112,7 +112,7 @@ groups:
 
   - name: "Z+jets"
     files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Z_sherpa_220*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Z_sherpa_220*.hists
     styles:
       legendstyle: F
       fillstyle: solid
@@ -120,7 +120,7 @@ groups:
 
   - name: "diboson"
     files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*diboson*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*diboson*.hists
     styles:
       legendstyle: F
       fillstyle: solid
@@ -128,15 +128,15 @@ groups:
 
   - name: dijet
     files:
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361020*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361021*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361022*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361023*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361024*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361025*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361026*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361027*.hists
-      - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361028*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361020*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361021*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361022*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361023*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361024*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361025*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361026*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361027*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*361028*.hists
     styles:
       legendstyle: F
       fillstyle: solid
@@ -144,7 +144,7 @@ groups:
 
   # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 300, m_{#tilde{#chi^{0}_{1}}} = 0"
   #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_300p0_0p0*.hists
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_300p0_0p0*.hists
   #   styles:
   #     legendstyle: L
   #     drawstyle: hist
@@ -153,7 +153,7 @@ groups:
   #
   # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 300, m_{#tilde{#chi^{0}_{1}}} = 50"
   #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_300p0_50p0*.hists
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_300p0_50p0*.hists
   #   styles:
   #     legendstyle: L
   #     drawstyle: hist
@@ -162,7 +162,7 @@ groups:
   #
   # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 300, m_{#tilde{#chi^{0}_{1}}} = 100"
   #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_300p0_100p0*.hists
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_300p0_100p0*.hists
   #   styles:
   #     legendstyle: L
   #     drawstyle: hist
@@ -171,7 +171,7 @@ groups:
   #
   # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 350, m_{#tilde{#chi^{0}_{1}}} = 50"
   #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_350p0_50p0*.hists
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_350p0_50p0*.hists
   #   styles:
   #     legendstyle: L
   #     drawstyle: hist
@@ -180,7 +180,7 @@ groups:
   #
   # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 350, m_{#tilde{#chi^{0}_{1}}} = 100"
   #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_350p0_100p0*.hists
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_350p0_100p0*.hists
   #   styles:
   #     legendstyle: L
   #     drawstyle: hist
@@ -189,7 +189,7 @@ groups:
   #
   # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 400, m_{#tilde{#chi^{0}_{1}}} = 0"
   #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_400p0_0p0*.hists
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_400p0_0p0*.hists
   #   styles:
   #     legendstyle: L
   #     drawstyle: hist
@@ -198,7 +198,7 @@ groups:
   #
   # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 450, m_{#tilde{#chi^{0}_{1}}} = 50"
   #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_450p0_50p0*.hists
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_450p0_50p0*.hists
   #   styles:
   #     legendstyle: L
   #     drawstyle: hist
@@ -207,7 +207,7 @@ groups:
   #
   # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 500, m_{#tilde{#chi^{0}_{1}}} = 0"
   #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_500p0_0p0*.hists
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_500p0_0p0*.hists
   #   styles:
   #     legendstyle: L
   #     drawstyle: hist
@@ -216,7 +216,7 @@ groups:
   #
   # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 500, m_{#tilde{#chi^{0}_{1}}} = 100"
   #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_500p0_100p0*.hists
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_500p0_100p0*.hists
   #   styles:
   #     legendstyle: L
   #     drawstyle: hist
@@ -225,7 +225,7 @@ groups:
   #
   # - name: "m_{#tilde{#chi^{#pm}_{1}},#tilde{#chi^{0}_{2}}} = 600, m_{#tilde{#chi^{0}_{1}}} = 0"
   #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_600p0_0p0*.hists
+  #     - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_main_variables_dataMC_September27_HT_incl_filter/*Wh_600p0_0p0*.hists
   #   styles:
   #     legendstyle: L
   #     drawstyle: hist

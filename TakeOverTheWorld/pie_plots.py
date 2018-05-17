@@ -45,10 +45,11 @@ if __name__ == '__main__':
     # print 'pass: {}'.format(bkgd[i].get('label'))
     labels.append(bkgd[i].get('label'))
     yields.append(bkgd[i].get('nevents'))
-    if (i < 2):
-      colors_new.append(colors[len(bkgd)-i-1])
-    else:
-      colors_new.append(colors[i-2])
+    # if (i < 2):
+    #   colors_new.append(colors[len(bkgd)-i-1])
+    # else:
+    #   colors_new.append(colors[i-2])
+    colors_new.append(colors[i])
 
   # foo = zip(yields, labels, colors_new)
   # foo.sort(reverse=True)
@@ -77,4 +78,4 @@ if __name__ == '__main__':
   # for wedge in wedges[0]:
   #   wedge.set_edgecolor('white')
   ax1.axis('equal')
-  fig1.savefig(re.sub('\.json', '.pdf', args.input_file), format='pdf', bbox_inches='tight')
+  fig1.savefig(re.sub('\.json', '_pie.pdf', args.input_file), format='pdf', bbox_inches='tight')

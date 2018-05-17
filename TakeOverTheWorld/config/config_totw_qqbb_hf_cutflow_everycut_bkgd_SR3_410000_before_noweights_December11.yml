@@ -1,0 +1,55 @@
+---
+# defines samples groups for the cutflows
+# wildcards for file patterns are allowed
+# NOTE indentation matters
+
+groups:
+
+  - name: "\\srthree cuts: \\ttbar (inclusive, 410000) -- generator weights only -- before"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms-noweights/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*410000*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_December11/bkgd_SR3_ttbar_410000_before_noweights_detailed_cutflow.txt"
+
+# specify the path to each cutflow histogram
+# one cutflow will be saved for each path
+#
+
+cutflows:
+  paths:
+
+    hists/all/cutflow:
+      label: "All events"
+      order: 0
+    hists/default/cutflow:
+      label: "Preselection"
+      order: 1
+    hists/optimization_Wh_SR3_nJetsGeq4Leq5/cutflow:
+      label: "$4 \\leq \\njet \\leq 5$"
+      order: 2
+    hists/optimization_Wh_SR3_nJetsGeq4Leq5_passMET_metG200/cutflow:
+      label: "\\Etmiss>200\\gev"
+      order: 3
+    hists/optimization_Wh_SR3_nJetsGeq4Leq5_passMET_metG200_leptonveto/cutflow:
+      label: "$0L$"
+      order: 4
+    hists/optimization_Wh_SR3_nJetsGeq4Leq5_passMET_metG200_leptonveto_nBJetsEq2/cutflow:
+      label: "$\\nbjet = 2$"
+      order: 5
+    hists/optimization_Wh_SR3_nJetsGeq4Leq5_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4/cutflow:
+      label: "$\\dphimin>0.4$"
+      order: 6
+    hists/optimization_Wh_SR3_nJetsGeq4Leq5_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG700/cutflow:
+      label: "$\\meffj>700\\gev$"
+      order: 7
+    hists/optimization_Wh_SR3_nJetsGeq4Leq5_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG700_mTbminG180/cutflow:
+      label: "$\\mTbmin>180\\gev$"
+      order: 8
+    hists/optimization_Wh_SR3_nJetsGeq4Leq5_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG700_mTbminG180_mCTbbG190/cutflow:
+      label: "$\\mctbb>190\\gev$"
+      order: 9
+    hists/optimization_Wh_SR3_nJetsGeq4Leq5_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG700_mTbminG180_mCTbbG190_mbbG105L135/cutflow:
+      label: "$105<\\mbb/\\gev<135$"
+      order: 10
+    hists/optimization_Wh_SR3_nJetsGeq4Leq5_passMET_metG200_leptonveto_nBJetsEq2_dphiMinG0p4_meffG700_mTbminG180_mCTbbG190_mbbG105L135_mNonbbG75L90/cutflow:
+      label: "$75<\\mnonbb/\\gev<90$"
+      order: 11

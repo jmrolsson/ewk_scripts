@@ -12,89 +12,112 @@
 #     files:
 #       - *ttbar*.hists     
 # 
-samples:
+groups:
 
-  # - name: "\\srthree cuts: dijet"
-  #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361021*.hists
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361022*.hists
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361023*.hists
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361024*.hists
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361025*.hists
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361026*.hists
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361027*.hists
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361028*.hists
-  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows/bkgd_SR3_dijet_cutflow.txt"
-  #
-  # - name: "\\srthree cuts: diboson"
-  #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*diboson*.hists
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.33-5-0-52-g169a7c2-mCTbb-MEV-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*342284*.hists
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.33-5-0-52-g169a7c2-mCTbb-MEV-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*342285*.hists
-  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows/bkgd_SR3_diboson_cutflow.txt"
-  #
-  # - name: "\\srthree cuts: VH"
-  #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.33-5-0-52-g169a7c2-mCTbb-MEV-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*342284*.hists
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.33-5-0-52-g169a7c2-mCTbb-MEV-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*342285*.hists
-  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows/bkgd_SR3_VH_cutflow.txt"
-  #
-  # - name: "\\srthree cuts: \\ttbar"
-  #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*ttbar*.hists
-  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows/bkgd_SR3_ttbar_detailed_cutflow.txt"
-  #
-  - name: "\\srone cuts: \\ttbar (inclusive, 410000) -- before"
+  - name: "\\srthree cuts: dijet"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361021*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361022*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361023*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361024*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361025*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361026*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361027*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*361028*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_dijet_cutflow.txt"
+
+  - name: "\\srthree cuts: diboson"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*diboson*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.33-5-0-52-g169a7c2-mCTbb-MEV-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*342284*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.33-5-0-52-g169a7c2-mCTbb-MEV-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*342285*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_diboson_cutflow.txt"
+
+  - name: "\\srthree cuts: VH"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.33-5-0-52-g169a7c2-mCTbb-MEV-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*342284*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.33-5-0-52-g169a7c2-mCTbb-MEV-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*342285*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_VH_cutflow.txt"
+
+  - name: "\\srthree cuts: \\ttbar"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*ttbar*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_ttbar_detailed_cutflow.txt"
+
+  - name: "\\srthree cuts: \\ttbar (inclusive, 410000) -- before"
     files:
       - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*410000*.hists
     outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_ttbar_410000_detailed_cutflow.txt"
 
-  - name: "\\srone cuts: \\ttbar (600<HT<1000, 407009) -- before"
+  - name: "\\srthree cuts: \\ttbar (600<HT<1000, 407009) -- before"
     files:
       - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*407009*.hists
     outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_ttbar_407009_detailed_cutflow.txt"
 
-  - name: "\\srone cuts: \\ttbar (1000<HT<1500, 407010) -- before"
+  - name: "\\srthree cuts: \\ttbar (1000<HT<1500, 407010) -- before"
     files:
       - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*407010*.hists
     outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_ttbar_407010_detailed_cutflow.txt"
 
-  - name: "\\srone cuts: \\ttbar (HT>1500, 407011) -- before"
+  - name: "\\srthree cuts: \\ttbar (HT>1500, 407011) -- before"
     files:
       - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*407011*.hists
     outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_ttbar_407011_detailed_cutflow.txt"
-  #
-  # - name: "\\srthree cuts: single-top"
-  #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*singletop*.hists
-  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows/bkgd_SR3_singletop_detailed_cutflow.txt"
-  #
-  # - name: "\\srthree cuts: \\ttbarX"
-  #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*topEW*.hists
-  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows/bkgd_SR3_topEW_detailed_cutflow.txt"
-  #
-  # - name: "\\srthree cuts: ttH"
-  #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*341177*.hists
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*341270*.hists
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*341271*.hists
-  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows/bkgd_SR3_ttH_cutflow.txt"
-  #
-  # - name: "\\srthree cuts: \\Wjets, Sherpa 2.2.0"
-  #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*W_sherpa_220*.hists
-  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows/bkgd_SR3_W_sherpa_220_detailed_cutflow.txt"
-  #
-  # - name: "\\srthree cuts: \\Zjets, Sherpa 2.2.0"
-  #   files:
-  #     - /Users/joakim/ewk/ewk_mbj_ntuples/histfitter/2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*Z_sherpa_220*.hists
-  #   outfile: "cutflow_resolved/bkgd_detailed_cutflows/bkgd_SR3_Z_sherpa_220_detailed_cutflow.txt"
 
-# specify the cutflow
+  - name: "\\srthree cuts: single-top"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*singletop*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_singletop_detailed_cutflow.txt"
+
+  - name: "\\srthree cuts: single-top (Wt anti-top, HT > 500 GeV, 407020) -- before"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*407020*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_singletop_407020_detailed_cutflow.txt"
+
+  - name: "\\srthree cuts: single-top (Wt top, inclusive, 410013) -- before"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*410013*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_singletop_410013_detailed_cutflow.txt"
+
+  - name: "\\srthree cuts: \\ttbarX"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*topEW*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_topEW_detailed_cutflow.txt"
+
+  - name: "\\srthree cuts: \\ttbarX (ttH semilep, 341270) -- before"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*341270*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_topEW_341270_detailed_cutflow.txt"
+
+  - name: "\\srthree cuts: \\ttbarX (ttZnnqq Np0, 410073) -- before"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*410073*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_topEW_410073_detailed_cutflow.txt"
+
+  - name: "\\srthree cuts: ttH"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*341177*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*341270*.hists
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*341271*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_ttH_cutflow.txt"
+
+  - name: "\\srthree cuts: \\Wjets, Sherpa 2.2.0"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*W_sherpa_220*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_W_sherpa_220_detailed_cutflow.txt"
+
+  - name: "\\srthree cuts: \\Zjets, Sherpa 2.2.0"
+    files:
+      - /Users/joakim/ewk/ewk_mbj_ntuples/tag2.4.37-0-5-g6d1fba4-histograms/hf_cutflow_everycut_Wh_SR_CR_VR_October31_HT_incl_filter/*Z_sherpa_220*.hists
+    outfile: "cutflow_resolved/bkgd_detailed_cutflows_October31/bkgd_SR3_Z_sherpa_220_detailed_cutflow.txt"
+
+# specify the path to each cutflow histogram
+# one cutflow will be saved for each path
+#
 
 cutflows:
   paths:
+
     hists/all/cutflow:
       label: "All events"
       order: 0

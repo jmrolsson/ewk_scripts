@@ -12,6 +12,8 @@ import re
 
 import argparse
 
+ROOT.gROOT.SetBatch(True)
+
 def ensure_dir(f):
     d = os.path.dirname(f)
     if not os.path.exists(d):
@@ -29,6 +31,7 @@ parser.add_argument('--doNotOverwrite', action='store_true', default=False, help
 parser.add_argument('--copyHists', type=str, required=False, nargs='+', dest='hists', metavar='<histname>', help='List of histograms to copy (if any) from the input file')
 parser.add_argument('--copyMBJCutflow', action='store_true', dest='copy_mbj_cutflow', default=False, help='Copy the master cutflow named "cut_flow" used in MBJ')
 parser.add_argument('--doData', action='store_true', dest='do_data', default=False, help='If running on data')
+parser.add_argument('--doDataPRW', action='store_true', default=False, help='Apply pileup reweighting scale factor to data')
 parser.add_argument('-o', required=False, type=str, dest='output_folder', metavar='', help='Specify folder where to store output files', default='')
 
 # parse the arguments, throw errors if missing any
@@ -121,8 +124,12 @@ for f in args.files:
 
       # things look ok, so we draw to the histogram
       if args.do_data:
-        print "\t\tdrawing {0}\n\t\twith cut ({1})".format(toDraw['draw'], cut['name'])
-        tree.Draw(toDraw['draw'], '({0:s})'.format(cut['cut']), hist=h)
+        if args.doDataPRW and 'average_int_per_crossing' in toDraw['draw']:
+          print "\t\tdrawing {0}\n\t\twith cut ({1})".format(toDraw['draw']+"*1.0/1.09", cut['name'])
+          tree.Draw(toDraw['draw']+"*1.0/1.09", '({0:s})'.format(cut['cut']), hist=h)
+        else:
+          print "\t\tdrawing {0}\n\t\twith cut ({1})".format(toDraw['draw'], cut['name'])
+          tree.Draw(toDraw['draw'], '({0:s})'.format(cut['cut']), hist=h)
       elif gen_filt:
         print "\t\tdrawing {0}\n\t\twith cut ({1})*({2})*({3})".format(toDraw['draw'], args.eventWeightBranch, cut['name'], gen_filt)
         tree.Draw(toDraw['draw'], '({0:s})*({1:s})*({2:s})'.format(args.eventWeightBranch, cut['cut'], gen_filt), hist=h)
