@@ -314,7 +314,7 @@ if __name__ == "__main__":
           hist.decorate(**hist_styles)
 
           # set axis
-          get_axis(hist, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 1))
+          get_axis(hist, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 1), canvasConfigs.get('ndivisions opt', True))
 
           # add each hist to the legend
           legend.AddEntry(hist)#, style=group.get('legendstyle', 'F'))
@@ -383,7 +383,7 @@ if __name__ == "__main__":
           # set up axes
           set_minmax(hstack, plots_path)
           set_label(hstack, plots_path, canvasConfigs)
-          get_axis(hstack, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
+          get_axis(hstack, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5), canvasConfigs.get('ndivisions opt', True))
           # set label/title sizes
           get_axis(hstack, 'x').set_label_size(canvasConfigs.get('xlabel size', 30))
           get_axis(hstack, 'x').set_title_size(canvasConfigs.get('xtitle size', 30))
@@ -401,7 +401,7 @@ if __name__ == "__main__":
           set_label(hist, plots_path, canvasConfigs)
           if canvasConfigs.get('logy', False) == True:
             hist.set_minimum(1e-5)
-          get_axis(hist, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5))
+          get_axis(hist, 'x').SetNdivisions(canvasConfigs.get('ndivisions', 5), canvasConfigs.get('ndivisions opt', True))
           # set label/title sizes
           get_axis(hist, 'x').set_label_size(canvasConfigs.get('xlabel size', 30))
           get_axis(hist, 'x').set_title_size(canvasConfigs.get('xtitle size', 30))
@@ -484,8 +484,8 @@ if __name__ == "__main__":
           hstack.xaxis.set_title_color(0)
 
           if len(soloHists) >0:
-            #tl = ROOT.TLine(0.2, 0.23, 0.9, 0.23)
-            tl = ROOT.TLine(0.2, 0.2067, 0.9, 0.2067)
+            tl = ROOT.TLine(0.2, 0.23, 0.9, 0.23)
+            #tl = ROOT.TLine(0.2, 0.2067, 0.9, 0.2067)
             tl.SetLineColor(ROOT.kRed)
             #tl.SetLineColor(ROOT.kBlack)
             tl.SetLineWidth(1)

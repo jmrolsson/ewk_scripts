@@ -9,25 +9,28 @@
 #tag="tagEWKqqbb.2.4.37-0-merged-filter"
 #out_tag="tagEWKqqbb.2.4.37-0-histograms-noloosefilter-noweights"
 
-#tag="tagEWKqqbb.2.4.37-0-merged-nofilter"
-#out_tag="tagEWKqqbb.2.4.37-0-histograms-noloosefilter"
-tag="tagEWKqqbb.2.4.42-merged-nofilter"
-out_tag="tagEWKqqbb.2.4.42-histograms-noloosefilter"
+tag="tagEWKqqbb.2.4.37-0-merged-nofilter"
+out_tag="tagEWKqqbb.2.4.37-0-histograms-noloosefilter"
+#tag="tagEWKqqbb.2.4.42-merged-nofilter"
+#out_tag="tagEWKqqbb.2.4.42-histograms-noloosefilter"
 ntuple_path=/share/t3data2/jolsson/EWK/ewk_mbj_ntuples
 
 #filter=_HT_incl_filter
-#filter=_MET_incl_filter
+filter=_MET_incl_filter
 
 #filter=_HT_filter_only
 #filter=_MET_filter_only
-filter=_sherpa_220_only
+#filter=_sherpa_220_only
 
 suffix=merged
 
 #cuts_tag=hf_cutflow_everycut_Wh_SR_CR_VR_October31
-cuts_tag=hf_cutflow_everycut_Wh_SR_CR_VR_November16
+#cuts_tag=hf_cutflow_everycut_Wh_SR_CR_VR_November16
+cuts_tag=hf_cutflow_everycut_Wh_SR_20180920
 
-event_weight="weight_mc*weight_btag*weight_elec*weight_muon*weight_jvt*weight_WZ_2_2"
+#event_weight="weight_mc*weight_btag*weight_elec*weight_muon*weight_jvt*weight_WZ_2_2"
+event_weight="weight_mc*weight_btag*weight_elec*weight_muon*weight_jvt*weight_WZ_2_2*weight_pu"
+
 # event_weight="1.0"
 
 dids_to_process=dids_to_process$filter.txt

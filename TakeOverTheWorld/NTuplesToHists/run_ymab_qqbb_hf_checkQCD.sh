@@ -27,14 +27,14 @@ cuts_tag=_May15
 
 event_weight="weight_mc*weight_btag*weight_elec*weight_muon*weight_jvt*weight_WZ_2_2*weight_pu"
 
-#dids_to_process=dids_to_process$filter.txt
-#echo "----> MC"
-#while read did; do
-# echo "Processing: ${did}"
-#
-# python YourMacrosAreBadAndYouShouldFeelBad.py --config config/config_qqbb_hf_checkQCD${cuts_tag}.json --out_tdirectory hists --treename nominal --eventWeight ${event_weight} --filters filters/filters_met_noloosefilter.json --newOutputs --copyMBJCutflow -o ${ntuple_path}/${out_tag}/hf_checkQCD${cuts_tag}${filter}/ ${ntuple_path}/${tag}/*${did}*.${suffix}* &
-#
-#done <${dids_to_process}
+dids_to_process=dids_to_process$filter.txt
+echo "----> MC"
+while read did; do
+echo "Processing: ${did}"
+
+python YourMacrosAreBadAndYouShouldFeelBad.py --config config/config_qqbb_hf_checkQCD${cuts_tag}.json --out_tdirectory hists --treename nominal --eventWeight ${event_weight} --filters filters/filters_met_noloosefilter.json --newOutputs --copyMBJCutflow -o ${ntuple_path}/${out_tag}/hf_checkQCD${cuts_tag}${filter}/ ${ntuple_path}/${tag}/*${did}*.${suffix}* &
+
+done <${dids_to_process}
 
 echo "----> Data"
 tag="tagEWKqqbb.2.4.37-0-merged-nofilter"

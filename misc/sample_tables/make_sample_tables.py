@@ -12,17 +12,18 @@ def print_table_begin(f):
     print(r'retain-explicit-plus=false, group-digits = false}', file=f)
     print(r'\begin{tabular}{|l|l|c|', file=f)
     print(r'S[table-parse-only, round-precision=4]|', file=f)
-    print(r'S[table-parse-only, round-mode=places, round-precision=1]|', file=f)
-    print(r'S[table-format= 1.3, round-mode=places, round-precision=3]|', file=f)
+    print(r'S[table-parse-only, round-precision=3]|', file=f)
+    print(r'S[table-parse-only, round-precision=3]|', file=f)
+    print(r'S[table-parse-only, round-precision=3]|', file=f)
     print(r'}', file=f)
     print(r'\toprule', file=f)
-    print(r'Generator & Fiducial Region & {DSID} & {\begin{tabular}[c]{@{}c@{}}No. of\\events\end{tabular}} & {\begin{tabular}[c]{@{}c@{}}$\sigma \times \epsilon_\textnormal{filter}$\\ $[$pb$]$\end{tabular}} & {$k$-factor} \\', file=f)
+    print(r'Generator & Fiducial Region & {DSID} & {\begin{tabular}[c]{@{}c@{}}No. of\\events\end{tabular}} & {\begin{tabular}[c]{@{}c@{}}$\sigma \times \epsilon_\textnormal{filter}$\\ $[$pb$]$\end{tabular}} & {$k$-factor} & {$\mathcal{L}_{\mathrm{generated}}~[\mathrm{fb}^{-1}]$}\\', file=f)
     print(r'\midrule', file=f)
 
-def print_table_end(f, group, tag, extra=''):
+def print_table_end(f, group, tag, extra='', nevents_tot = 0, genlumi_tot = 0):
     print(r'\bottomrule', file=f)
     print(r'\end{tabular}', file=f)
-    print('\\caption{{The {0:s} MC samples used{1:s}.}}'.format(tag, extra), file=f)
+    print('\\caption{{The {0:s} MC samples used{1:s}. Total generated number of events (luminosity): {2:.2f} ({3:.2f}$~\mathrm{{fb}}^{{-1}}$).}}'.format(tag, extra, nevents_tot, genlumi_tot), file=f)
     print('\\label{{tab:app:datamc{}}}'.format(group), file=f)
     print(r'\end{center}', file=f)
     print(r'\end{table}', file=f)
@@ -82,6 +83,8 @@ if __name__ == "__main__":
                     print_table_begin(f)
                     ordered_dids = sorted(metadata.keys())
                     page_i = 0
+                    nevents_tot = 0
+                    genlumi_tot = 0
                     for i,did in enumerate(ordered_dids):
                         if (i>0 and i%25==0):
                             if (page_i>0):
@@ -97,12 +100,21 @@ if __name__ == "__main__":
                         eff = metadata[did]['filter efficiency']
                         kfactor = metadata[did]['k-factor']
                         xsec_filtereff = float(xsec)*float(eff)
-                        print('{0:s} & {1:s} & {2:s} & {3:} & {4:} & {5:} \\\\'.format(generator, fiducial, did, nevents, xsec_filtereff, kfactor), file=f)
+                        denom = (xsec_filtereff*float(kfactor))
+                        if denom > 0:
+                          genlumi = nevents / denom / 1000
+                        else:
+                          genlumi = 0
+                        nevents_tot += nevents
+                        genlumi_tot += genlumi
+                        print('{0:s} & {1:s} & {2:s} & {3:} & {4:} & {5:} & {6:} \\\\'.format(generator, fiducial, did, nevents, xsec_filtereff, kfactor, genlumi), file=f)
 
                     if (page_i>0):
-                        print_table_end(f, group, metadata[did]['tag'], ' (continued)')
+                        print_table_end(f, group, metadata[did]['tag'], ' (continued)', nevents_tot, genlumi_tot)
                     else:
-                        print_table_end(f, group, metadata[did]['tag'], '')
+                        print_table_end(f, group, metadata[did]['tag'], '', nevents_tot, genlumi_tot)
+                    nevents_tot = 0
+                    genlumi_tot = 0
 
 
             except IOError:

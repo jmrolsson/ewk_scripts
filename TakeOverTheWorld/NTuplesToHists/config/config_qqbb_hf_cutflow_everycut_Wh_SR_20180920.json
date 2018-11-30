@@ -1,0 +1,59 @@
+{
+  "cuts": [
+
+    {"cut": "1",
+    "name": "default"}, 
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0",
+    "name": "Wh_leptonveto"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5",
+    "name": "Wh_leptonveto_nJetsGeq4Leq5"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2",
+    "name": "Wh_leptonveto_nJetsGeq4Leq5_nBJetsEq2"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4",
+    "name": "Wh_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && met > 200 && pass_MET == 1",
+    "name": "Wh_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_metG200"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && met > 200 && pass_MET == 1 && meff_4j > 700",
+    "name": "Wh_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_metG200_meffG700"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && met > 200 && pass_MET == 1 && meff_4j > 700 && m_bb > 105 && m_bb < 135",
+    "name": "Wh_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_metG200_meffG700_mbbG105L135"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && met > 200 && pass_MET == 1 && meff_4j > 700 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90",
+    "name": "Wh_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_metG200_meffG700_mbbG105L135_mNonbbG75L90"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && met > 250 && pass_MET == 1 && meff_4j > 700 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90",
+    "name": "Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_metG250_meffG700_mbbG105L135_mNonbbG75L90"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && met > 250 && pass_MET == 1 && meff_4j > 900 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90",
+    "name": "Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_metG250_meffG900_mbbG105L135_mNonbbG75L90"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && met > 250 && pass_MET == 1 && meff_4j > 900 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && mCT_bb > 140",
+    "name": "Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_metG250_meffG900_mbbG105L135_mNonbbG75L90_mCTbbG140"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && met > 250 && pass_MET == 1 && meff_4j > 900 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && mCT_bb > 140 && mTb_min > 160",
+    "name": "Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_metG250_meffG900_mbbG105L135_mNonbbG75L90_mCTbbG140_mTbminG160"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && met > 200 && pass_MET == 1 && meff_4j > 700 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && mCT_bb > 190",
+    "name": "Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_metG200_meffG700_mbbG105L135_mNonbbG75L90_mCTbbG190"},
+
+    {"cut": "baseline_electrons_n == 0 && baseline_muons_n == 0 && jets_n >= 4 && jets_n <= 5 && bjets_n == 2 && dphi_min > 0.4 && met > 200 && pass_MET == 1 && meff_4j > 700 && m_bb > 105 && m_bb < 135 && m_non_bb > 75 && m_non_bb < 90 && mCT_bb > 190 && mTb_min > 180",
+    "name": "Wh_SR2_leptonveto_nJetsGeq4Leq5_nBJetsEq2_dphiMinG0p4_metG200_meffG700_mbbG105L135_mNonbbG75L90_mCTbbG190_mTbminG180"}
+
+  ],
+  "draw": [
+    {
+      "draw": "n_vtx",
+      "name": "cutflow",
+      "min": -1e8,
+      "max": 1e8,
+      "nbins": 1
+    }
+  ]
+}

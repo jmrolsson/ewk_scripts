@@ -69,6 +69,16 @@ labeloptions: &labeloptions
 
 groups:
 
+  - name: data
+    files:
+       - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_checkQCD_December4/*period*.hists
+    styles:
+      legendstyle: p
+      color: black
+      drawstyle: "E1"
+    do not scale me: true
+    stack it: false
+
   - name: "t#bar{t}"
     files:
       - /Users/joakim/ewk/ewk_mbj_ntuples/tagEWKqqbb.2.4.37-0-histograms-noloosefilter/hf_checkQCD_December4_HT_incl_filter/*ttbar*.hists
@@ -164,7 +174,9 @@ plots:
       width: 800
       height: 600
       logy: true
-      ndivisions: 10
+      ndivisions: 208
+      ndivisions opt: False
+      ndivisions opt: False
     legend:
       numcolumns: 1
       topmargin: 0.02
@@ -177,13 +189,17 @@ plots:
   paths:
 
     hists/leptonveto_nJetsGeq4_nBJetsEq2_metG200/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.1
-      ymax: 1000000
+      ymax: 100000000
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -192,14 +208,20 @@ plots:
           size: 20
           label: "0L, #geq4j, 2b, E_{T}^{miss}>200 GeV"
 
+    ##############################################
+
     hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.1
-      ymax: 1000000
+      ymax: 500000000
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -208,14 +230,310 @@ plots:
           size: 20
           label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
 
-    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200_meffG700/dphi_min:
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200/m_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 0.1
+      ymax: 100000000
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
+      ylabel: Events
+      xlabel: "m_{bb} [GeV]"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200/m_non_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 0.1
+      ymax: 100000000
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
+      ylabel: Events
+      xlabel: "m_{qq} [GeV]"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200/mCT_bb:
+      xmin: 0
+      xmax: 600
+      ymin: 0.1
+      ymax: 10000000
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
+      ylabel: Events
+      xlabel: "m_{CT}^{bb} [GeV]"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200/meff_4j:
+      xmin: 400
+      xmax: 1600
+      ymin: 0.01
+      ymax: 1000000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "m_{eff}^{4j} [GeV]"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200/met:
+      xmin: 200
+      xmax: 1000
+      ymin: 0.1
+      ymax: 100000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "E_{T}^{miss} [GeV]"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200/mTb_min:
+      xmin: 0
+      xmax: 600
+      ymin: 0.1
+      ymax: 10000000
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
+      ylabel: Events
+      xlabel: "m_{T}^{b,min} [GeV]"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+
+    ##############################################
+
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200_dphiMinG0p4/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.1
-      ymax: 1000000
+      ymax: 500000000
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "#Delta#phi^{4j}_{min} > 0.4"
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200_dphiMinG0p4/m_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 0.1
+      ymax: 100000000
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
+      ylabel: Events
+      xlabel: "m_{bb} [GeV]"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "#Delta#phi^{4j}_{min} > 0.4"
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200_dphiMinG0p4/m_non_bb:
+      xmin: 20
+      xmax: 600
+      ymin: 0.1
+      ymax: 100000000
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
+      ylabel: Events
+      xlabel: "m_{qq} [GeV]"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "#Delta#phi^{4j}_{min} > 0.4"
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200_dphiMinG0p4/mCT_bb:
+      xmin: 0
+      xmax: 600
+      ymin: 0.1
+      ymax: 10000000
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
+      ylabel: Events
+      xlabel: "m_{CT}^{bb} [GeV]"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "#Delta#phi^{4j}_{min} > 0.4"
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200_dphiMinG0p4/meff_4j:
+      xmin: 400
+      xmax: 1600
+      ymin: 0.01
+      ymax: 1000000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "m_{eff}^{4j} [GeV]"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "#Delta#phi^{4j}_{min} > 0.4"
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200_dphiMinG0p4/met:
+      xmin: 200
+      xmax: 1000
+      ymin: 0.1
+      ymax: 100000000
+      rebin: 5
+      ylabel: Events
+      xlabel: "E_{T}^{miss} [GeV]"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "#Delta#phi^{4j}_{min} > 0.4"
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200_dphiMinG0p4/mTb_min:
+      xmin: 0
+      xmax: 600
+      ymin: 0.1
+      ymax: 10000000
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
+      ylabel: Events
+      xlabel: "m_{T}^{b,min} [GeV]"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "0L, 4-5j, 2b, E_{T}^{miss}>200 GeV"
+        - 
+          x: 0.25
+          y: 0.75
+          font: 43
+          size: 20
+          label: "#Delta#phi^{4j}_{min} > 0.4"
+
+     ##############################################
+
+    hists/leptonveto_nJetsGeq4Leq5_nBJetsEq2_metG200_meffG700/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
+      xmin: 0
+      xmax: 3.14
+      ymin: 0.1
+      ymax: 100000000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -231,6 +549,9 @@ plots:
           label: "m_{eff}^{4j}>700 GeV"
 
     hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.1
@@ -238,6 +559,7 @@ plots:
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -257,9 +579,12 @@ plots:
       ymin: 0.1
       ymax: 10000000
       rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       ylabel: Events
-      xlabel: "m^{bb} [GeV]"
+      xlabel: "m_{bb} [GeV]"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -279,9 +604,12 @@ plots:
       ymin: 0.1
       ymax: 10000000
       rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       ylabel: Events
-      xlabel: "m^{non-bb} [GeV]"
+      xlabel: "m_{qq} [GeV]"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -301,9 +629,12 @@ plots:
       ymin: 0.1
       ymax: 1000000
       rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       ylabel: Events
       xlabel: "m_{CT}^{bb} [GeV]"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -324,8 +655,9 @@ plots:
       ymax: 100000000
       rebin: 5
       ylabel: Events
-      xlabel: "m_{eff}^{4j}^{4j} [GeV]"
+      xlabel: "m_{eff}^{4j} [GeV]"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -348,6 +680,7 @@ plots:
       ylabel: Events
       xlabel: "E_{T}^{miss} [GeV]"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -367,9 +700,12 @@ plots:
       ymin: 0.1
       ymax: 1000000
       rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       ylabel: Events
       xlabel: "m_{T}^{b,min} [GeV]"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -383,8 +719,11 @@ plots:
           font: 43
           size: 20
           label: "m_{eff}^{4j}>900 GeV"
- 
+
     hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900_mTbminG140/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.1
@@ -392,6 +731,7 @@ plots:
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -407,6 +747,9 @@ plots:
           label: "m_{eff}^{4j}>900 GeV, m_{T}^{b,min}>140 GeV"
 
     hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900_mCTbbG140/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.1
@@ -414,6 +757,7 @@ plots:
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -429,6 +773,9 @@ plots:
           label: "m_{eff}^{4j}>900 GeV, m_{CT}^{bb}>140 GeV"
 
     hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900_mTbminG140_mCTbbG140/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.1
@@ -436,6 +783,7 @@ plots:
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -463,13 +811,17 @@ plots:
           label: "m_{CT}^{bb}>140 GeV"
 
     hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900_mbbG105L135/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.1
-      ymax: 1000
+      ymax: 10000
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -489,15 +841,19 @@ plots:
           font: 43
           size: 20
           label: "105<m_{bb}/GeV<135"
- 
+
     hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900_mNonbbG75L90/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.1
-      ymax: 1000
+      ymax: 10000
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -517,8 +873,11 @@ plots:
           font: 43
           size: 20
           label: "75<m_{non-bb}/GeV<90"
- 
+
     hists/leptonveto_nJetsEq4_nBJetsEq2_metG200_meffG900_mbbG105L135_mNonbbG75L90/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.1
@@ -526,6 +885,7 @@ plots:
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -551,16 +911,19 @@ plots:
           font: 43
           size: 20
           label: "75<m_{non-bb}/GeV<90"
- 
+
     hists/optimization_Wh_SR1_Nm1_dphiMin/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.01
       ymax: 100
-      rebin: 4
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -570,14 +933,17 @@ plots:
           label: "N-1: SR_{1} - #Delta#phi^{4j}_{min}"
 
     hists/optimization_Wh_SR2_Nm1_dphiMin/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.01
       ymax: 100
-      rebin: 4
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -587,14 +953,17 @@ plots:
           label: "N-1: SR_{2} - #Delta#phi^{4j}_{min}"
 
     hists/optimization_Wh_SR3_Nm1_dphiMin/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.01
       ymax: 1000
-      rebin: 4
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -604,14 +973,18 @@ plots:
           label: "N-1: SR_{3} - #Delta#phi^{4j}_{min}"
 
     hists/optimization_Wh_CR1_ttbar_Nm1_dphiMin/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
+      ndivisions opt: False
       xmin: 0
-      xmax: 3.14
+      xmax: 3.20
       ymin: 0.01
       ymax: 10000
-      rebin: 4
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -621,14 +994,17 @@ plots:
           label: "N-1: CR_{1}^{t#bar{t}} - #Delta#phi^{4j}_{min}"
 
     hists/optimization_Wh_CR1_singletop_Nm1_dphiMin/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.01
       ymax: 10000
-      rebin: 4
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -638,14 +1014,17 @@ plots:
           label: "N-1: CR_{1}^{st} - #Delta#phi^{4j}_{min}"
 
     hists/optimization_Wh_CR1_Zjets_Nm1_dphiMin/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
       xmin: 0
       xmax: 3.14
       ymin: 0.01
       ymax: 1000
-      rebin: 4
       ylabel: Events
       xlabel: "#Delta#phi^{4j}_{min}"
       plot tag: logy
+      ratio: true
       texts:
         - 
           x: 0.25
@@ -653,3 +1032,66 @@ plots:
           font: 43
           size: 20
           label: "N-1: CR_{1}^{Z+jets} - #Delta#phi^{4j}_{min}"
+
+    hists/optimization_Wh_VR1_ttbar_Nm1_dphiMin/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
+      ndivisions opt: False
+      xmin: 0
+      xmax: 3.20
+      ymin: 0.01
+      ymax: 100000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "N-1: VR_{1}^{t#bar{t}} - #Delta#phi^{4j}_{min}"
+
+    hists/optimization_Wh_SB1_mbbL105orG135_mNonbbL75orG90_Nm1_dphiMin/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
+      ndivisions opt: False
+      xmin: 0
+      xmax: 3.20
+      ymin: 0.01
+      ymax: 100000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "N-1: VR_{1}^{SB-bb,SB-qq} - #Delta#phi^{4j}_{min}"
+
+    hists/optimization_Wh_SB1_mbbG135_Nm1_dphiMin/dphi_min:
+      rebin: 2
+      ndivisions: 208
+      ndivisions opt: False
+      ndivisions opt: False
+      xmin: 0
+      xmax: 3.20
+      ymin: 0.01
+      ymax: 100000
+      ylabel: Events
+      xlabel: "#Delta#phi^{4j}_{min}"
+      plot tag: logy
+      ratio: true
+      texts:
+        - 
+          x: 0.25
+          y: 0.80
+          font: 43
+          size: 20
+          label: "N-1: VR_{1}^{SB-bb-high} - #Delta#phi^{4j}_{min}"

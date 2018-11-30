@@ -1,4 +1,7 @@
 #!/usr/bin/env python
+from __future__ import print_function
+from operator import itemgetter
+from pdgRounding import pdgRoundStr
 
 # @file:    totw_cutflow.py
 # @purpose: Make professional looking cutflows for different regions
@@ -8,7 +11,7 @@
 
 # __future__ imports must occur at beginning of file
 #   print(string, f=fd)
-from __future__ import print_function
+# from __future__ import print_function
 # used to redirect ROOT output
 #   see http://stackoverflow.com/questions/21541238/get-ipython-doesnt-work-in-a-startup-script-for-ipython-ipython-notebook
 import tempfile
@@ -169,7 +172,7 @@ def ensure_dir(f):
     if not os.path.exists(d):
         os.makedirs(d)
 
-did_regex = re.compile('(\d{6,8})')
+did_regex = re.compile('(\d{6,8})\.')
 def get_did(hist):
   if not isinstance(hist, _Hist):
     import pdb; pdb.set_trace()
@@ -515,6 +518,97 @@ def save_cutflow_detailed_signal(cuts, title='signal cutflow', outfile='detailed
   except IOError:
       print ('Could not open file', outfile)
 
+def save_cutflow_paper(cuts, title='cutflow', outfile='paper_cutflow.txt', caption='', label='', do_latex=False, ext_caption=False):
+
+  if do_latex:
+    toprule = r"\toprule"
+    bottomrule = r"\bottomrule"
+    midrule = r"\midrule"
+  else:
+    toprule = bottomrule = '*' * (190)
+    midrule = '-' * (190)
+
+  try:
+    ensure_dir(outfile)
+    if do_latex:
+      f = open(re.sub(".txt", ".tex", outfile), 'w')
+      if ext_caption:
+        fcap = open(re.sub(".txt", "_caption.tex", outfile), 'w')
+    else:
+      f = open(outfile, 'w')
+
+    if do_latex:
+      if not ext_caption:
+        print(r"\begin{table}[!ht]", file=f)
+      print(r"\tiny", file=f)
+      print(r"\begin{center}\renewcommand\arraystretch{1.6}", file=f)
+      print(r"\sisetup{round-mode=figures, round-precision=2, group-digits = true, separate-uncertainty=true}", file=f)
+      print(r"\scalebox{0.4}{", file=f)
+      print(r"\begin{tabular}{l | ", file=f)
+      print(r"S[scientific-notation = true]}", file=f)
+    print(toprule, file=f)
+    if do_latex:
+      print("\multicolumn{{2}}{{c}}{{ {} }} \\\\[0.2cm]".format(title), file=f)
+    else:
+      print(title, file=f)
+    print(toprule, file=f)
+    if do_latex:
+      # print(r"Cut & {$N^{\mathrm{raw}}$} & {$N^{\mathrm{w}}$} & {$N$} & {$\eff$ [\%]} & {$\releff$ [\%]} \\", file=f)
+      #print(r"Cut & {$N^{\mathrm{raw}}$} & {$\eff$ [\%]} & {$\releff$ [\%]} & {$N^{\mathrm{w}}$} & {$N$} \\", file=f)
+      print(r"Cut & $N$ \\", file=f)
+    else:
+      print("{: <25} | {: <21}".format(
+        "Cut", "nweighted"), file=f)
+    print(midrule, file=f)
+
+    eff = releff = 100.
+    n_prev = -1
+    #wsn_prev = -1
+    for i, (_, _, tag, c) in enumerate(cuts):
+      if (i==0):
+        n_initial = c.n
+      if (i!=0):
+        if (n_initial>0): eff = c.n/n_initial*100.
+        else: eff = 0
+        if (n_prev>0): releff = c.n/n_prev*100.
+        else: releff = 0
+      n_prev = c.n
+      # if (i==0):
+      #   wsn_initial = c.wsn
+      # if (i!=0):
+      #   if (wsn_initial>0): eff = c.wsn/wsn_initial*100.
+      #   else: eff = 0
+      #   if (wsn_prev>0): releff = c.wsn/wsn_prev*100.
+      #   else: releff = 0
+      # wsn_prev = c.wsn
+      if do_latex:
+          # cutflow_str = "{} & \\num{{{:.1f}}} & \\num{{{:.1uS}}} & \\num{{{:.1uS}}} & \\num{{{:g}}} & \\num{{{:g}}} \\\\".format(
+          # tag, ufloat(c.n, c.err), ufloat(c.wn, c.werr), ufloat(c.wsn, c.wserr), eff, releff)
+          #cutflow_str = "{} & \\num{{{:.1f}}} & \\num{{{:g}}} & \\num{{{:g}}} & \\num{{{:.1uS}}} & \\num{{{:.1uS}}} \\\\".format(
+          # import pdb; pdb.set_trace()
+          cutflow_str = "{} & ${}$ \\\\".format(tag, pdgRoundStr(c.wsn, c.wserr))
+          # cutflow_str = cutflow_str.replace(r'+/-', r'\pm')
+          # cutflow_str = re.sub('num{[0\.]*0\\\\pm0}', 'num{0.0\pm0.0}', cutflow_str)
+      else:
+        # cutflow_str = "{: <25} | {:.2e} +/- {:.2e} | {:.2e} +/- {:.2e} | {:.2e} +/- {:.2e} | {:.2e} | {:.2e}".format(
+        #   cut, c.n, c.err, c.wn, c.werr, c.wsn, c.wserr, eff, releff)
+        cutflow_str = "{: <25} | {:.2e} +/- {:.2e}".format(cut, c.wsn, c.wserr)
+      print(cutflow_str, file=f)
+    print(bottomrule, file=f)
+    if do_latex:
+      print(r"\end{tabular}", file=f)
+      print(r"}", file=f)
+      if ext_caption:
+        print("\caption{{\\label{{ {:s} }} {:s} }}".format(label, caption), file=fcap)
+      else:
+        print("\caption{{\\label{{ {:s} }} {:s} }}".format(label, caption), file=f)
+      print(r"\end{center}", file=f)
+      if not ext_caption:
+        print(r"\end{table}", file=f)
+
+  except IOError:
+      print ('Could not open file', outfile)
+
 
 if __name__ == "__main__":
   class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter):
@@ -535,7 +629,7 @@ if __name__ == "__main__":
   parser.add_argument('--config', required=True, type=str, dest='config_file', metavar='<file.yml>', help='YAML file specifying input files and asssociated names.')
   parser.add_argument('--weights', required=True, type=str, dest='weights_file', metavar='<file.json>', help='json file specifying the weights by dataset id.')
   parser.add_argument('--lumi', required=False, type=float, dest='global_luminosity', metavar='<ifb>', help='luminosity to use for scaling.')
-  parser.add_argument('--type', type=str, dest='cutflow_type', choices = ['summary', 'detailed', 'detailed-signal'], help="Specify type of cutflow to make.", default='summary')
+  parser.add_argument('--type', type=str, dest='cutflow_type', choices = ['summary', 'detailed', 'detailed-signal', 'paper'], help="Specify type of cutflow to make.", default='summary')
   parser.add_argument('-i', '--input', dest='top_level', type=str, help='Top level directory containing plots.', default='all')
   parser.add_argument('--top-dir', action='store_true', help='If plots are in the top directory')
 
@@ -748,6 +842,45 @@ if __name__ == "__main__":
             label = ''
 
           save_cutflow_detailed_signal(cuts, title=signal_name, outfile=outfile, caption=caption, label=label, do_latex=args.do_latex, ext_caption=args.ext_caption)
+
+      if args.cutflow_type == 'paper':
+
+        for sample in [s for s in groups]:
+          logger.log(25, "Saving detailed cutflow for: {:s}".format(sample))
+
+          # Loop over cutflow paths and create a list of cuts for this sample group
+          cuts = []
+          for path, cut_metadata in cutflows_paths.iteritems():
+            # Get number of events for this group
+            cut = all_cuts[path][sample]
+            # (order, path/to/cutflow, label, signal_events, tot_bkgd_events)
+            cuts.append((cut_metadata['order'], path, cut_metadata['label'], cut))
+
+          # Sort cuts
+          cuts = sorted(cuts)
+
+          try:
+            sample_name = groups[sample]['name']
+          except KeyError:
+            logger.error("'name' must be specified for each group of samples")
+            exit(1)
+
+          try:
+            outfile = groups[sample]['outfile']
+          except KeyError:
+            outfile = './cutflow.txt'
+
+          try:
+            caption = groups[sample]['caption']
+          except KeyError:
+            caption = ''
+
+          try:
+            label = groups[sample]['label']
+          except KeyError:
+            label = ''
+
+          save_cutflow_paper(cuts, title=sample_name, outfile=outfile, caption=caption, label=label, do_latex=args.do_latex, ext_caption=args.ext_caption)
 
       if not args.debug:
         ROOT.gROOT.ProcessLine("gSystem->RedirectOutput(0);")

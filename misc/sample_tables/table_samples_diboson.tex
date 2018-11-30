@@ -5,24 +5,25 @@
 retain-explicit-plus=false, group-digits = false}
 \begin{tabular}{|l|l|c|
 S[table-parse-only, round-precision=4]|
-S[table-parse-only, round-mode=places, round-precision=1]|
-S[table-format= 1.3, round-mode=places, round-precision=3]|
+S[table-parse-only, round-precision=3]|
+S[table-parse-only, round-precision=3]|
+S[table-parse-only, round-precision=3]|
 }
 \toprule
-Generator & Fiducial Region & {DSID} & {\begin{tabular}[c]{@{}c@{}}No. of\\events\end{tabular}} & {\begin{tabular}[c]{@{}c@{}}$\sigma \times \epsilon_\textnormal{filter}$\\ $[$pb$]$\end{tabular}} & {$k$-factor} \\
+Generator & Fiducial Region & {DSID} & {\begin{tabular}[c]{@{}c@{}}No. of\\events\end{tabular}} & {\begin{tabular}[c]{@{}c@{}}$\sigma \times \epsilon_\textnormal{filter}$\\ $[$pb$]$\end{tabular}} & {$k$-factor} & {$\mathcal{L}_{\mathrm{generated}}~[\mathrm{fb}^{-1}]$}\\
 \midrule
-\Pythia8 & $Wh$, inclusive & 342284 & 99400.0 & 1.10210001469 & 1.25215494633 \\
-\Pythia8 & $Zh$, inclusive & 342285 & 99200.0 & 0.600719988346 & 1.44759619236 \\
-\Sherpa-2.2.1 & $Wp\rightarrow l\nu, Wm\rightarrow q\bar{q}$ & 361091 & 477048.813411 & 24.8850002289 & 0.910000026226 \\
-\Sherpa-2.2.1 & $Wp\rightarrow q\bar{q}, Wm\rightarrow l\nu$ & 361092 & 477549.860946 & 24.857000351 & 0.910000026226 \\
-\Sherpa-2.2.1 & $W\rightarrow l\nu, Zqq$ & 361093 & 495934.476966 & 11.4940004349 & 0.910000026226 \\
-\Sherpa-2.2.1 & $W\rightarrow q\bar{q}, Z\rightarrow ll$ & 361094 & 37127.7285325 & 3.42339992523 & 0.910000026226 \\
-\Sherpa-2.2.1 & $W\rightarrow q\bar{q}, Z\rightarrow \nu\nu$ & 361095 & 743153.458218 & 6.77699995041 & 0.910000026226 \\
-\Sherpa-2.2.1 & $Z\rightarrow q\bar{q}, Z\rightarrow ll$ & 361096 & 323506.138757 & 2.35278606407 & 0.910000026226 \\
-\Sherpa-2.2.1 & $Z\rightarrow q\bar{q}, Z\rightarrow \nu\nu$ & 361097 & 2985373.89665 & 4.63497419531 & 0.910000026226 \\
+\Pythia8 & $Wh$, inclusive & 342284 & 99400.0 & 1.10210001469 & 1.25215494633 & 72.0289863039 \\
+\Pythia8 & $Zh$, inclusive & 342285 & 99200.0 & 0.600719988346 & 1.44759619236 & 114.075441206 \\
+\Sherpa-2.2.1 & $Wp\rightarrow l\nu, Wm\rightarrow q\bar{q}$ & 361091 & 477048.813411 & 24.8850002289 & 0.910000026226 & 21.0660817905 \\
+\Sherpa-2.2.1 & $Wp\rightarrow q\bar{q}, Wm\rightarrow l\nu$ & 361092 & 477549.860946 & 24.857000351 & 0.910000026226 & 21.1119622014 \\
+\Sherpa-2.2.1 & $W\rightarrow l\nu, Zqq$ & 361093 & 495934.476966 & 11.4940004349 & 0.910000026226 & 47.4145558896 \\
+\Sherpa-2.2.1 & $W\rightarrow q\bar{q}, Z\rightarrow ll$ & 361094 & 37127.7285325 & 3.42339992523 & 0.910000026226 & 11.9178890575 \\
+\Sherpa-2.2.1 & $W\rightarrow q\bar{q}, Z\rightarrow \nu\nu$ & 361095 & 743153.458218 & 6.77699995041 & 0.910000026226 & 120.503487432 \\
+\Sherpa-2.2.1 & $Z\rightarrow q\bar{q}, Z\rightarrow ll$ & 361096 & 323506.138757 & 2.35278606407 & 0.910000026226 & 151.097988281 \\
+\Sherpa-2.2.1 & $Z\rightarrow q\bar{q}, Z\rightarrow \nu\nu$ & 361097 & 2985373.89665 & 4.63497419531 & 0.910000026226 & 707.799099385 \\
 \bottomrule
 \end{tabular}
-\caption{The diboson MC samples used.}
+\caption{The diboson MC samples used. Total generated number of events (luminosity): 5738294.37 (1267.02$~\mathrm{fb}^{-1}$).}
 \label{tab:app:datamcdiboson}
 \end{center}
 \end{table}
